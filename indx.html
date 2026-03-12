@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sawqhaly | Premium Digital Marketing Agency</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-neon: #00f2ff;
+            --secondary-neon: #7000ff;
+            --bg-dark: #050505;
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --text-gray: #b0b0b0;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: white;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- Global Styles --- */
+        .container { padding: 0 8%; }
+        .section-padding { padding: 100px 0; }
+        
+        /* --- Navbar --- */
+        header {
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            padding: 20px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+        }
+
+        header.scrolled { padding: 12px 8%; background: rgba(5, 5, 5, 0.95); }
+
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; color: #fff; }
+        .logo span { color: var(--primary-neon); }
+
+        nav { display: flex; align-items: center; }
+        nav a {
+            color: white; text-decoration: none; margin-left: 30px;
+            font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; transition: 0.3s;
+        }
+        nav a:hover { color: var(--primary-neon); text-shadow: 0 0 10px var(--primary-neon); }
+
+        /* --- Mobile Menu (Simple toggle for demo) --- */
+        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-neon); }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; position: relative;
+            background: radial-gradient(circle at 50% 50%, #111122 0%, #050505 100%);
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900;
+            line-height: 1.1; margin-bottom: 25px;
+            background: linear-gradient(to right, #fff, var(--primary-neon), var(--secondary-neon));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .cta-btn {
+            margin-top: 30px; padding: 15px 40px;
+            background: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
+            color: white; text-decoration: none; border-radius: 50px;
+            font-weight: 700; display: inline-block; transition: var(--transition);
+        }
+        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 242, 255, 0.5); }
+
+        /* --- Services Grid --- */
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--card-glass); padding: 40px; border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.05); transition: var(--transition);
+        }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--primary-neon); background: rgba(255,255,255,0.06); }
+        .service-card i { font-size: 2.5rem; color: var(--primary-neon); margin-bottom: 20px; }
+
+        /* --- Contact Section --- */
+        .contact-wrapper {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-top: 50px;
+        }
+
+        .contact-info { display: flex; flex-direction: column; gap: 30px; }
+        .info-item { display: flex; align-items: center; gap: 20px; }
+        .info-item i { width: 50px; height: 50px; background: var(--card-glass); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-neon); border: 1px solid rgba(0, 242, 255, 0.2); }
+
+        .contact-form {
+            background: var(--card-glass); padding: 40px; border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 15px; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+            color: white; outline: none; transition: 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary-neon); }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .contact-wrapper { grid-template-columns: 1fr; }
+            nav { display: none; }
+            .menu-btn { display: block; }
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 0 5%; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .section-padding { padding: 60px 0; }
+        }
+
+        /* Float Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .floating { animation: float 5s ease-in-out infinite; }
+    </style>
+</head>
+<body>
+
+    <header id="navbar">
+        <div class="logo">SAWQH<span>ALY.</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="https://wa.me/YOUR_NUMBER" class="cta-btn" style="margin-top:0; padding: 10px 25px; font-size: 0.8rem;">WhatsApp</a>
+        </nav>
+        <div class="menu-btn"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content" data-aos="zoom-out">
+            <h1 class="floating">ELEVATE YOUR<br><span>DIGITAL PRESENCE.</span></h1>
+            <p>The next generation of marketing is here. Sawqhaly provides full-stack digital solutions tailored for exponential growth.</p>
+            <a href="#contact" class="cta-btn">Start Your Project</a>
+        </div>
+    </section>
+
+    <section class="section-padding container" id="services">
+        <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
+            <h2 style="font-family: 'Montserrat'; font-size: 2.5rem;">Expert Solutions</h2>
+            <div style="width: 60px; height: 4px; background: var(--primary-neon); margin: 15px auto;"></div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Ads Management</h3>
+                <p>Strategic campaigns on Facebook, Instagram, and Google focused on maximum conversions.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-rocket"></i>
+                <h3>SEO Mastery</h3>
+                <p>Propel your website to the first page of Google with our advanced ranking techniques.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Creative Design</h3>
+                <p>Logo design and brand identity that communicate your values and attract your ideal audience.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Fast, secure, and mobile-friendly websites built with the latest frontend technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container" id="contact">
+        <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
+            <h2 style="font-family: 'Montserrat'; font-size: 2.5rem;">Get In Touch</h2>
+            <p style="color: var(--text-gray);">Let's discuss your next big move</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p style="color: var(--text-gray);">hello@sawqhaly.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p style="color: var(--text-gray);">+1 234 567 890</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-linkedin-in"></i>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <p style="color: var(--text-gray);">Sawqhaly Agency</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form" data-aos="fade-left">
+                <form id="sawqhalyForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-btn" style="border: none; width: 100%; cursor: pointer;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 40px 8%; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <div class="logo" style="margin-bottom: 20px;">SAWQH<span>ALY.</span></div>
+        <p style="color: var(--text-gray); font-size: 0.9rem;">&copy; 2026 Sawqhaly Agency. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Form Submission (Demo)
+        document.getElementById('sawqhalyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent to Sawqhaly Team.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
