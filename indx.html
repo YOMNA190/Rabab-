@@ -2,335 +2,216 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>محمود الهادي | Media Buyer بورتفليو عالمي</title>
-  <!-- Font Awesome 6 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محمود الهادي | بورتفليو ميديا باير - إصدار احترافي</title>
+  <!-- Font Awesome & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Font: Cairo -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- AOS Scroll animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #0a0f1e 0%, #0c1222 100%);
+      font-family: 'Inter', sans-serif;
+      background: #0a0c12;
       color: #eef5ff;
+      transition: background 0.3s, color 0.2s;
       line-height: 1.5;
-      padding: 2rem 1rem;
     }
-
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
+    body.light-mode {
+      background: #f4f7fc;
+      color: #1a202c;
     }
-
-    /* Glassmorphism cards */
-    .card {
-      background: rgba(18, 25, 45, 0.65);
-      backdrop-filter: blur(12px);
+    /* animated gradient orbs */
+    .orb {
+      position: fixed;
+      width: 40vw;
+      height: 40vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,255,255,0.15) 0%, rgba(0,0,0,0) 80%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb-1 { top: -20vh; left: -10vw; animation: float 20s infinite; }
+    .orb-2 { bottom: -10vh; right: -5vw; animation: float 25s infinite reverse; background: radial-gradient(circle, rgba(255,0,255,0.1) 0%, rgba(0,0,0,0) 80%);}
+    @keyframes float { 0%{ transform: translate(0,0); } 50%{ transform: translate(5%,5%); } 100%{ transform: translate(0,0); } }
+    .container { max-width: 1400px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 2; }
+    /* Glass card */
+    .glass {
+      background: rgba(20, 25, 45, 0.7);
+      backdrop-filter: blur(14px);
       border-radius: 2rem;
-      border: 1px solid rgba(0, 255, 255, 0.15);
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border: 1px solid rgba(0,255,255,0.25);
+      transition: all 0.2s;
     }
-
-    .card:hover {
-      border-color: rgba(0, 255, 255, 0.5);
-      box-shadow: 0 12px 30px rgba(0, 200, 255, 0.1);
-      transform: translateY(-3px);
+    body.light-mode .glass {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
-
-    /* Header / Hero */
-    .hero {
+    .profile-section {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       align-items: center;
       margin-bottom: 2.5rem;
     }
-
-    .profile-pic {
-      flex-shrink: 0;
+    .profile-img {
       width: 130px;
       height: 130px;
       border-radius: 50%;
-      background: #1e2a47;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border: 3px solid #0ff;
-      box-shadow: 0 0 20px rgba(0,255,255,0.3);
+      background: linear-gradient(135deg, #0ff, #a0f);
+      padding: 4px;
+      transition: 0.3s;
     }
-
-    .profile-pic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Placeholder style if no image */
-    .profile-pic .placeholder-icon {
-      font-size: 4rem;
-      color: #0ff;
-    }
-
-    .hero-info h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #fff, #0ff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-info .title {
-      font-size: 1.2rem;
-      color: #9bb5ff;
-      margin-bottom: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      font-size: 0.9rem;
-    }
-
-    .contact-info a, .contact-info span {
-      color: #cbd5ff;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-
-    .contact-info a:hover {
-      color: #0ff;
-    }
-
-    /* stats row */
-    .stats-row {
+    .profile-img img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: #0a0c12; }
+    .profile-img:hover { transform: scale(1.03); box-shadow: 0 0 25px #0ff; }
+    h1 { font-size: 2.4rem; font-weight: 800; background: linear-gradient(135deg, #fff, #0ff); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.25rem; }
+    .badge-global { background: #0ff20; border: 1px solid #0ff; border-radius: 40px; padding: 0.2rem 1rem; font-size: 0.8rem; display: inline-block; margin-bottom: 1rem; }
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.2rem;
-      margin-bottom: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
     }
-
-    .stat-card {
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 1.5rem;
-      padding: 1.2rem;
-      text-align: center;
-      border-right: 3px solid #0ff;
-    }
-
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #0ff;
-    }
-
-    /* table wrapper */
-    .table-wrapper {
-      overflow-x: auto;
+    .stat-tile { padding: 1.2rem; text-align: center; border-radius: 1.5rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(8px); border-right: 3px solid #0ff; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: #0ff; }
+    .campaign-filters { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0 1.5rem; }
+    .filter-btn { background: transparent; border: 1px solid #0ff; color: #0ff; padding: 0.5rem 1.2rem; border-radius: 2rem; cursor: pointer; transition: 0.2s; font-weight: 600; }
+    .filter-btn.active, .filter-btn:hover { background: #0ff; color: #0a0c12; border-color: #0ff; }
+    .campaign-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
       margin: 1.5rem 0;
     }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-    }
-
-    th, td {
-      padding: 12px 8px;
-      text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    th {
-      background: rgba(0, 200, 255, 0.1);
-      color: #0ff;
-      font-weight: 700;
-    }
-
-    .badge-active {
-      background: #00a86b;
-      padding: 4px 10px;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: bold;
-    }
-
-    .badge-stopped {
-      background: #ff4d4d;
-      padding: 4px 10px;
-      border-radius: 30px;
-    }
-
-    .highlight {
-      color: #ffd966;
-      font-weight: bold;
-    }
-
-    .comparison-box {
-      background: linear-gradient(145deg, #0a1022, #050a15);
+    .camp-card {
+      background: rgba(15, 20, 35, 0.6);
+      backdrop-filter: blur(8px);
       border-radius: 1.5rem;
-      padding: 1.5rem;
-      margin-top: 1rem;
-      border: 1px solid #0ff3;
+      padding: 1.2rem;
+      border: 1px solid rgba(0,255,255,0.2);
+      transition: 0.2s;
     }
-
-    .metric {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 0.8rem;
-    }
-
-    .value {
-      font-weight: 800;
-      color: #0ff;
-    }
-
-    hr {
-      border-color: #0ff2;
-      margin: 1rem 0;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 2.5rem;
-      font-size: 0.8rem;
-      color: #7d8bb8;
-    }
-
-    @media (max-width: 700px) {
-      .hero {
-        justify-content: center;
-        text-align: center;
-      }
-      .hero-info {
-        text-align: center;
-      }
-      .contact-info {
-        justify-content: center;
-      }
-    }
+    body.light-mode .camp-card { background: rgba(245, 248, 250, 0.9); border: 1px solid #ccc; }
+    .camp-card:hover { transform: translateY(-6px); border-color: #0ff; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+    .status { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; font-weight: bold; margin-top: 0.5rem; }
+    .active { background: #00c853; }
+    .stopped { background: #d32f2f; }
+    .cost { font-size: 1.5rem; font-weight: 800; color: #ffd966; }
+    .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+    @media (max-width: 800px) { .charts-row { grid-template-columns: 1fr; } }
+    footer { text-align: center; margin-top: 3rem; opacity: 0.7; font-size: 0.8rem; }
+    .theme-toggle { position: fixed; bottom: 20px; left: 20px; background: #1f2a48; border-radius: 50px; padding: 0.5rem 1rem; z-index: 99; cursor: pointer; border: 1px solid #0ff; }
   </style>
 </head>
 <body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div>
 <div class="container">
-  <!-- Hero + Profile Image -->
-  <div class="hero">
-    <div class="profile-pic">
-      <!-- 👇 ضع رابط صورتك هنا مباشرة (استبدل الرابط اللي تحت) 👇 -->
-      <img src="https://via.placeholder.com/130?text=Your+Photo" alt="محمود الهادي" id="profileImage">
-      <!-- للتعديل: اكتب رابط صورتك في السطر ده بدل الرابط الحالي -->
-    </div>
-    <div class="hero-info">
-      <h1>محمود الهادي</h1>
-      <div class="title">
-        <span><i class="fas fa-chart-line"></i> Media Buyer</span>
-        <span><i class="fas fa-globe"></i> عالمي · مصر</span>
-      </div>
-      <div class="contact-info">
-        <span><i class="fas fa-phone-alt"></i> 01009770363</span>
-        <a href="mailto:mahmoudalhady2020@gmail.com"><i class="fas fa-envelope"></i> mahmoudalhady2020@gmail.com</a>
-        <span><i class="fas fa-map-marker-alt"></i> المنصورة، مصر</span>
+  <div class="glass" style="padding: 2rem; margin-bottom: 2rem;">
+    <div class="profile-section">
+      <div class="profile-img"><img id="profilePhoto" src="https://randomuser.me/api/portraits/men/32.jpg" alt="محمود الهادي"></div>
+      <div><h1>محمود الهادي</h1><div class="badge-global"><i class="fas fa-chart-line"></i> Media Buyer · عالمي</div>
+      <p><i class="fas fa-phone"></i> 01009770363    <i class="fas fa-envelope"></i> mahmoudalhady2020@gmail.com    <i class="fas fa-map-marker-alt"></i> المنصورة</p>
+      <p>🎓 بكالوريوس جامعة القاهرة · 🚀 Media Buying 2025 (Bassem Magdy & Abdelrahman Alaa)</p>
+      <p>🛠️ Facebook/Instagram/TikTok Ads | Python | HTML/CSS | Photoshop/CapCut</p>
       </div>
     </div>
   </div>
 
-  <!-- بطاقات الإحصائيات السريعة -->
-  <div class="stats-row">
-    <div class="stat-card"><div class="stat-number">9,312 ج.م</div><div>إجمالي الإنفاق</div></div>
-    <div class="stat-card"><div class="stat-number">5,886</div><div>إجمالي النتائج</div></div>
-    <div class="stat-card"><div class="stat-number">1.47 ج.م</div><div>أفضل تكلفة محادثة</div></div>
-    <div class="stat-card"><div class="stat-number">540</div><div>أعلى محادثات (حملة)</div></div>
+  <div class="stats-grid" data-aos="fade-up">
+    <div class="stat-tile"><div class="stat-num">9,312 ج.م</div><div>إجمالي الإنفاق</div></div>
+    <div class="stat-tile"><div class="stat-num">5,886</div><div>إجمالي النتائج</div></div>
+    <div class="stat-tile"><div class="stat-num">1.47 ج.م</div><div>أفضل تكلفة محادثة</div></div>
+    <div class="stat-tile"><div class="stat-num">61%</div><div>أقل من متوسط السوق</div></div>
   </div>
 
-  <!-- جدول الحملات كامل -->
-  <div class="card">
-    <h2 style="margin-bottom: 1rem;"><i class="fas fa-ad"></i> الحملات الإعلانية</h2>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>#</th><th>الحملة</th><th>الإنفاق (ج.م)</th><th>النتائج</th><th>تكلفة النتيجة</th><th>الحالة</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>عرض العيد رسايل – sun gym</td><td>847.05</td><td>89 محادثة</td><td>9.52</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>2</td><td>elhamady cam massage (1)</td><td>8.83</td><td>6 محادثات</td><td class="highlight">1.47</td><td><span class="badge-active">نشطة</span></td></tr>
-          <tr><td>3</td><td>Agial views portsaid</td><td>480.78</td><td>181 تفاعل</td><td>2.66</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>4</td><td>elhamady cam massage (2)</td><td>458.07</td><td>102 محادثة</td><td>4.49</td><td><span class="badge-active">نشطة</span></td></tr>
-          <tr><td>5</td><td>أسس شركتك الخاصة</td><td>260.00</td><td>20 محادثة</td><td>13.00</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>6</td><td>campaign massage</td><td>572.96</td><td>40 محادثة</td><td>14.32</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>7</td><td>حملة (252.98)</td><td>252.98</td><td>32 محادثة</td><td>7.91</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>8</td><td>Leads – Butcher – Oct & Zayed</td><td>775.28</td><td>76 محادثة</td><td>10.20</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>9</td><td>تفاعل الفيديو – رمضان</td><td>370.25</td><td>4,206 تفاعل</td><td>0.088</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>10</td><td>حملة جديدة بهدف الزيارات</td><td>1,874.85</td><td>263 محادثة</td><td>7.13</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>11</td><td>elsafa massege campaign</td><td>530.03</td><td>106 محادثة</td><td>5.00</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>12</td><td>pearl M Cam</td><td>156.96</td><td>21 محادثة</td><td>7.47</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>13</td><td>حملة جديدة – نسخة 011</td><td>3,130.92</td><td>540 محادثة</td><td>5.80</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>14</td><td>حملة جديدة – نسخة ماسنج</td><td>126.42</td><td>14 محادثة</td><td>9.03</td><td><span class="badge-stopped">متوقف</span></td></tr>
-          <tr><td>15</td><td>كوزماتكس</td><td>210.93</td><td>16 محادثة</td><td>13.18</td><td><span class="badge-active">نشطة</span></td></tr>
-          <tr><td>16</td><td>كامبين جديد بهدف الرسايل</td><td>920.97</td><td>174 محادثة</td><td>5.29</td><td><span class="badge-stopped">متوقف</span></td></tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- charts -->
+  <div class="charts-row" data-aos="fade-up">
+    <div class="glass" style="padding: 1rem;"><canvas id="costChart" width="400" height="250"></canvas><p style="text-align:center; margin-top:0.5rem;">أقل 5 حملات تكلفة محادثة</p></div>
+    <div class="glass" style="padding: 1rem;"><canvas id="spendChart" width="400" height="250"></canvas><p style="text-align:center;">الإنفاق حسب الحملة (أعلى 6)</p></div>
   </div>
 
-  <!-- الملخص الإجمالي والمقارنة العالمية -->
-  <div class="comparison-box">
-    <h3><i class="fas fa-chart-simple"></i> الملخص الإجمالي والميزة التنافسية</h3>
-    <div class="metric"><span>💰 إجمالي الإنفاق:</span><span class="value">9,312 ج.م</span></div>
-    <div class="metric"><span>🎯 إجمالي النتائج:</span><span class="value">5,886</span></div>
-    <div class="metric"><span>⚡ أفضل تكلفة محادثة:</span><span class="value">1.47 ج.م</span></div>
-    <div class="metric"><span>🏆 أعلى عدد محادثات:</span><span class="value">540 (حملة نسخة 011)</span></div>
-    <hr>
-    <div class="metric"><span>📉 تكلفة المحادثة عندي:</span><span class="value">2.17 ج.م (متوسط أفضل الحملات)</span></div>
-    <div class="metric"><span>🌍 متوسط السوق (النظراء):</span><span class="value">5.55 ج.م</span></div>
-    <div class="metric" style="font-size:1.2rem; margin-top:0.5rem;"><span>🔥 أقل من النظراء بنسبة :</span><span class="value" style="color:#ffaa44;">61%</span></div>
-    <p style="margin-top: 0.8rem; font-size:0.85rem;"><i class="fas fa-tachometer-alt"></i> كفاءة إعلانية عالية – أثبت جودة الـ Media Buying بأرقام حقيقية.</p>
+  <!-- filters & campaigns -->
+  <div class="campaign-filters" data-aos="fade-up">
+    <button class="filter-btn active" data-filter="all">الكل</button>
+    <button class="filter-btn" data-filter="active">نشطة</button>
+    <button class="filter-btn" data-filter="stopped">متوقفة</button>
+    <button class="filter-btn" data-filter="best">أقل تكلفة</button>
   </div>
+  <div id="campaignsContainer" class="campaign-cards"></div>
 
-  <!-- المهارات والخبرة -->
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.5rem; margin: 2rem 0;">
-    <div class="card">
-      <h3><i class="fas fa-code"></i> المهارات</h3>
-      <p>Facebook, Instagram, TikTok Ads, ROAS/CPC/CTR, Photoshop, CapCut, Python, HTML/CSS</p>
-    </div>
-    <div class="card">
-      <h3><i class="fas fa-briefcase"></i> الخبرات</h3>
-      <p>Paid Ads & Dropshipping (السعودية 2020–الآن) – بناء مواقع و Landing Pages</p>
-    </div>
-    <div class="card">
-      <h3><i class="fas fa-graduation-cap"></i> التعليم والشهادات</h3>
-      <p>بكالوريوس جامعة القاهرة 2018–2022 | كورس Media Buying 2025 مع Bassem Magdy و Abdelrahman Alaa</p>
-    </div>
+  <div class="glass" style="padding: 1.5rem; margin-top: 1rem;" data-aos="fade-up">
+    <h3><i class="fas fa-chart-simple"></i> الميزة التنافسية</h3>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap;"><span>📉 متوسط تكلفة المحادثة لديّ:</span> <strong>2.17 ج.م</strong></div>
+    <div><span>🌍 متوسط السوق العالمي:</span> <strong>5.55 ج.م</strong></div>
+    <div class="progress"><div style="width:61%; background:#0ff; height:8px; border-radius:10px; margin: 0.8rem 0;"></div></div>
+    <p>✅ أداء أقل من 61% من النظراء – كفاءة مثبتة في تحسين الإنفاق.</p>
   </div>
-
-  <footer>
-    <i class="fas fa-chart-line"></i> محمود الهادي – Media Buyer | جميع الحملات حقيقية وموثقة | تحديث 2026
-  </footer>
+  <footer>محمود الهادي – 2026 · بيانات حقيقية من الحملات</footer>
 </div>
+<div class="theme-toggle" onclick="document.body.classList.toggle('light-mode')"><i class="fas fa-moon"></i> <i class="fas fa-sun"></i> الوضع</div>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  // Script صغير لتسهيل تغيير الصورة: لو عايز تغير الصورة من هنا فقط، غير المتغير التالي
-  // 👇 ضع رابط صورتك المباشر بدل placeholder
-  const myImageUrl = "https://via.placeholder.com/130?text=Your+Photo"; // 👈 غير هذا الرابط لرابط صورتك
-  const imgElement = document.getElementById("profileImage");
-  if (imgElement && myImageUrl) {
-    imgElement.src = myImageUrl;
-  }
+AOS.init({ duration: 800, once: true });
+// بيانات الحملات
+const campaigns = [
+  {name:"عرض العيد رسايل – sun gym", spend:847.05, results:"89 محادثة", cost:9.52, status:"stopped"},
+  {name:"elhamady cam massage (1)", spend:8.83, results:"6 محادثات", cost:1.47, status:"active"},
+  {name:"Agial views portsaid", spend:480.78, results:"181 تفاعل", cost:2.66, status:"stopped"},
+  {name:"elhamady cam massage (2)", spend:458.07, results:"102 محادثة", cost:4.49, status:"active"},
+  {name:"أسس شركتك الخاصة", spend:260, results:"20 محادثة", cost:13, status:"stopped"},
+  {name:"campaign massage", spend:572.96, results:"40 محادثة", cost:14.32, status:"stopped"},
+  {name:"حملة (252.98)", spend:252.98, results:"32 محادثة", cost:7.91, status:"stopped"},
+  {name:"Leads – Butcher – Oct & Zayed", spend:775.28, results:"76 محادثة", cost:10.2, status:"stopped"},
+  {name:"تفاعل الفيديو – رمضان", spend:370.25, results:"4,206 تفاعل", cost:0.088, status:"stopped"},
+  {name:"حملة جديدة بهدف الزيارات", spend:1874.85, results:"263 محادثة", cost:7.13, status:"stopped"},
+  {name:"elsafa massege campaign", spend:530.03, results:"106 محادثة", cost:5, status:"stopped"},
+  {name:"pearl M Cam", spend:156.96, results:"21 محادثة", cost:7.47, status:"stopped"},
+  {name:"حملة جديدة – نسخة 011", spend:3130.92, results:"540 محادثة", cost:5.8, status:"stopped"},
+  {name:"حملة جديدة – نسخة ماسنج", spend:126.42, results:"14 محادثة", cost:9.03, status:"stopped"},
+  {name:"كوزماتكس", spend:210.93, results:"16 محادثة", cost:13.18, status:"active"},
+  {name:"كامبين جديد بهدف الرسايل", spend:920.97, results:"174 محادثة", cost:5.29, status:"stopped"}
+];
+
+function renderCampaigns(filter) {
+  let filtered = [...campaigns];
+  if(filter === 'active') filtered = campaigns.filter(c => c.status === 'active');
+  else if(filter === 'stopped') filtered = campaigns.filter(c => c.status === 'stopped');
+  else if(filter === 'best') filtered = [...campaigns].sort((a,b)=>a.cost - b.cost).slice(0,5);
+  const container = document.getElementById('campaignsContainer');
+  container.innerHTML = filtered.map(c => `
+    <div class="camp-card">
+      <div><strong>${c.name}</strong></div>
+      <div>💰 ${c.spend} ج.م &nbsp;| 🎯 ${c.results}</div>
+      <div class="cost">${c.cost} ج.م <span style="font-size:0.8rem;">/ نتيجة</span></div>
+      <div class="status ${c.status === 'active' ? 'active' : 'stopped'}">${c.status === 'active' ? 'نشطة' : 'متوقفة'}</div>
+    </div>
+  `).join('');
+}
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    renderCampaigns(this.dataset.filter);
+  });
+});
+renderCampaigns('all');
+
+// Charts
+const bestFive = [...campaigns].sort((a,b)=>a.cost - b.cost).slice(0,5);
+new Chart(document.getElementById('costChart'), { type: 'bar', data: { labels: bestFive.map(c=>c.name.slice(0,15)), datasets: [{ label: 'تكلفة المحادثة (ج.م)', data: bestFive.map(c=>c.cost), backgroundColor: '#0ff' }] }, options: { responsive: true, plugins: { legend: { labels: { color: '#ccc' } } } } });
+const topSpend = [...campaigns].sort((a,b)=>b.spend - a.spend).slice(0,6);
+new Chart(document.getElementById('spendChart'), { type: 'pie', data: { labels: topSpend.map(c=>c.name.slice(0,12)), datasets: [{ data: topSpend.map(c=>c.spend), backgroundColor: ['#0ff','#f0f','#ffaa44','#44ffaa','#ff66cc','#66ccff'] }] }, options: { responsive: true } });
 </script>
+<style>
+  body.light-mode .glass, body.light-mode .stat-tile, body.light-mode .camp-card { background: rgba(250,250,255,0.85); color:#1a202c; border-color:#aaa; }
+  body.light-mode .cost { color:#d97706; }
+  body.light-mode .stat-num { color:#0891b2; }
+  .progress div { background: #0ff; border-radius: 10px; }
+</style>
 </body>
 </html>
