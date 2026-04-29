@@ -1,270 +1,336 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sawqhaly | Premium Digital Marketing Agency</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>محمود الهادي | Media Buyer بورتفليو عالمي</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Font: Cairo -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        :root {
-            --primary-neon: #00f2ff;
-            --secondary-neon: #7000ff;
-            --bg-dark: #050505;
-            --card-glass: rgba(255, 255, 255, 0.03);
-            --text-gray: #b0b0b0;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #0a0f1e 0%, #0c1222 100%);
+      color: #eef5ff;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-        body {
-            background-color: var(--bg-dark);
-            color: white;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+    /* Glassmorphism cards */
+    .card {
+      background: rgba(18, 25, 45, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      border: 1px solid rgba(0, 255, 255, 0.15);
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
 
-        /* --- Global Styles --- */
-        .container { padding: 0 8%; }
-        .section-padding { padding: 100px 0; }
-        
-        /* --- Navbar --- */
-        header {
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-            padding: 20px 8%;
-            display: flex; justify-content: space-between; align-items: center;
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: var(--transition);
-        }
+    .card:hover {
+      border-color: rgba(0, 255, 255, 0.5);
+      box-shadow: 0 12px 30px rgba(0, 200, 255, 0.1);
+      transform: translateY(-3px);
+    }
 
-        header.scrolled { padding: 12px 8%; background: rgba(5, 5, 5, 0.95); }
+    /* Header / Hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
 
-        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; color: #fff; }
-        .logo span { color: var(--primary-neon); }
+    .profile-pic {
+      flex-shrink: 0;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: #1e2a47;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 3px solid #0ff;
+      box-shadow: 0 0 20px rgba(0,255,255,0.3);
+    }
 
-        nav { display: flex; align-items: center; }
-        nav a {
-            color: white; text-decoration: none; margin-left: 30px;
-            font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 1px; transition: 0.3s;
-        }
-        nav a:hover { color: var(--primary-neon); text-shadow: 0 0 10px var(--primary-neon); }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        /* --- Mobile Menu (Simple toggle for demo) --- */
-        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-neon); }
+    /* Placeholder style if no image */
+    .profile-pic .placeholder-icon {
+      font-size: 4rem;
+      color: #0ff;
+    }
 
-        /* --- Hero Section --- */
-        .hero {
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            text-align: center; position: relative;
-            background: radial-gradient(circle at 50% 50%, #111122 0%, #050505 100%);
-        }
+    .hero-info h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #0ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
 
-        .hero-content h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900;
-            line-height: 1.1; margin-bottom: 25px;
-            background: linear-gradient(to right, #fff, var(--primary-neon), var(--secondary-neon));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
+    .hero-info .title {
+      font-size: 1.2rem;
+      color: #9bb5ff;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-        .cta-btn {
-            margin-top: 30px; padding: 15px 40px;
-            background: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
-            color: white; text-decoration: none; border-radius: 50px;
-            font-weight: 700; display: inline-block; transition: var(--transition);
-        }
-        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 242, 255, 0.5); }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
 
-        /* --- Services Grid --- */
-        .services-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;
-            margin-top: 50px;
-        }
+    .contact-info a, .contact-info span {
+      color: #cbd5ff;
+      text-decoration: none;
+      transition: 0.2s;
+    }
 
-        .service-card {
-            background: var(--card-glass); padding: 40px; border-radius: 25px;
-            border: 1px solid rgba(255,255,255,0.05); transition: var(--transition);
-        }
-        .service-card:hover { transform: translateY(-10px); border-color: var(--primary-neon); background: rgba(255,255,255,0.06); }
-        .service-card i { font-size: 2.5rem; color: var(--primary-neon); margin-bottom: 20px; }
+    .contact-info a:hover {
+      color: #0ff;
+    }
 
-        /* --- Contact Section --- */
-        .contact-wrapper {
-            display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-top: 50px;
-        }
+    /* stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
 
-        .contact-info { display: flex; flex-direction: column; gap: 30px; }
-        .info-item { display: flex; align-items: center; gap: 20px; }
-        .info-item i { width: 50px; height: 50px; background: var(--card-glass); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-neon); border: 1px solid rgba(0, 242, 255, 0.2); }
+    .stat-card {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 1.5rem;
+      padding: 1.2rem;
+      text-align: center;
+      border-right: 3px solid #0ff;
+    }
 
-        .contact-form {
-            background: var(--card-glass); padding: 40px; border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0ff;
+    }
 
-        .form-group { margin-bottom: 20px; }
-        .form-group input, .form-group textarea {
-            width: 100%; padding: 15px; background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
-            color: white; outline: none; transition: 0.3s;
-        }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary-neon); }
+    /* table wrapper */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
 
-        /* --- Responsive Design --- */
-        @media (max-width: 992px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-            nav { display: none; }
-            .menu-btn { display: block; }
-        }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
 
-        @media (max-width: 600px) {
-            .container { padding: 0 5%; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .section-padding { padding: 60px 0; }
-        }
+    th, td {
+      padding: 12px 8px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-        /* Float Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        .floating { animation: float 5s ease-in-out infinite; }
-    </style>
+    th {
+      background: rgba(0, 200, 255, 0.1);
+      color: #0ff;
+      font-weight: 700;
+    }
+
+    .badge-active {
+      background: #00a86b;
+      padding: 4px 10px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+
+    .badge-stopped {
+      background: #ff4d4d;
+      padding: 4px 10px;
+      border-radius: 30px;
+    }
+
+    .highlight {
+      color: #ffd966;
+      font-weight: bold;
+    }
+
+    .comparison-box {
+      background: linear-gradient(145deg, #0a1022, #050a15);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      border: 1px solid #0ff3;
+    }
+
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
+    }
+
+    .value {
+      font-weight: 800;
+      color: #0ff;
+    }
+
+    hr {
+      border-color: #0ff2;
+      margin: 1rem 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: #7d8bb8;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        justify-content: center;
+        text-align: center;
+      }
+      .hero-info {
+        text-align: center;
+      }
+      .contact-info {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
+<div class="container">
+  <!-- Hero + Profile Image -->
+  <div class="hero">
+    <div class="profile-pic">
+      <!-- 👇 ضع رابط صورتك هنا مباشرة (استبدل الرابط اللي تحت) 👇 -->
+      <img src="https://via.placeholder.com/130?text=Your+Photo" alt="محمود الهادي" id="profileImage">
+      <!-- للتعديل: اكتب رابط صورتك في السطر ده بدل الرابط الحالي -->
+    </div>
+    <div class="hero-info">
+      <h1>محمود الهادي</h1>
+      <div class="title">
+        <span><i class="fas fa-chart-line"></i> Media Buyer</span>
+        <span><i class="fas fa-globe"></i> عالمي · مصر</span>
+      </div>
+      <div class="contact-info">
+        <span><i class="fas fa-phone-alt"></i> 01009770363</span>
+        <a href="mailto:mahmoudalhady2020@gmail.com"><i class="fas fa-envelope"></i> mahmoudalhady2020@gmail.com</a>
+        <span><i class="fas fa-map-marker-alt"></i> المنصورة، مصر</span>
+      </div>
+    </div>
+  </div>
 
-    <header id="navbar">
-        <div class="logo">SAWQH<span>ALY.</span></div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-            <a href="https://wa.me/YOUR_NUMBER" class="cta-btn" style="margin-top:0; padding: 10px 25px; font-size: 0.8rem;">WhatsApp</a>
-        </nav>
-        <div class="menu-btn"><i class="fas fa-bars"></i></div>
-    </header>
+  <!-- بطاقات الإحصائيات السريعة -->
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-number">9,312 ج.م</div><div>إجمالي الإنفاق</div></div>
+    <div class="stat-card"><div class="stat-number">5,886</div><div>إجمالي النتائج</div></div>
+    <div class="stat-card"><div class="stat-number">1.47 ج.م</div><div>أفضل تكلفة محادثة</div></div>
+    <div class="stat-card"><div class="stat-number">540</div><div>أعلى محادثات (حملة)</div></div>
+  </div>
 
-    <section class="hero" id="home">
-        <div class="container hero-content" data-aos="zoom-out">
-            <h1 class="floating">ELEVATE YOUR<br><span>DIGITAL PRESENCE.</span></h1>
-            <p>The next generation of marketing is here. Sawqhaly provides full-stack digital solutions tailored for exponential growth.</p>
-            <a href="#contact" class="cta-btn">Start Your Project</a>
-        </div>
-    </section>
+  <!-- جدول الحملات كامل -->
+  <div class="card">
+    <h2 style="margin-bottom: 1rem;"><i class="fas fa-ad"></i> الحملات الإعلانية</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr><th>#</th><th>الحملة</th><th>الإنفاق (ج.م)</th><th>النتائج</th><th>تكلفة النتيجة</th><th>الحالة</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>عرض العيد رسايل – sun gym</td><td>847.05</td><td>89 محادثة</td><td>9.52</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>2</td><td>elhamady cam massage (1)</td><td>8.83</td><td>6 محادثات</td><td class="highlight">1.47</td><td><span class="badge-active">نشطة</span></td></tr>
+          <tr><td>3</td><td>Agial views portsaid</td><td>480.78</td><td>181 تفاعل</td><td>2.66</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>4</td><td>elhamady cam massage (2)</td><td>458.07</td><td>102 محادثة</td><td>4.49</td><td><span class="badge-active">نشطة</span></td></tr>
+          <tr><td>5</td><td>أسس شركتك الخاصة</td><td>260.00</td><td>20 محادثة</td><td>13.00</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>6</td><td>campaign massage</td><td>572.96</td><td>40 محادثة</td><td>14.32</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>7</td><td>حملة (252.98)</td><td>252.98</td><td>32 محادثة</td><td>7.91</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>8</td><td>Leads – Butcher – Oct & Zayed</td><td>775.28</td><td>76 محادثة</td><td>10.20</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>9</td><td>تفاعل الفيديو – رمضان</td><td>370.25</td><td>4,206 تفاعل</td><td>0.088</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>10</td><td>حملة جديدة بهدف الزيارات</td><td>1,874.85</td><td>263 محادثة</td><td>7.13</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>11</td><td>elsafa massege campaign</td><td>530.03</td><td>106 محادثة</td><td>5.00</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>12</td><td>pearl M Cam</td><td>156.96</td><td>21 محادثة</td><td>7.47</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>13</td><td>حملة جديدة – نسخة 011</td><td>3,130.92</td><td>540 محادثة</td><td>5.80</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>14</td><td>حملة جديدة – نسخة ماسنج</td><td>126.42</td><td>14 محادثة</td><td>9.03</td><td><span class="badge-stopped">متوقف</span></td></tr>
+          <tr><td>15</td><td>كوزماتكس</td><td>210.93</td><td>16 محادثة</td><td>13.18</td><td><span class="badge-active">نشطة</span></td></tr>
+          <tr><td>16</td><td>كامبين جديد بهدف الرسايل</td><td>920.97</td><td>174 محادثة</td><td>5.29</td><td><span class="badge-stopped">متوقف</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-    <section class="section-padding container" id="services">
-        <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
-            <h2 style="font-family: 'Montserrat'; font-size: 2.5rem;">Expert Solutions</h2>
-            <div style="width: 60px; height: 4px; background: var(--primary-neon); margin: 15px auto;"></div>
-        </div>
+  <!-- الملخص الإجمالي والمقارنة العالمية -->
+  <div class="comparison-box">
+    <h3><i class="fas fa-chart-simple"></i> الملخص الإجمالي والميزة التنافسية</h3>
+    <div class="metric"><span>💰 إجمالي الإنفاق:</span><span class="value">9,312 ج.م</span></div>
+    <div class="metric"><span>🎯 إجمالي النتائج:</span><span class="value">5,886</span></div>
+    <div class="metric"><span>⚡ أفضل تكلفة محادثة:</span><span class="value">1.47 ج.م</span></div>
+    <div class="metric"><span>🏆 أعلى عدد محادثات:</span><span class="value">540 (حملة نسخة 011)</span></div>
+    <hr>
+    <div class="metric"><span>📉 تكلفة المحادثة عندي:</span><span class="value">2.17 ج.م (متوسط أفضل الحملات)</span></div>
+    <div class="metric"><span>🌍 متوسط السوق (النظراء):</span><span class="value">5.55 ج.م</span></div>
+    <div class="metric" style="font-size:1.2rem; margin-top:0.5rem;"><span>🔥 أقل من النظراء بنسبة :</span><span class="value" style="color:#ffaa44;">61%</span></div>
+    <p style="margin-top: 0.8rem; font-size:0.85rem;"><i class="fas fa-tachometer-alt"></i> كفاءة إعلانية عالية – أثبت جودة الـ Media Buying بأرقام حقيقية.</p>
+  </div>
 
-        <div class="services-grid">
-            <div class="service-card" data-aos="fade-up">
-                <i class="fas fa-bullhorn"></i>
-                <h3>Ads Management</h3>
-                <p>Strategic campaigns on Facebook, Instagram, and Google focused on maximum conversions.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-rocket"></i>
-                <h3>SEO Mastery</h3>
-                <p>Propel your website to the first page of Google with our advanced ranking techniques.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-paint-brush"></i>
-                <h3>Creative Design</h3>
-                <p>Logo design and brand identity that communicate your values and attract your ideal audience.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>Fast, secure, and mobile-friendly websites built with the latest frontend technologies.</p>
-            </div>
-        </div>
-    </section>
+  <!-- المهارات والخبرة -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.5rem; margin: 2rem 0;">
+    <div class="card">
+      <h3><i class="fas fa-code"></i> المهارات</h3>
+      <p>Facebook, Instagram, TikTok Ads, ROAS/CPC/CTR, Photoshop, CapCut, Python, HTML/CSS</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-briefcase"></i> الخبرات</h3>
+      <p>Paid Ads & Dropshipping (السعودية 2020–الآن) – بناء مواقع و Landing Pages</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-graduation-cap"></i> التعليم والشهادات</h3>
+      <p>بكالوريوس جامعة القاهرة 2018–2022 | كورس Media Buying 2025 مع Bassem Magdy و Abdelrahman Alaa</p>
+    </div>
+  </div>
 
-    <section class="section-padding container" id="contact">
-        <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
-            <h2 style="font-family: 'Montserrat'; font-size: 2.5rem;">Get In Touch</h2>
-            <p style="color: var(--text-gray);">Let's discuss your next big move</p>
-        </div>
+  <footer>
+    <i class="fas fa-chart-line"></i> محمود الهادي – Media Buyer | جميع الحملات حقيقية وموثقة | تحديث 2026
+  </footer>
+</div>
 
-        <div class="contact-wrapper">
-            <div class="contact-info" data-aos="fade-right">
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email Us</h4>
-                        <p style="color: var(--text-gray);">hello@sawqhaly.com</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <h4>Call Us</h4>
-                        <p style="color: var(--text-gray);">+1 234 567 890</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <i class="fab fa-linkedin-in"></i>
-                    <div>
-                        <h4>LinkedIn</h4>
-                        <p style="color: var(--text-gray);">Sawqhaly Agency</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form" data-aos="fade-left">
-                <form id="sawqhalyForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="cta-btn" style="border: none; width: 100%; cursor: pointer;">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer style="padding: 40px 8%; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
-        <div class="logo" style="margin-bottom: 20px;">SAWQH<span>ALY.</span></div>
-        <p style="color: var(--text-gray); font-size: 0.9rem;">&copy; 2026 Sawqhaly Agency. All Rights Reserved.</p>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Form Submission (Demo)
-        document.getElementById('sawqhalyForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! Your message has been sent to Sawqhaly Team.');
-            this.reset();
-        });
-    </script>
+<script>
+  // Script صغير لتسهيل تغيير الصورة: لو عايز تغير الصورة من هنا فقط، غير المتغير التالي
+  // 👇 ضع رابط صورتك المباشر بدل placeholder
+  const myImageUrl = "https://via.placeholder.com/130?text=Your+Photo"; // 👈 غير هذا الرابط لرابط صورتك
+  const imgElement = document.getElementById("profileImage");
+  if (imgElement && myImageUrl) {
+    imgElement.src = myImageUrl;
+  }
+</script>
 </body>
 </html>
