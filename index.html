@@ -1,2914 +1,1147 @@
-<!-- =========================================================
-     AL-TAMAYOZ DEMOLITION | PAGE ID 1111
-     Full Replacement Landing Page
-     ========================================================= -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>هدم وتكسير في الدمام والمنطقة الشرقية | التميز لمقاولات الهدم</title>
+<meta name="description" content="التميز لمقاولات الهدم، خدمات هدم المنازل والمباني القديمة وتكسير الجدران والخرسانة في الدمام والمنطقة الشرقية. تواصل معنا للبدء في معاينة مشروعك.">
+<meta name="theme-color" content="#111111">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-/* =========================================================
-   RESET / BASE
-   ========================================================= */
-
-body.page-id-1111 .site-header,
-body.page-id-1111 .site-footer,
-body.page-id-1111 .sidebar,
-body.page-id-1111 .entry-title {
-    display: none !important;
+:root{
+  --black:#0c0c0c;
+  --black-2:#151515;
+  --white:#f5f3ef;
+  --muted:#a9a6a0;
+  --orange:#ff5a16;
+  --orange-2:#ff6d2d;
+  --line:rgba(255,255,255,.12);
+  --dark-line:rgba(0,0,0,.12);
+  --max:1440px;
 }
 
-body.page-id-1111 {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #0a0b0c;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-.dm-page,
-.dm-page * {
-    box-sizing: border-box;
+html{
+  scroll-behavior:smooth;
 }
 
-.dm-page {
-    --dm-orange: #ef6a22;
-    --dm-orange-dark: #c84e12;
-    --dm-green: #1fa968;
-    --dm-black: #08090a;
-    --dm-dark: #111315;
-    --dm-panel: #171a1c;
-    --dm-panel-2: #1d2023;
-    --dm-white: #ffffff;
-    --dm-muted: #a7abad;
-    --dm-line: rgba(255,255,255,.10);
-    --dm-radius: 24px;
-
-    direction: rtl;
-    color: var(--dm-white);
-    background: var(--dm-black);
-    font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
-    overflow: hidden;
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:"IBM Plex Sans Arabic",sans-serif;
+  overflow-x:hidden;
 }
 
-.dm-page a {
-    color: inherit;
-    text-decoration: none;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-.dm-container {
-    width: min(1200px, calc(100% - 40px));
-    margin-inline: auto;
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
 }
 
-/* =========================================================
-   TOP STRIP
-   ========================================================= */
-
-.dm-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 30;
-    border-bottom: 1px solid rgba(255,255,255,.09);
-    background: rgba(5,6,7,.28);
-    backdrop-filter: blur(12px);
+img{
+  display:block;
+  width:100%;
 }
 
-.dm-top-inner {
-    min-height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    font-size: 13px;
-    color: rgba(255,255,255,.78);
-}
-
-.dm-top-right,
-.dm-top-left {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.dm-live {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.dm-live-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #35d985;
-    box-shadow: 0 0 0 5px rgba(53,217,133,.12);
+::selection{
+  background:var(--orange);
+  color:#fff;
 }
 
 /* =========================================================
    HEADER
-   ========================================================= */
+========================================================= */
 
-.dm-header {
-    position: absolute;
-    top: 46px;
-    left: 0;
-    right: 0;
-    z-index: 25;
-    border-bottom: 1px solid rgba(255,255,255,.07);
+.dm-header{
+  position:absolute;
+  inset:0 0 auto;
+  z-index:100;
+  height:92px;
+  border-bottom:1px solid rgba(255,255,255,.12);
 }
 
-.dm-header-inner {
-    min-height: 84px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+.dm-header-inner{
+  width:min(var(--max),calc(100% - 80px));
+  height:100%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-.dm-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    white-space: nowrap;
+.dm-logo{
+  display:flex;
+  align-items:center;
+  gap:13px;
 }
 
-.dm-brand-mark {
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    border: 1px solid rgba(255,255,255,.18);
-    background: rgba(255,255,255,.07);
-    color: var(--dm-orange);
-    font-size: 19px;
-    font-weight: 900;
-    transform: skew(-7deg);
+.dm-logo-mark{
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  background:var(--orange);
+  color:#fff;
+  font-family:"Tajawal",sans-serif;
+  font-weight:900;
+  font-size:21px;
 }
 
-.dm-brand-text strong {
-    display: block;
-    font-size: 17px;
-    font-weight: 800;
-    line-height: 1.2;
+.dm-logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.05;
 }
 
-.dm-brand-text span {
-    display: block;
-    margin-top: 3px;
-    font-size: 10px;
-    color: rgba(255,255,255,.52);
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
+.dm-logo-text strong{
+  font-family:"Tajawal",sans-serif;
+  font-size:18px;
+  font-weight:900;
 }
 
-.dm-nav {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    font-size: 14px;
-    color: rgba(255,255,255,.75);
+.dm-logo-text span{
+  margin-top:5px;
+  color:#aaa;
+  font-size:11px;
 }
 
-.dm-nav a {
-    position: relative;
-    transition: color .25s ease;
+.dm-nav{
+  display:flex;
+  align-items:center;
+  gap:34px;
 }
 
-.dm-nav a::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: -9px;
-    width: 0;
-    height: 2px;
-    background: var(--dm-orange);
-    transition: width .25s ease;
+.dm-nav a{
+  color:#ddd;
+  font-size:14px;
+  font-weight:500;
+  transition:.2s;
 }
 
-.dm-nav a:hover {
-    color: #fff;
+.dm-nav a:hover{
+  color:#fff;
 }
 
-.dm-nav a:hover::after {
-    width: 100%;
+.dm-header-action{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-.dm-header-actions {
-    display: flex;
-    gap: 9px;
+.dm-header-phone{
+  height:46px;
+  padding:0 20px;
+  border:1px solid rgba(255,255,255,.2);
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:14px;
+  font-weight:700;
 }
 
-.dm-mini-btn {
-    min-height: 43px;
-    padding: 0 17px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    border: 1px solid rgba(255,255,255,.16);
-    background: rgba(255,255,255,.07);
-    font-size: 13px;
-    font-weight: 700;
+.dm-header-phone:hover{
+  background:#fff;
+  color:#111;
 }
 
-.dm-mini-btn.orange {
-    border-color: var(--dm-orange);
-    background: var(--dm-orange);
+.dm-header-wa{
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  background:#20c76b;
+  color:#fff;
+  font-size:20px;
 }
 
 /* =========================================================
    HERO
-   ========================================================= */
+========================================================= */
 
-.dm-hero {
-    position: relative;
-    min-height: 850px;
-    display: flex;
-    align-items: center;
-    isolation: isolate;
-    overflow: hidden;
+.dm-hero{
+  min-height:100svh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  background:#111;
 }
 
-.dm-hero-image {
-    position: absolute;
-    inset: 0;
-    z-index: -5;
-    background:
-        url("https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=2200")
-        center center / cover no-repeat;
-    transform: scale(1.015);
+.dm-hero-image{
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5,5,5,.12) 0%,
+      rgba(5,5,5,.48) 42%,
+      rgba(5,5,5,.92) 100%
+    ),
+    url("https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=2200");
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.01);
 }
 
-.dm-hero-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(5,6,7,.96) 0%,
-            rgba(5,6,7,.84) 35%,
-            rgba(5,6,7,.43) 68%,
-            rgba(5,6,7,.55) 100%
-        ),
-        linear-gradient(
-            0deg,
-            rgba(5,6,7,.96) 0%,
-            transparent 38%,
-            rgba(5,6,7,.40) 100%
-        );
+.dm-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.08) 45%,rgba(0,0,0,.25) 100%);
+  pointer-events:none;
 }
 
-.dm-hero-grid {
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    opacity: .12;
-    background-image:
-        linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px);
-    background-size: 70px 70px;
-    mask-image: linear-gradient(90deg, black, transparent 75%);
+.dm-hero-content{
+  position:relative;
+  z-index:2;
+  width:min(var(--max),calc(100% - 80px));
+  margin:0 auto;
+  padding:0 0 100px;
 }
 
-.dm-hero-content {
-    width: min(1200px, calc(100% - 40px));
-    margin-inline: auto;
-    padding-top: 130px;
+.dm-hero-kicker{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  margin-bottom:25px;
+  color:#ddd;
+  font-size:15px;
+  font-weight:600;
 }
 
-.dm-hero-copy {
-    max-width: 770px;
+.dm-hero-kicker::before{
+  content:"";
+  width:42px;
+  height:3px;
+  background:var(--orange);
 }
 
-.dm-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 12px;
-    border: 1px solid rgba(255,255,255,.16);
-    background: rgba(0,0,0,.30);
-    color: rgba(255,255,255,.83);
-    font-size: 12px;
-    font-weight: 700;
-    backdrop-filter: blur(10px);
+.dm-hero h1{
+  max-width:1000px;
+  font-family:"Tajawal",sans-serif;
+  font-size:clamp(56px,7.7vw,116px);
+  line-height:.93;
+  letter-spacing:-4px;
+  font-weight:900;
 }
 
-.dm-eyebrow::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--dm-orange);
-    box-shadow: 0 0 0 5px rgba(239,106,34,.12);
+.dm-hero h1 span{
+  color:var(--orange);
 }
 
-.dm-hero h1 {
-    margin: 25px 0 20px;
-    font-family: "Tajawal", sans-serif;
-    font-size: clamp(46px, 6vw, 82px);
-    line-height: .99;
-    letter-spacing: -2.5px;
-    font-weight: 900;
-    max-width: 850px;
+.dm-hero-bottom{
+  margin-top:38px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:50px;
 }
 
-.dm-hero h1 span {
-    color: var(--dm-orange);
+.dm-hero-copy{
+  max-width:560px;
+  color:#d1cfca;
+  font-size:18px;
+  line-height:1.9;
 }
 
-.dm-hero-lead {
-    max-width: 680px;
-    margin: 0;
-    color: rgba(255,255,255,.76);
-    font-size: 18px;
-    line-height: 1.9;
+.dm-actions{
+  display:flex;
+  gap:12px;
+  flex-shrink:0;
 }
 
-.dm-hero-actions {
-    margin-top: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+.dm-btn{
+  min-width:190px;
+  height:62px;
+  padding:0 27px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  font-size:16px;
+  font-weight:800;
+  transition:.25s;
 }
 
-.dm-cta {
-    min-height: 58px;
-    padding: 0 25px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 11px;
-    font-size: 15px;
-    font-weight: 800;
-    border: 1px solid transparent;
-    transition: transform .25s ease, background .25s ease;
+.dm-btn-orange{
+  background:var(--orange);
+  color:#fff;
 }
 
-.dm-cta:hover {
-    transform: translateY(-2px);
+.dm-btn-orange:hover{
+  background:#fff;
+  color:#111;
+  transform:translateY(-3px);
 }
 
-.dm-cta-primary {
-    background: var(--dm-orange);
-    color: #fff;
+.dm-btn-outline{
+  border:1px solid rgba(255,255,255,.4);
+  background:rgba(0,0,0,.18);
+  backdrop-filter:blur(7px);
 }
 
-.dm-cta-primary:hover {
-    background: var(--dm-orange-dark);
+.dm-btn-outline:hover{
+  background:#fff;
+  color:#111;
+  transform:translateY(-3px);
 }
 
-.dm-cta-whatsapp {
-    background: #1fa968;
-    color: #fff;
-}
-
-.dm-cta-dark {
-    background: rgba(255,255,255,.07);
-    border-color: rgba(255,255,255,.18);
-}
-
-.dm-hero-meta {
-    margin-top: 45px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,.13);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    color: rgba(255,255,255,.64);
-    font-size: 13px;
-}
-
-.dm-hero-meta-item {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-}
-
-.dm-hero-meta-item strong {
-    color: #fff;
+.dm-hero-location{
+  position:absolute;
+  z-index:3;
+  left:40px;
+  bottom:42px;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  color:#999;
+  font-size:11px;
+  letter-spacing:2px;
 }
 
 /* =========================================================
-   SECTION SYSTEM
-   ========================================================= */
+   INTRO STRIP
+========================================================= */
 
-.dm-section {
-    padding: 105px 0;
-    position: relative;
+.dm-intro{
+  background:var(--orange);
+  color:#111;
+  padding:25px 0;
 }
 
-.dm-section-dark {
-    background: #0b0d0e;
+.dm-intro-inner{
+  width:min(var(--max),calc(100% - 80px));
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
 }
 
-.dm-section-panel {
-    background: #111416;
+.dm-intro strong{
+  font-family:"Tajawal",sans-serif;
+  font-size:clamp(21px,2vw,30px);
+  font-weight:900;
 }
 
-.dm-section-head {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 48px;
+.dm-intro span{
+  font-size:14px;
+  font-weight:700;
 }
 
-.dm-section-kicker {
-    margin-bottom: 12px;
-    color: var(--dm-orange);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.4px;
+/* =========================================================
+   SECTION BASE
+========================================================= */
+
+.dm-section{
+  padding:125px 0;
 }
 
-.dm-section h2 {
-    margin: 0;
-    font-family: "Tajawal", sans-serif;
-    font-size: clamp(34px, 4vw, 56px);
-    line-height: 1.05;
-    font-weight: 900;
-    letter-spacing: -1px;
+.dm-container{
+  width:min(var(--max),calc(100% - 80px));
+  margin:auto;
 }
 
-.dm-section-head p {
-    max-width: 440px;
-    margin: 0;
-    color: var(--dm-muted);
-    line-height: 1.9;
+.dm-eyebrow{
+  color:var(--orange);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.5px;
+  margin-bottom:18px;
+}
+
+.dm-title{
+  font-family:"Tajawal",sans-serif;
+  font-size:clamp(42px,5vw,76px);
+  line-height:1;
+  letter-spacing:-2px;
+  font-weight:900;
+}
+
+.dm-lead{
+  max-width:650px;
+  color:#a9a6a0;
+  font-size:18px;
+  line-height:1.9;
 }
 
 /* =========================================================
    SERVICES
-   ========================================================= */
+========================================================= */
 
-.dm-services {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 14px;
+.dm-services{
+  background:#f1eee8;
+  color:#111;
 }
 
-.dm-service {
-    position: relative;
-    min-height: 330px;
-    padding: 28px;
-    overflow: hidden;
-    background: #16191b;
-    border: 1px solid var(--dm-line);
-    transition: transform .3s ease, border-color .3s ease;
+.dm-services-head{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  margin-bottom:75px;
 }
 
-.dm-service:nth-child(1),
-.dm-service:nth-child(4) {
-    grid-column: span 7;
+.dm-services .dm-title{
+  color:#111;
 }
 
-.dm-service:nth-child(2),
-.dm-service:nth-child(3) {
-    grid-column: span 5;
+.dm-services .dm-lead{
+  color:#68645e;
+  align-self:end;
 }
 
-.dm-service:hover {
-    transform: translateY(-5px);
-    border-color: rgba(239,106,34,.50);
+.dm-service{
+  display:grid;
+  grid-template-columns:90px 1fr 1.1fr;
+  min-height:310px;
+  border-top:1px solid #c9c5bd;
+  align-items:center;
+  gap:45px;
+  transition:.3s;
 }
 
-.dm-service-image {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: .42;
-    transition: transform .5s ease, opacity .5s ease;
+.dm-service:last-child{
+  border-bottom:1px solid #c9c5bd;
 }
 
-.dm-service:hover .dm-service-image {
-    transform: scale(1.04);
-    opacity: .55;
+.dm-service-number{
+  font-family:"Tajawal",sans-serif;
+  font-size:22px;
+  color:#9b9790;
+  font-weight:800;
 }
 
-.dm-service::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, rgba(4,5,6,.96), rgba(4,5,6,.18));
+.dm-service-info h3{
+  font-family:"Tajawal",sans-serif;
+  font-size:clamp(30px,3vw,46px);
+  line-height:1;
+  font-weight:900;
+  margin-bottom:18px;
 }
 
-.dm-service-content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    min-height: 274px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+.dm-service-info p{
+  max-width:430px;
+  color:#66615b;
+  line-height:1.8;
+  font-size:16px;
 }
 
-.dm-service-number {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 12px;
-    color: rgba(255,255,255,.45);
+.dm-service-image{
+  height:230px;
+  overflow:hidden;
 }
 
-.dm-service h3 {
-    margin: 0 0 9px;
-    font-family: "Tajawal", sans-serif;
-    font-size: 28px;
-    font-weight: 900;
+.dm-service-image img{
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.75);
+  transition:.6s;
 }
 
-.dm-service p {
-    max-width: 500px;
-    margin: 0;
-    color: rgba(255,255,255,.68);
-    line-height: 1.8;
-    font-size: 14px;
-}
-
-.dm-service-link {
-    margin-top: 17px;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    color: var(--dm-orange);
-    font-size: 13px;
-    font-weight: 800;
+.dm-service:hover .dm-service-image img{
+  transform:scale(1.05);
+  filter:saturate(1);
 }
 
 /* =========================================================
-   INTRO CTA
-   ========================================================= */
+   DARK FEATURE
+========================================================= */
 
-.dm-breaker {
-    padding: 0 0 105px;
-    background: #0b0d0e;
+.dm-feature{
+  background:#111;
+  padding:140px 0;
 }
 
-.dm-breaker-inner {
-    position: relative;
-    padding: 45px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 30px;
-    background:
-        linear-gradient(110deg, #1a1d1f, #101213);
-    border: 1px solid rgba(255,255,255,.10);
-    overflow: hidden;
+.dm-feature-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:90px;
+  align-items:center;
 }
 
-.dm-breaker-inner::before {
-    content: "";
-    position: absolute;
-    width: 240px;
-    height: 240px;
-    left: -80px;
-    top: -100px;
-    border-radius: 50%;
-    border: 1px solid rgba(239,106,34,.25);
-    box-shadow:
-        0 0 0 30px rgba(239,106,34,.025),
-        0 0 0 60px rgba(239,106,34,.025);
+.dm-feature-image{
+  height:650px;
+  position:relative;
+  overflow:hidden;
 }
 
-.dm-breaker h3 {
-    position: relative;
-    z-index: 2;
-    margin: 0 0 9px;
-    font-size: 26px;
+.dm-feature-image img{
+  height:100%;
+  object-fit:cover;
 }
 
-.dm-breaker p {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    color: var(--dm-muted);
+.dm-feature-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.75));
 }
 
-/* =========================================================
-   WHY
-   ========================================================= */
-
-.dm-why {
-    display: grid;
-    grid-template-columns: .85fr 1.15fr;
-    gap: 70px;
-    align-items: center;
+.dm-feature-tag{
+  position:absolute;
+  z-index:2;
+  bottom:28px;
+  right:28px;
+  font-size:13px;
+  color:#ddd;
 }
 
-.dm-why-visual {
-    position: relative;
-    min-height: 540px;
-    background:
-        url("https://images.pexels.com/photos/6474450/pexels-photo-6474450.jpeg?auto=compress&cs=tinysrgb&w=1400")
-        center / cover;
+.dm-feature-copy .dm-title{
+  margin-bottom:30px;
 }
 
-.dm-why-visual::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, rgba(5,6,7,.8), transparent 60%);
+.dm-feature-copy > p{
+  max-width:570px;
+  color:#a9a6a0;
+  font-size:18px;
+  line-height:2;
 }
 
-.dm-why-label {
-    position: absolute;
-    z-index: 2;
-    right: 24px;
-    bottom: 24px;
-    padding: 14px 18px;
-    background: rgba(5,6,7,.78);
-    border: 1px solid rgba(255,255,255,.12);
-    backdrop-filter: blur(12px);
+.dm-feature-list{
+  margin-top:45px;
+  border-top:1px solid var(--line);
 }
 
-.dm-why-label strong {
-    display: block;
-    font-size: 18px;
+.dm-feature-item{
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  gap:20px;
 }
 
-.dm-why-label span {
-    display: block;
-    margin-top: 4px;
-    color: rgba(255,255,255,.55);
-    font-size: 12px;
+.dm-feature-item b{
+  width:35px;
+  height:35px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  background:var(--orange);
+  color:#fff;
+  font-size:14px;
 }
 
-.dm-benefits {
-    display: grid;
-    gap: 0;
-    border-top: 1px solid var(--dm-line);
-}
-
-.dm-benefit {
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 18px;
-    padding: 23px 0;
-    border-bottom: 1px solid var(--dm-line);
-}
-
-.dm-benefit-num {
-    color: var(--dm-orange);
-    font-size: 12px;
-    font-weight: 800;
-    padding-top: 3px;
-}
-
-.dm-benefit h3 {
-    margin: 0 0 6px;
-    font-size: 18px;
-}
-
-.dm-benefit p {
-    margin: 0;
-    color: var(--dm-muted);
-    font-size: 14px;
-    line-height: 1.8;
+.dm-feature-item span{
+  color:#ddd;
+  font-size:16px;
+  font-weight:600;
 }
 
 /* =========================================================
    PROCESS
-   ========================================================= */
+========================================================= */
 
-.dm-process-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--dm-line);
-    border: 1px solid var(--dm-line);
+.dm-process{
+  background:#171717;
 }
 
-.dm-process {
-    min-height: 255px;
-    padding: 27px;
-    background: #111416;
+.dm-process-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:50px;
+  margin-bottom:70px;
 }
 
-.dm-process-num {
-    color: var(--dm-orange);
-    font-family: "Tajawal", sans-serif;
-    font-size: 42px;
-    font-weight: 900;
+.dm-process-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
 }
 
-.dm-process h3 {
-    margin: 30px 0 8px;
-    font-size: 18px;
+.dm-step{
+  padding:42px 35px 20px;
+  border-left:1px solid var(--line);
+  min-height:270px;
 }
 
-.dm-process p {
-    margin: 0;
-    color: var(--dm-muted);
-    line-height: 1.8;
-    font-size: 13px;
+.dm-step:last-child{
+  border-left:0;
 }
 
-/* =========================================================
-   WHAT WE NEED
-   ========================================================= */
-
-.dm-info {
-    background: #f1eee8;
-    color: #101112;
+.dm-step-num{
+  color:var(--orange);
+  font-family:"Tajawal",sans-serif;
+  font-size:18px;
+  font-weight:900;
+  margin-bottom:60px;
 }
 
-.dm-info .dm-section-kicker {
-    color: var(--dm-orange-dark);
+.dm-step h3{
+  font-family:"Tajawal",sans-serif;
+  font-size:30px;
+  font-weight:900;
+  margin-bottom:14px;
 }
 
-.dm-info .dm-section-head p {
-    color: #686765;
-}
-
-.dm-info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 55px;
-    align-items: center;
-}
-
-.dm-info-list {
-    display: grid;
-    gap: 11px;
-}
-
-.dm-info-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 18px;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,.08);
-}
-
-.dm-info-icon {
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    flex: 0 0 38px;
-    background: #101112;
-    color: #fff;
-    font-weight: 900;
-}
-
-.dm-info-item strong {
-    font-size: 15px;
-}
-
-.dm-info-item span {
-    display: block;
-    margin-top: 2px;
-    color: #777;
-    font-size: 12px;
-}
-
-.dm-info-copy h3 {
-    margin: 0 0 14px;
-    font-family: "Tajawal", sans-serif;
-    font-size: 38px;
-    line-height: 1.15;
-}
-
-.dm-info-copy p {
-    margin: 0 0 25px;
-    color: #5d5c59;
-    line-height: 1.9;
+.dm-step p{
+  color:#98958f;
+  font-size:15px;
+  line-height:1.8;
 }
 
 /* =========================================================
-   MAP
-   ========================================================= */
+   COVERAGE / MAP
+========================================================= */
 
-.dm-map-section {
-    background: #0b0d0e;
+.dm-coverage{
+  background:#ece9e2;
+  color:#111;
 }
 
-.dm-map-wrap {
-    display: grid;
-    grid-template-columns: .72fr 1.28fr;
-    gap: 18px;
+.dm-coverage-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+  align-items:stretch;
 }
 
-.dm-map-copy {
-    padding: 35px;
-    background: #15181a;
-    border: 1px solid var(--dm-line);
+.dm-coverage-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
-.dm-map-copy h3 {
-    margin: 0 0 12px;
-    font-family: "Tajawal", sans-serif;
-    font-size: 34px;
+.dm-coverage-copy .dm-title{
+  margin-bottom:25px;
 }
 
-.dm-map-copy p {
-    margin: 0;
-    color: var(--dm-muted);
-    line-height: 1.9;
+.dm-coverage-copy p{
+  color:#66615b;
+  font-size:17px;
+  line-height:1.9;
+  max-width:520px;
 }
 
-.dm-cities {
-    margin-top: 28px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+.dm-city-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:30px;
 }
 
-.dm-city {
-    padding: 9px 12px;
-    border: 1px solid rgba(255,255,255,.11);
-    color: rgba(255,255,255,.78);
-    background: rgba(255,255,255,.035);
-    font-size: 12px;
+.dm-city{
+  border:1px solid #bbb6ad;
+  padding:10px 16px;
+  font-size:14px;
+  font-weight:700;
 }
 
-.dm-map-cta {
-    margin-top: 30px;
-    display: inline-flex;
+.dm-map{
+  min-height:530px;
+  background:#d5d1ca;
+  position:relative;
+  overflow:hidden;
 }
 
-.dm-map {
-    min-height: 520px;
-    border: 1px solid var(--dm-line);
-    overflow: hidden;
-    background: #17191a;
+.dm-map iframe{
+  width:100%;
+  height:100%;
+  min-height:530px;
+  border:0;
+  filter:grayscale(.85) contrast(1.05);
 }
 
-.dm-map iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 520px;
-    border: 0;
-    filter: grayscale(.25) contrast(1.05);
+.dm-map-label{
+  position:absolute;
+  z-index:2;
+  top:22px;
+  right:22px;
+  background:#111;
+  color:#fff;
+  padding:13px 18px;
+  font-size:12px;
+  font-weight:700;
 }
 
 /* =========================================================
    GALLERY
-   ========================================================= */
+========================================================= */
 
-.dm-gallery {
-    display: grid;
-    grid-template-columns: 1.3fr .7fr .7fr;
-    grid-template-rows: 280px 280px;
-    gap: 12px;
+.dm-gallery{
+  background:#111;
 }
 
-.dm-gallery-item {
-    position: relative;
-    overflow: hidden;
-    background: #16191b;
+.dm-gallery-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:55px;
 }
 
-.dm-gallery-item:first-child {
-    grid-row: span 2;
+.dm-gallery-grid{
+  display:grid;
+  grid-template-columns:1.35fr .8fr .8fr;
+  grid-template-rows:290px 290px;
+  gap:12px;
 }
 
-.dm-gallery-item img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform .5s ease;
+.dm-gallery-item{
+  overflow:hidden;
+  position:relative;
 }
 
-.dm-gallery-item:hover img {
-    transform: scale(1.045);
+.dm-gallery-item:first-child{
+  grid-row:1 / 3;
 }
 
-.dm-gallery-item::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, rgba(0,0,0,.6), transparent 55%);
+.dm-gallery-item img{
+  height:100%;
+  object-fit:cover;
+  transition:.7s;
 }
 
-.dm-gallery-caption {
-    position: absolute;
-    z-index: 2;
-    right: 18px;
-    bottom: 16px;
-    left: 18px;
-    font-size: 12px;
-    color: #fff;
+.dm-gallery-item:hover img{
+  transform:scale(1.04);
+}
+
+.dm-gallery-note{
+  margin-top:20px;
+  color:#77736d;
+  font-size:12px;
 }
 
 /* =========================================================
    FAQ
-   ========================================================= */
+========================================================= */
 
-.dm-faq {
-    max-width: 900px;
-    margin-inline: auto;
+.dm-faq{
+  background:#f1eee8;
+  color:#111;
 }
 
-.dm-faq details {
-    border-top: 1px solid var(--dm-line);
+.dm-faq-grid{
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:100px;
 }
 
-.dm-faq details:last-child {
-    border-bottom: 1px solid var(--dm-line);
+.dm-faq .dm-title{
+  color:#111;
 }
 
-.dm-faq summary {
-    padding: 23px 0;
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    font-size: 16px;
-    font-weight: 700;
+.dm-faq-list{
+  border-top:1px solid #c9c5bd;
 }
 
-.dm-faq summary::-webkit-details-marker {
-    display: none;
+.dm-faq-item{
+  border-bottom:1px solid #c9c5bd;
 }
 
-.dm-faq summary::after {
-    content: "+";
-    color: var(--dm-orange);
-    font-size: 22px;
-    font-weight: 400;
+.dm-faq-question{
+  width:100%;
+  background:none;
+  border:0;
+  padding:27px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  cursor:pointer;
+  color:#111;
+  text-align:right;
+  font-family:"IBM Plex Sans Arabic",sans-serif;
+  font-size:18px;
+  font-weight:700;
 }
 
-.dm-faq details[open] summary::after {
-    content: "−";
+.dm-faq-plus{
+  width:35px;
+  height:35px;
+  border:1px solid #aaa59d;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  font-size:22px;
+  font-weight:400;
 }
 
-.dm-faq answer,
-.dm-faq .dm-answer {
-    display: block;
-    padding: 0 0 23px;
-    color: var(--dm-muted);
-    line-height: 1.9;
-    font-size: 14px;
+.dm-faq-answer{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:.3s;
+}
+
+.dm-faq-answer-inner{
+  overflow:hidden;
+}
+
+.dm-faq-answer p{
+  padding:0 0 25px;
+  color:#66615b;
+  line-height:1.9;
+  font-size:15px;
+}
+
+.dm-faq-item.active .dm-faq-answer{
+  grid-template-rows:1fr;
+}
+
+.dm-faq-item.active .dm-faq-plus{
+  background:#111;
+  color:#fff;
+  border-color:#111;
 }
 
 /* =========================================================
    FINAL CTA
-   ========================================================= */
+========================================================= */
 
-.dm-final {
-    position: relative;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+.dm-final{
+  min-height:650px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
 }
 
-.dm-final-bg {
-    position: absolute;
-    inset: 0;
-    background:
-        url("https://images.pexels.com/photos/2101137/pexels-photo-2101137.jpeg?auto=compress&cs=tinysrgb&w=2200")
-        center / cover;
+.dm-final-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.55)),
+    url("https://images.pexels.com/photos/2101137/pexels-photo-2101137.jpeg?auto=compress&cs=tinysrgb&w=2200");
+  background-size:cover;
+  background-position:center;
 }
 
-.dm-final-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(5,6,7,.78);
+.dm-final-content{
+  position:relative;
+  z-index:2;
+  width:min(var(--max),calc(100% - 80px));
+  margin:auto;
 }
 
-.dm-final-content {
-    position: relative;
-    z-index: 2;
-    max-width: 760px;
+.dm-final .dm-eyebrow{
+  margin-bottom:25px;
 }
 
-.dm-final h2 {
-    margin: 0 0 16px;
-    font-family: "Tajawal", sans-serif;
-    font-size: clamp(38px, 5vw, 66px);
-    line-height: 1;
+.dm-final h2{
+  max-width:950px;
+  font-family:"Tajawal",sans-serif;
+  font-size:clamp(48px,7vw,100px);
+  line-height:.96;
+  letter-spacing:-3px;
+  font-weight:900;
 }
 
-.dm-final p {
-    margin: 0;
-    max-width: 620px;
-    color: rgba(255,255,255,.70);
-    line-height: 1.9;
-    font-size: 16px;
+.dm-final h2 span{
+  color:var(--orange);
 }
 
-.dm-final-actions {
-    margin-top: 28px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.dm-final-actions{
+  display:flex;
+  gap:12px;
+  margin-top:40px;
 }
 
 /* =========================================================
    FOOTER
-   ========================================================= */
+========================================================= */
 
-.dm-footer {
-    padding: 35px 0 100px;
-    background: #070809;
-    border-top: 1px solid var(--dm-line);
+.dm-footer{
+  background:#080808;
+  padding:55px 0 30px;
 }
 
-.dm-footer-inner {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    color: rgba(255,255,255,.50);
-    font-size: 12px;
+.dm-footer-inner{
+  width:min(var(--max),calc(100% - 80px));
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:50px;
+  padding-bottom:35px;
+  border-bottom:1px solid var(--line);
 }
 
-.dm-footer-brand {
-    color: #fff;
-    font-weight: 800;
+.dm-footer-brand p{
+  max-width:400px;
+  margin-top:18px;
+  color:#777;
+  line-height:1.8;
+  font-size:14px;
+}
+
+.dm-footer-contact{
+  text-align:left;
+}
+
+.dm-footer-contact small{
+  display:block;
+  color:#777;
+  margin-bottom:8px;
+}
+
+.dm-footer-contact a{
+  color:#fff;
+  font-family:"Tajawal",sans-serif;
+  font-size:24px;
+  font-weight:800;
+}
+
+.dm-footer-bottom{
+  width:min(var(--max),calc(100% - 80px));
+  margin:22px auto 0;
+  display:flex;
+  justify-content:space-between;
+  color:#555;
+  font-size:11px;
 }
 
 /* =========================================================
    POPUP
-   ========================================================= */
+========================================================= */
 
-.dm-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(0,0,0,.74);
-    backdrop-filter: blur(12px);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .3s ease, visibility .3s ease;
+.dm-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(12px);
+  opacity:0;
+  visibility:hidden;
+  transition:.35s;
 }
 
-.dm-modal.is-open {
-    opacity: 1;
-    visibility: visible;
+.dm-modal.active{
+  opacity:1;
+  visibility:visible;
 }
 
-.dm-modal-card {
-    position: relative;
-    width: min(500px, 100%);
-    padding: 38px;
-    background:
-        linear-gradient(145deg, #1b1e20, #0d0f10);
-    border: 1px solid rgba(255,255,255,.13);
-    box-shadow: 0 30px 100px rgba(0,0,0,.6);
-    transform: translateY(18px) scale(.97);
-    transition: transform .35s cubic-bezier(.2,.8,.2,1);
+.dm-modal-box{
+  width:min(650px,100%);
+  background:#151515;
+  border:1px solid rgba(255,255,255,.14);
+  padding:55px;
+  position:relative;
+  transform:translateY(25px);
+  transition:.35s;
 }
 
-.dm-modal.is-open .dm-modal-card {
-    transform: translateY(0) scale(1);
+.dm-modal.active .dm-modal-box{
+  transform:translateY(0);
 }
 
-.dm-modal-close {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(255,255,255,.13);
-    background: rgba(255,255,255,.05);
-    color: #fff;
-    cursor: pointer;
-    font-size: 19px;
+.dm-modal-close{
+  position:absolute;
+  top:18px;
+  left:18px;
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.2);
+  background:none;
+  color:#fff;
+  cursor:pointer;
+  font-size:22px;
 }
 
-.dm-modal-mark {
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    background: var(--dm-orange);
-    color: #fff;
-    font-weight: 900;
-    margin-bottom: 25px;
+.dm-modal-label{
+  color:var(--orange);
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:18px;
 }
 
-.dm-modal-card h2 {
-    margin: 0 0 10px;
-    font-family: "Tajawal", sans-serif;
-    font-size: 34px;
-    line-height: 1.1;
+.dm-modal h2{
+  font-family:"Tajawal",sans-serif;
+  font-size:clamp(38px,5vw,58px);
+  line-height:1;
+  font-weight:900;
+  margin-bottom:18px;
 }
 
-.dm-modal-card p {
-    margin: 0;
-    color: var(--dm-muted);
-    line-height: 1.8;
-    font-size: 14px;
+.dm-modal p{
+  color:#999;
+  font-size:16px;
+  line-height:1.8;
+  margin-bottom:30px;
 }
 
-.dm-modal-actions {
-    margin-top: 26px;
-    display: grid;
-    gap: 9px;
+.dm-modal-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
 
-.dm-modal-action {
-    min-height: 61px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 18px;
-    border: 1px solid rgba(255,255,255,.10);
-    background: rgba(255,255,255,.05);
-    transition: transform .2s ease, background .2s ease;
+.dm-modal-btn{
+  height:65px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:16px;
+  font-weight:800;
 }
 
-.dm-modal-action:hover {
-    transform: translateX(-3px);
-    background: rgba(255,255,255,.08);
+.dm-modal-call{
+  background:var(--orange);
 }
 
-.dm-modal-action strong {
-    display: block;
-    font-size: 15px;
+.dm-modal-wa{
+  background:#20c76b;
 }
 
-.dm-modal-action span {
-    display: block;
-    margin-top: 2px;
-    color: rgba(255,255,255,.48);
-    font-size: 11px;
-}
-
-.dm-modal-action.phone {
-    border-color: rgba(239,106,34,.4);
-}
-
-.dm-modal-action.whatsapp {
-    border-color: rgba(31,169,104,.4);
-}
-
-.dm-modal-action-icon {
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    background: rgba(255,255,255,.08);
-}
-
-.dm-modal-skip {
-    width: 100%;
-    margin-top: 15px;
-    border: 0;
-    background: transparent;
-    color: rgba(255,255,255,.42);
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 12px;
+.dm-modal-skip{
+  display:block;
+  margin:22px auto 0;
+  background:none;
+  border:0;
+  color:#777;
+  cursor:pointer;
+  font-family:inherit;
+  font-size:12px;
 }
 
 /* =========================================================
-   FLOATING WHATSAPP
-   ========================================================= */
+   FLOATING / MOBILE
+========================================================= */
 
-.dm-floating-wa {
-    position: fixed;
-    z-index: 90;
-    right: 20px;
-    bottom: 22px;
-    width: 55px;
-    height: 55px;
-    display: grid;
-    place-items: center;
-    background: #1fa968;
-    color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 12px 35px rgba(0,0,0,.3);
-    font-size: 20px;
+.dm-floating-wa{
+  position:fixed;
+  left:24px;
+  bottom:24px;
+  z-index:90;
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  background:#20c76b;
+  color:#fff;
+  font-size:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
-/* =========================================================
-   MOBILE BAR
-   ========================================================= */
-
-.dm-mobile-bar {
-    display: none;
-    position: fixed;
-    z-index: 95;
-    right: 10px;
-    left: 10px;
-    bottom: 10px;
-    padding: 7px;
-    gap: 7px;
-    background: rgba(13,15,16,.94);
-    border: 1px solid rgba(255,255,255,.12);
-    backdrop-filter: blur(15px);
-}
-
-.dm-mobile-bar a {
-    min-height: 50px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 800;
-}
-
-.dm-mobile-call {
-    background: var(--dm-orange);
-}
-
-.dm-mobile-wa {
-    background: #1fa968;
+.dm-mobile-bar{
+  display:none;
 }
 
 /* =========================================================
    REVEAL
-   ========================================================= */
+========================================================= */
 
-.dm-reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity .65s ease, transform .65s ease;
+.dm-reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:.7s ease;
 }
 
-.dm-reveal.dm-visible {
-    opacity: 1;
-    transform: translateY(0);
+.dm-reveal.visible{
+  opacity:1;
+  transform:none;
 }
 
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-.dm-page a:focus-visible,
-.dm-page button:focus-visible,
-.dm-page summary:focus-visible {
-    outline: 2px solid var(--dm-orange);
-    outline-offset: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .dm-page *,
-    .dm-page *::before,
-    .dm-page *::after {
-        animation: none !important;
-        transition: none !important;
-    }
-
-    .dm-reveal {
-        opacity: 1;
-        transform: none;
-    }
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .dm-reveal{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
 }
 
 /* =========================================================
-   RESPONSIVE
-   ========================================================= */
+   TABLET
+========================================================= */
 
-@media (max-width: 1000px) {
+@media(max-width:1000px){
 
-    .dm-nav {
-        display: none;
-    }
+  .dm-header-inner,
+  .dm-container,
+  .dm-hero-content,
+  .dm-intro-inner,
+  .dm-final-content,
+  .dm-footer-inner,
+  .dm-footer-bottom{
+    width:min(100% - 45px,var(--max));
+  }
 
-    .dm-hero {
-        min-height: 780px;
-    }
+  .dm-nav{
+    display:none;
+  }
 
-    .dm-hero h1 {
-        max-width: 700px;
-    }
+  .dm-hero-content{
+    padding-bottom:80px;
+  }
 
-    .dm-why {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
+  .dm-hero h1{
+    font-size:clamp(52px,9vw,85px);
+  }
 
-    .dm-why-visual {
-        min-height: 430px;
-    }
+  .dm-services-head,
+  .dm-feature-grid,
+  .dm-coverage-grid,
+  .dm-faq-grid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
 
-    .dm-map-wrap {
-        grid-template-columns: 1fr;
-    }
+  .dm-feature-image{
+    height:500px;
+  }
 
-    .dm-map {
-        min-height: 420px;
-    }
+  .dm-coverage-copy{
+    max-width:700px;
+  }
 
-    .dm-map iframe {
-        min-height: 420px;
-    }
+  .dm-gallery-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:300px 300px 300px;
+  }
+
+  .dm-gallery-item:first-child{
+    grid-column:1 / 3;
+    grid-row:auto;
+  }
 }
 
-@media (max-width: 760px) {
+/* =========================================================
+   MOBILE
+========================================================= */
 
-    .dm-container,
-    .dm-hero-content {
-        width: min(100% - 28px, 1200px);
-    }
+@media(max-width:650px){
 
-    .dm-top-left {
-        display: none;
-    }
+  body{
+    padding-bottom:72px;
+  }
 
-    .dm-top-inner {
-        justify-content: center;
-        min-height: 38px;
-        font-size: 11px;
-    }
+  .dm-header{
+    height:72px;
+  }
 
-    .dm-header {
-        top: 38px;
-    }
+  .dm-header-inner{
+    width:calc(100% - 30px);
+  }
 
-    .dm-header-inner {
-        min-height: 68px;
-    }
+  .dm-logo-mark{
+    width:38px;
+    height:38px;
+  }
 
-    .dm-header-actions .dm-mini-btn:first-child {
-        display: none;
-    }
+  .dm-logo-text strong{
+    font-size:15px;
+  }
 
-    .dm-brand-mark {
-        width: 38px;
-        height: 38px;
-    }
+  .dm-logo-text span{
+    font-size:9px;
+  }
 
-    .dm-brand-text strong {
-        font-size: 14px;
-    }
-
-    .dm-brand-text span {
-        font-size: 8px;
-    }
-
-    .dm-hero {
-        min-height: 760px;
-    }
-
-    .dm-hero-image {
-        background-position: 60% center;
-    }
-
-    .dm-hero-image::after {
-        background:
-            linear-gradient(
-                0deg,
-                rgba(5,6,7,.97) 4%,
-                rgba(5,6,7,.68) 55%,
-                rgba(5,6,7,.35) 100%
-            );
-    }
-
-    .dm-hero-content {
-        padding-top: 125px;
-        padding-bottom: 55px;
-    }
-
-    .dm-hero h1 {
-        font-size: clamp(42px, 13vw, 62px);
-        letter-spacing: -1.5px;
-        line-height: 1;
-    }
-
-    .dm-hero-lead {
-        font-size: 15px;
-        line-height: 1.8;
-    }
-
-    .dm-hero-actions {
-        display: grid;
-    }
-
-    .dm-cta {
-        width: 100%;
-    }
-
-    .dm-hero-meta {
-        gap: 14px;
-        margin-top: 30px;
-    }
-
-    .dm-section {
-        padding: 75px 0;
-    }
-
-    .dm-section-head {
-        display: block;
-        margin-bottom: 32px;
-    }
-
-    .dm-section-head p {
-        margin-top: 16px;
-    }
-
-    .dm-services {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .dm-service,
-    .dm-service:nth-child(1),
-    .dm-service:nth-child(2),
-    .dm-service:nth-child(3),
-    .dm-service:nth-child(4) {
-        grid-column: span 1;
-        min-height: 300px;
-    }
-
-    .dm-breaker {
-        padding-bottom: 75px;
-    }
-
-    .dm-breaker-inner {
-        grid-template-columns: 1fr;
-        padding: 28px;
-    }
-
-    .dm-process-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .dm-process {
-        min-height: 220px;
-    }
-
-    .dm-info-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .dm-info-copy h3 {
-        font-size: 32px;
-    }
-
-    .dm-gallery {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 260px 180px 180px;
-    }
-
-    .dm-gallery-item:first-child {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-
-    .dm-gallery-item:nth-child(2),
-    .dm-gallery-item:nth-child(3),
-    .dm-gallery-item:nth-child(4),
-    .dm-gallery-item:nth-child(5) {
-        grid-column: span 1;
-    }
-
-    .dm-final {
-        min-height: 570px;
-    }
-
-    .dm-footer {
-        padding-bottom: 90px;
-    }
-
-    .dm-footer-inner {
-        display: block;
-    }
-
-    .dm-footer-inner > * + * {
-        margin-top: 10px;
-    }
-
-    .dm-floating-wa {
-        display: none;
-    }
-
-    .dm-mobile-bar {
-        display: flex;
-    }
-
-    .dm-modal {
-        align-items: end;
-        padding: 10px;
-    }
-
-    .dm-modal-card {
-        padding: 30px 22px 20px;
-        width: 100%;
-    }
-
-    .dm-modal-card h2 {
-        font-size: 29px;
-    }
-}
-
-@media (max-width: 420px) {
-
-    .dm-process-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .dm-process {
-        min-height: auto;
-    }
-
-    .dm-gallery {
-        grid-template-rows: 230px 150px 150px;
-    }
-
-    .dm-modal-card {
-        padding-top: 28px;
-    }
-}
-</style>
-
-
-<div class="dm-page" id="dmPage">
-
-    <!-- =====================================================
-         OPENING CONTACT MODAL
-         ===================================================== -->
-
-    <div class="dm-modal" id="dmModal" aria-hidden="true">
-        <div class="dm-modal-card" role="dialog" aria-modal="true" aria-labelledby="dmModalTitle">
-
-            <button class="dm-modal-close" id="dmModalClose" type="button" aria-label="إغلاق">
-                ×
-            </button>
-
-            <div class="dm-modal-mark">هـ</div>
-
-            <h2 id="dmModalTitle">
-                عندك هدم أو تكسير؟
-            </h2>
-
-            <p>
-                أرسل لنا موقع المشروع أو تواصل معنا مباشرة،
-                ونحدد معك الخطوة المناسبة قبل التنفيذ.
-            </p>
-
-            <div class="dm-modal-actions">
-
-                <a
-                    class="dm-modal-action phone"
-                    href="tel:+966568526502"
-                    data-dm-event="phone_click"
-                >
-                    <div>
-                        <strong>اتصل الآن</strong>
-                        <span>056 852 6502</span>
-                    </div>
-
-                    <div class="dm-modal-action-icon">☎</div>
-                </a>
-
-                <a
-                    class="dm-modal-action whatsapp"
-                    href="https://wa.me/966568526502?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D9%87%D8%AF%D9%85%20%D9%88%D8%A7%D9%84%D8%AA%D9%83%D8%B3%D9%8A%D8%B1."
-                    target="_blank"
-                    rel="noopener"
-                    data-dm-event="whatsapp_click"
-                >
-                    <div>
-                        <strong>واتساب</strong>
-                        <span>أرسل موقع المشروع وصورة أو فيديو</span>
-                    </div>
-
-                    <div class="dm-modal-action-icon">↗</div>
-                </a>
-
-            </div>
-
-            <button class="dm-modal-skip" id="dmModalSkip" type="button">
-                متابعة إلى الموقع
-            </button>
-
-        </div>
-    </div>
-
-
-    <!-- =====================================================
-         TOP
-         ===================================================== -->
-
-    <div class="dm-top">
-        <div class="dm-container dm-top-inner">
-
-            <div class="dm-top-right">
-                <span class="dm-live">
-                    <i class="dm-live-dot"></i>
-                    متاح للتواصل
-                </span>
-
-                <span>الدمام والمنطقة الشرقية</span>
-            </div>
-
-            <div class="dm-top-left">
-                <span>اتصل الآن</span>
-                <a href="tel:+966568526502" data-dm-event="phone_click">
-                    056 852 6502
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
-
-    <header class="dm-header">
-        <div class="dm-container dm-header-inner">
-
-            <a class="dm-brand" href="#top" aria-label="التميز لمقاولات الهدم">
-
-                <div class="dm-brand-mark">
-                    هـ
-                </div>
-
-                <div class="dm-brand-text">
-                    <strong>التميز لمقاولات الهدم</strong>
-                    <span>DEMOLITION & BREAKING</span>
-                </div>
-
-            </a>
-
-            <nav class="dm-nav" aria-label="التنقل الرئيسي">
-                <a href="#services">الخدمات</a>
-                <a href="#why">لماذا نحن</a>
-                <a href="#process">طريقة العمل</a>
-                <a href="#areas">نطاق الخدمة</a>
-                <a href="#faq">الأسئلة</a>
-            </nav>
-
-            <div class="dm-header-actions">
-
-                <a
-                    class="dm-mini-btn"
-                    href="tel:+966568526502"
-                    data-dm-event="phone_click"
-                >
-                    اتصل
-                </a>
-
-                <a
-                    class="dm-mini-btn orange"
-                    href="https://wa.me/966568526502"
-                    target="_blank"
-                    rel="noopener"
-                    data-dm-event="whatsapp_click"
-                >
-                    واتساب
-                </a>
-
-            </div>
-
-        </div>
-    </header>
-
-
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
-
-    <main id="top">
-
-        <section class="dm-hero">
-
-            <div class="dm-hero-image"></div>
-            <div class="dm-hero-grid"></div>
-
-            <div class="dm-hero-content">
-
-                <div class="dm-hero-copy dm-reveal">
-
-                    <div class="dm-eyebrow">
-                        هدم وتكسير في الدمام والمنطقة الشرقية
-                    </div>
-
-                    <h1>
-                        نهدم القديم
-                        <br>
-                        <span>ونجهّز المكان للجديد.</span>
-                    </h1>
-
-                    <p class="dm-hero-lead">
-                        هدم المنازل والمباني القديمة، تكسير الجدران والخرسانة،
-                        وتنفيذ أعمال الهدم والتكسير حسب طبيعة الموقع واحتياجه.
-                    </p>
-
-                    <div class="dm-hero-actions">
-
-                        <a
-                            class="dm-cta dm-cta-primary"
-                            href="tel:+966568526502"
-                            data-dm-event="phone_click"
-                        >
-                            اتصل الآن
-                            <span>↗</span>
-                        </a>
-
-                        <a
-                            class="dm-cta dm-cta-whatsapp"
-                            href="https://wa.me/966568526502?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%87%D8%AF%D9%85%20%D9%88%D8%A7%D9%84%D8%AA%D9%83%D8%B3%D9%8A%D8%B1."
-                            target="_blank"
-                            rel="noopener"
-                            data-dm-event="whatsapp_click"
-                        >
-                            تواصل عبر واتساب
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-
-                    <div class="dm-hero-meta">
-
-                        <div class="dm-hero-meta-item">
-                            <span>01</span>
-                            <strong>هدم مباني ومنازل</strong>
-                        </div>
-
-                        <div class="dm-hero-meta-item">
-                            <span>02</span>
-                            <strong>تكسير جدران وخرسانة</strong>
-                        </div>
-
-                        <div class="dm-hero-meta-item">
-                            <span>03</span>
-                            <strong>المنطقة الشرقية</strong>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             SERVICES
-             ================================================= -->
-
-        <section class="dm-section dm-section-dark" id="services">
-
-            <div class="dm-container">
-
-                <div class="dm-section-head dm-reveal">
-
-                    <div>
-                        <div class="dm-section-kicker">
-                            WHAT WE DO
-                        </div>
-
-                        <h2>
-                            هدم وتكسير،
-                            <br>
-                            من أول ضربة لآخر مخلف.
-                        </h2>
-                    </div>
-
-                    <p>
-                        نغطي أعمال الهدم والتكسير للمنازل والمباني والأجزاء
-                        الداخلية، مع اختيار أسلوب التنفيذ حسب طبيعة المشروع.
-                    </p>
-
-                </div>
-
-
-                <div class="dm-services">
-
-                    <article class="dm-service dm-reveal">
-
-                        <div
-                            class="dm-service-image"
-                            style="background-image:url('https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=1200')">
-                        </div>
-
-                        <div class="dm-service-content">
-
-                            <span class="dm-service-number">01</span>
-
-                            <h3>هدم المنازل القديمة</h3>
-
-                            <p>
-                                هدم المنازل والمباني القديمة وتجهيز الموقع
-                                للمرحلة التالية من المشروع.
-                            </p>
-
-                            <span class="dm-service-link">
-                                تفاصيل الخدمة ←
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="dm-service dm-reveal">
-
-                        <div
-                            class="dm-service-image"
-                            style="background-image:url('https://images.pexels.com/photos/6474450/pexels-photo-6474450.jpeg?auto=compress&cs=tinysrgb&w=1200')">
-                        </div>
-
-                        <div class="dm-service-content">
-
-                            <span class="dm-service-number">02</span>
-
-                            <h3>هدم المباني والمنشآت</h3>
-
-                            <p>
-                                أعمال هدم للمباني والمنشآت حسب حجم الموقع
-                                وطبيعة العناصر المطلوب إزالتها.
-                            </p>
-
-                            <span class="dm-service-link">
-                                اطلب المعاينة ←
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="dm-service dm-reveal">
-
-                        <div
-                            class="dm-service-image"
-                            style="background-image:url('https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=1200')">
-                        </div>
-
-                        <div class="dm-service-content">
-
-                            <span class="dm-service-number">03</span>
-
-                            <h3>تكسير الجدران</h3>
-
-                            <p>
-                                فتحات وتكسير جدران داخلية حسب متطلبات
-                                التعديل أو إعادة توزيع المساحات.
-                            </p>
-
-                            <span class="dm-service-link">
-                                تواصل معنا ←
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="dm-service dm-reveal">
-
-                        <div
-                            class="dm-service-image"
-                            style="background-image:url('https://images.pexels.com/photos/162568/demolition-crane-building-construction-162568.jpeg?auto=compress&cs=tinysrgb&w=1200')">
-                        </div>
-
-                        <div class="dm-service-content">
-
-                            <span class="dm-service-number">04</span>
-
-                            <h3>تكسير الخرسانة وإزالة الأنقاض</h3>
-
-                            <p>
-                                تكسير العناصر الخرسانية وإزالة مخلفات الهدم
-                                بحسب نطاق العمل المتفق عليه.
-                            </p>
-
-                            <span class="dm-service-link">
-                                اسأل عن الخدمة ←
-                            </span>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             BREAKER CTA
-             ================================================= -->
-
-        <section class="dm-breaker">
-
-            <div class="dm-container">
-
-                <div class="dm-breaker-inner dm-reveal">
-
-                    <div>
-                        <h3>
-                            عندك مبنى قديم أو جزء محتاج تكسير؟
-                        </h3>
-
-                        <p>
-                            أرسل موقع المشروع وصورة للمكان على واتساب.
-                        </p>
-                    </div>
-
-                    <a
-                        class="dm-cta dm-cta-whatsapp"
-                        href="https://wa.me/966568526502"
-                        target="_blank"
-                        rel="noopener"
-                        data-dm-event="whatsapp_click"
-                    >
-                        أرسل الموقع على واتساب
-                        ↗
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             WHY
-             ================================================= -->
-
-        <section class="dm-section dm-section-panel" id="why">
-
-            <div class="dm-container">
-
-                <div class="dm-why">
-
-                    <div class="dm-why-visual dm-reveal">
-
-                        <div class="dm-why-label">
-                            <strong>الهدم مش مجرد تكسير</strong>
-                            <span>كل موقع له طريقة تنفيذ مختلفة</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="dm-reveal">
-
-                        <div class="dm-section-kicker">
-                            WHY AL-TAMAYOZ
-                        </div>
-
-                        <h2>
-                            الشغل يبدأ
-                            <br>
-                            قبل المعدات.
-                        </h2>
-
-                        <div class="dm-benefits">
-
-                            <div class="dm-benefit">
-                                <div class="dm-benefit-num">01</div>
-                                <div>
-                                    <h3>فهم الموقع أولًا</h3>
-                                    <p>
-                                        معرفة نوع المبنى والأجزاء المطلوب هدمها
-                                        قبل تحديد طريقة التنفيذ.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="dm-benefit">
-                                <div class="dm-benefit-num">02</div>
-                                <div>
-                                    <h3>اختيار أسلوب التنفيذ</h3>
-                                    <p>
-                                        نوع العمل والمساحة وطبيعة العناصر
-                                        تحدد المعدات وطريقة التكسير المناسبة.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="dm-benefit">
-                                <div class="dm-benefit-num">03</div>
-                                <div>
-                                    <h3>تنفيذ منظم</h3>
-                                    <p>
-                                        الهدف ليس إزالة الجزء المطلوب فقط،
-                                        بل تنفيذ العمل بصورة منظمة داخل الموقع.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="dm-benefit">
-                                <div class="dm-benefit-num">04</div>
-                                <div>
-                                    <h3>وضوح قبل البداية</h3>
-                                    <p>
-                                        تفاصيل الموقع ونطاق العمل يتم تحديدها
-                                        قبل بدء التنفيذ قدر الإمكان.
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             PROCESS
-             ================================================= -->
-
-        <section class="dm-section dm-section-dark" id="process">
-
-            <div class="dm-container">
-
-                <div class="dm-section-head dm-reveal">
-
-                    <div>
-                        <div class="dm-section-kicker">
-                            THE PROCESS
-                        </div>
-
-                        <h2>
-                            من أول رسالة
-                            <br>
-                            إلى تسليم الموقع.
-                        </h2>
-                    </div>
-
-                    <p>
-                        كل ما نحتاجه في البداية هو معلومات بسيطة عن المشروع
-                        حتى نقدر نفهم نطاق العمل المطلوب.
-                    </p>
-
-                </div>
-
-
-                <div class="dm-process-grid">
-
-                    <div class="dm-process dm-reveal">
-                        <div class="dm-process-num">01</div>
-                        <h3>أرسل الموقع</h3>
-                        <p>
-                            أرسل موقع المشروع على واتساب، مع صور أو فيديو
-                            للمكان إن أمكن.
-                        </p>
-                    </div>
-
-                    <div class="dm-process dm-reveal">
-                        <div class="dm-process-num">02</div>
-                        <h3>نفهم المطلوب</h3>
-                        <p>
-                            نحدد نوع الهدم أو التكسير والجزء المطلوب
-                            التعامل معه.
-                        </p>
-                    </div>
-
-                    <div class="dm-process dm-reveal">
-                        <div class="dm-process-num">03</div>
-                        <h3>تحديد التنفيذ</h3>
-                        <p>
-                            يتم الاتفاق على نطاق العمل وطريقة التنفيذ
-                            والموعد المناسب.
-                        </p>
-                    </div>
-
-                    <div class="dm-process dm-reveal">
-                        <div class="dm-process-num">04</div>
-                        <h3>بدء العمل</h3>
-                        <p>
-                            يبدأ التنفيذ وفق التفاصيل المتفق عليها
-                            للموقع.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             INFO
-             ================================================= -->
-
-        <section class="dm-section dm-info">
-
-            <div class="dm-container">
-
-                <div class="dm-info-grid">
-
-                    <div class="dm-info-copy dm-reveal">
-
-                        <div class="dm-section-kicker">
-                            BEFORE WE START
-                        </div>
-
-                        <h3>
-                            عشان نقدر نفهم شغلك بسرعة،
-                            ابعت لنا 4 حاجات.
-                        </h3>
-
-                        <p>
-                            كلما كانت معلومات الموقع أوضح، كان أسهل علينا
-                            تحديد طبيعة العمل المطلوب من البداية.
-                        </p>
-
-                        <a
-                            class="dm-cta dm-cta-primary"
-                            href="https://wa.me/966568526502"
-                            target="_blank"
-                            rel="noopener"
-                            data-dm-event="whatsapp_click"
-                        >
-                            أرسل التفاصيل على واتساب
-                            ↗
-                        </a>
-
-                    </div>
-
-
-                    <div class="dm-info-list dm-reveal">
-
-                        <div class="dm-info-item">
-                            <div class="dm-info-icon">01</div>
-                            <div>
-                                <strong>موقع المشروع</strong>
-                                <span>المدينة أو رابط الموقع</span>
-                            </div>
-                        </div>
-
-                        <div class="dm-info-item">
-                            <div class="dm-info-icon">02</div>
-                            <div>
-                                <strong>صور أو فيديو</strong>
-                                <span>لقطات واضحة للمكان</span>
-                            </div>
-                        </div>
-
-                        <div class="dm-info-item">
-                            <div class="dm-info-icon">03</div>
-                            <div>
-                                <strong>نوع العمل</strong>
-                                <span>هدم منزل، مبنى، جدار، خرسانة...</span>
-                            </div>
-                        </div>
-
-                        <div class="dm-info-item">
-                            <div class="dm-info-icon">04</div>
-                            <div>
-                                <strong>الموعد التقريبي</strong>
-                                <span>متى تحتاج بدء العمل؟</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             MAP
-             ================================================= -->
-
-        <section class="dm-section dm-map-section" id="areas">
-
-            <div class="dm-container">
-
-                <div class="dm-section-head dm-reveal">
-
-                    <div>
-                        <div class="dm-section-kicker">
-                            SERVICE AREA
-                        </div>
-
-                        <h2>
-                            نخدم الدمام
-                            <br>
-                            ومدن المنطقة الشرقية.
-                        </h2>
-                    </div>
-
-                    <p>
-                        نطاق الخدمة يشمل الدمام وعددًا من مدن ومحافظات
-                        المنطقة الشرقية. أرسل موقع مشروعك للتأكد من إمكانية
-                        التنفيذ في موقعك.
-                    </p>
-
-                </div>
-
-
-                <div class="dm-map-wrap">
-
-                    <div class="dm-map-copy dm-reveal">
-
-                        <h3>
-                            أين نوصلك؟
-                        </h3>
-
-                        <p>
-                            إذا كان مشروعك خارج الدمام، أرسل الموقع مباشرة
-                            على واتساب وسنراجع نطاق الخدمة للمشروع.
-                        </p>
-
-                        <div class="dm-cities">
-
-                            <span class="dm-city">الدمام</span>
-                            <span class="dm-city">الخبر</span>
-                            <span class="dm-city">الظهران</span>
-                            <span class="dm-city">القطيف</span>
-                            <span class="dm-city">الجبيل</span>
-                            <span class="dm-city">الأحساء</span>
-                            <span class="dm-city">بقيق</span>
-                            <span class="dm-city">الخفجي</span>
-
-                        </div>
-
-                        <a
-                            class="dm-cta dm-cta-whatsapp dm-map-cta"
-                            href="https://wa.me/966568526502"
-                            target="_blank"
-                            rel="noopener"
-                            data-dm-event="whatsapp_click"
-                        >
-                            أرسل موقع مشروعك
-                            ↗
-                        </a>
-
-                    </div>
-
-
-                    <div class="dm-map dm-reveal">
-
-                        <iframe
-                            src="https://www.google.com/maps?q=26.431827,49.890377&z=9&output=embed"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="خريطة نطاق الخدمة في المنطقة الشرقية">
-                        </iframe>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             GALLERY
-             ================================================= -->
-
-        <section class="dm-section dm-section-panel">
-
-            <div class="dm-container">
-
-                <div class="dm-section-head dm-reveal">
-
-                    <div>
-                        <div class="dm-section-kicker">
-                            DEMOLITION WORK
-                        </div>
-
-                        <h2>
-                            طبيعة الأعمال
-                            <br>
-                            التي ننفذها.
-                        </h2>
-                    </div>
-
-                    <p>
-                        أمثلة بصرية على طبيعة أعمال الهدم والتكسير،
-                        وليست صورًا لموقع عميل محدد.
-                    </p>
-
-                </div>
-
-
-                <div class="dm-gallery">
-
-                    <div class="dm-gallery-item dm-reveal">
-                        <img
-                            src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                            alt="أعمال هدم وتكسير مباني"
-                            width="1200"
-                            height="900"
-                            loading="lazy">
-                        <div class="dm-gallery-caption">
-                            هدم مباني ومنشآت
-                        </div>
-                    </div>
-
-                    <div class="dm-gallery-item dm-reveal">
-                        <img
-                            src="https://images.pexels.com/photos/6474450/pexels-photo-6474450.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                            alt="معدات وأعمال هدم"
-                            width="1000"
-                            height="700"
-                            loading="lazy">
-                        <div class="dm-gallery-caption">
-                            أعمال التكسير والهدم
-                        </div>
-                    </div>
-
-                    <div class="dm-gallery-item dm-reveal">
-                        <img
-                            src="https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                            alt="تكسير داخل المباني"
-                            width="1000"
-                            height="700"
-                            loading="lazy">
-                        <div class="dm-gallery-caption">
-                            تكسير وتجهيز المساحات
-                        </div>
-                    </div>
-
-                    <div class="dm-gallery-item dm-reveal">
-                        <img
-                            src="https://images.pexels.com/photos/162568/demolition-crane-building-construction-162568.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                            alt="هدم مبنى"
-                            width="1000"
-                            height="700"
-                            loading="lazy">
-                        <div class="dm-gallery-caption">
-                            هدم المباني
-                        </div>
-                    </div>
-
-                    <div class="dm-gallery-item dm-reveal">
-                        <img
-                            src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                            alt="موقع أعمال إنشائية"
-                            width="1000"
-                            height="700"
-                            loading="lazy">
-                        <div class="dm-gallery-caption">
-                            تجهيز الموقع بعد الهدم
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             FAQ
-             ================================================= -->
-
-        <section class="dm-section dm-section-dark" id="faq">
-
-            <div class="dm-container">
-
-                <div class="dm-section-head dm-reveal">
-
-                    <div>
-                        <div class="dm-section-kicker">
-                            FAQ
-                        </div>
-
-                        <h2>
-                            قبل ما تتصل،
-                            <br>
-                            هذه أهم الأسئلة.
-                        </h2>
-                    </div>
-
-                </div>
-
-
-                <div class="dm-faq">
-
-                    <details class="dm-reveal">
-                        <summary>
-                            هل تنفذون هدم المنازل القديمة؟
-                        </summary>
-                        <div class="dm-answer">
-                            نعم، يمكن التواصل معنا وإرسال موقع وصور المشروع
-                            لتحديد طبيعة العمل المطلوب.
-                        </div>
-                    </details>
-
-                    <details class="dm-reveal">
-                        <summary>
-                            هل تقدمون تكسير الجدران والخرسانة؟
-                        </summary>
-                        <div class="dm-answer">
-                            تشمل الخدمات تكسير الجدران وبعض أعمال تكسير الخرسانة،
-                            ويحدد نطاق التنفيذ حسب طبيعة الموقع.
-                        </div>
-                    </details>
-
-                    <details class="dm-reveal">
-                        <summary>
-                            هل أقدر أرسل الموقع على واتساب؟
-                        </summary>
-                        <div class="dm-answer">
-                            نعم، وهذه أفضل طريقة للبدء. أرسل رابط الموقع وصور
-                            أو فيديو للمكان مع وصف مختصر للمطلوب.
-                        </div>
-                    </details>
-
-                    <details class="dm-reveal">
-                        <summary>
-                            هل الخدمة متوفرة خارج الدمام؟
-                        </summary>
-                        <div class="dm-answer">
-                            نخدم الدمام وعددًا من مدن المنطقة الشرقية.
-                            أرسل موقع المشروع للتأكد من إمكانية التنفيذ.
-                        </div>
-                    </details>
-
-                    <details class="dm-reveal">
-                        <summary>
-                            كم يستغرق تنفيذ الهدم؟
-                        </summary>
-                        <div class="dm-answer">
-                            المدة تختلف حسب حجم المبنى ونوع العمل وطبيعة الموقع،
-                            لذلك يتم تحديدها بعد معرفة تفاصيل المشروع.
-                        </div>
-                    </details>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             FINAL CTA
-             ================================================= -->
-
-        <section class="dm-final">
-
-            <div class="dm-final-bg"></div>
-
-            <div class="dm-container">
-
-                <div class="dm-final-content dm-reveal">
-
-                    <div class="dm-section-kicker">
-                        READY TO START?
-                    </div>
-
-                    <h2>
-                        عندك هدم؟
-                        <br>
-                        خلّنا نشوف الموقع.
-                    </h2>
-
-                    <p>
-                        أرسل موقع المشروع وصورة أو فيديو للمكان،
-                        وتواصل معنا لمعرفة الخطوة التالية.
-                    </p>
-
-                    <div class="dm-final-actions">
-
-                        <a
-                            class="dm-cta dm-cta-primary"
-                            href="tel:+966568526502"
-                            data-dm-event="phone_click"
-                        >
-                            اتصل الآن
-                            ↗
-                        </a>
-
-                        <a
-                            class="dm-cta dm-cta-whatsapp"
-                            href="https://wa.me/966568526502"
-                            target="_blank"
-                            rel="noopener"
-                            data-dm-event="whatsapp_click"
-                        >
-                            واتساب
-                            ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer class="dm-footer">
-
-        <div class="dm-container dm-footer-inner">
-
-            <div class="dm-footer-brand">
-                التميز لمقاولات الهدم
-            </div>
-
-            <div>
-                هدم وتكسير المنازل والمباني في الدمام والمنطقة الشرقية
-            </div>
-
-            <div>
-                © <span id="dmYear"></span>
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <!-- =====================================================
-         FLOATING WHATSAPP
-         ===================================================== -->
-
-    <a
-        class="dm-floating-wa"
-        href="https://wa.me/966568526502"
-        target="_blank"
-        rel="noopener"
-        aria-label="التواصل عبر واتساب"
-        data-dm-event="whatsapp_click"
-    >
-        ↗
-    </a>
-
-
-    <!-- =====================================================
-         MOBILE CTA
-         ===================================================== -->
-
-    <div class="dm-mobile-bar">
-
-        <a
-            class="dm-mobile-call"
-            href="tel:+966568526502"
-            data-dm-event="phone_click"
-        >
-            اتصل الآن
-        </a>
-
-        <a
-            class="dm-mobile-wa"
-            href="https://wa.me/966568526502"
-            target="_blank"
-            rel="noopener"
-            data-dm-event="whatsapp_click"
-        >
-            واتساب
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
-
-<script>
-(function () {
-
-    "use strict";
-
-    const modal = document.getElementById("dmModal");
-    const closeBtn = document.getElementById("dmModalClose");
-    const skipBtn = document.getElementById("dmModalSkip");
-    const year = document.getElementById("dmYear");
-
-    /* ---------------------------------------------------------
-       YEAR
-       --------------------------------------------------------- */
-
-    if (year) {
-        year.textContent = new Date().getFullYear();
-    }
-
-    /* ---------------------------------------------------------
-       TRACKING
-       --------------------------------------------------------- */
-
-    function trackEvent(eventName) {
-
-        try {
-
-            if (window.dataLayer && Array.isArray(window.dataLayer)) {
-                window.dataLayer.push({
-                    event: eventName,
-                    page: "demolition_landing",
-                    source: "dm_page"
-                });
-            }
-
-            if (typeof window.gtag === "function") {
-                window.gtag("event", eventName, {
-                    page_location: window.location.href,
-                    page_title: document.title
-                });
-            }
-
-        } catch (error) {
-            console.warn("Tracking error:", error);
-        }
-
-    }
-
-    document.querySelectorAll("[data-dm-event]").forEach(function (element) {
-
-        element.addEventListener("click", function () {
-
-            const eventName = element.getAttribute("data-dm-event");
-
-            if (eventName) {
-                trackEvent(eventName);
-            }
-
-        });
-
-    });
-
-    /* ---------------------------------------------------------
-       MODAL
-       --------------------------------------------------------- */
-
-    function openModal() {
-
-        if (!modal) return;
-
-        modal.classList.add("is-open");
-        modal.setAttribute("aria-hidden", "false");
-
-        document.body.style.overflow = "hidden";
-
-        trackEvent("contact_modal_view");
-
-    }
-
-    function closeModal() {
-
-        if (!modal) return;
-
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
-
-        document.body.style.overflow = "";
-
-        try {
-            sessionStorage.setItem("dm_contact_modal_seen", "1");
-        } catch (error) {}
-
-    }
-
-    if (closeBtn) {
-        closeBtn.addEventListener("click", closeModal);
-    }
-
-    if (skipBtn) {
-        skipBtn.addEventListener("click", closeModal);
-    }
-
-    if (modal) {
-
-        modal.addEventListener("click", function (event) {
-
-            if (event.target === modal) {
-                closeModal();
-            }
-
-        });
-
-    }
-
-    document.addEventListener("keydown", function (event) {
-
-        if (event.key === "Escape" && modal && modal.classList.contains("is-open")) {
-            closeModal();
-        }
-
-    });
-
-    /*
-     * Show on first visit only.
-     * Delay prevents the popup from appearing before
-     * the Hero starts rendering.
-     */
-
-    let alreadySeen = false;
-
-    try {
-        alreadySeen = sessionStorage.getItem("dm_contact_modal_seen") === "1";
-    } catch (error) {}
-
-    if (!alreadySeen) {
-
-        window.setTimeout(function () {
-            openModal();
-        }, 900);
-
-    }
-
-
-    /* ---------------------------------------------------------
-       REVEAL ANIMATIONS
-       --------------------------------------------------------- */
-
-    const revealElements = document.querySelectorAll(".dm-reveal");
-
-    if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver(
-            function (entries, obs) {
-
-                entries.forEach(function (entry) {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("dm-visible");
-
-                        obs.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12,
-                rootMargin: "0px 0px -40px 0px"
-            }
-        );
-
-        revealElements.forEach(function (element) {
-            observer.observe(element);
-        });
-
-    } else {
-
-        revealElements.forEach(function (element) {
-            element.classList.add("dm-visible");
-        });
-
-    }
-
-
-    /* ---------------------------------------------------------
-       HERO PARALLAX
-       --------------------------------------------------------- */
-
-    const heroImage = document.querySelector(".dm-hero-image");
-
-    if (
-        heroImage &&
-        window.matchMedia("(min-width: 900px)").matches &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-
-        let ticking = false;
-
-        window.addEventListener("scroll", function () {
-
-            if (ticking) return;
-
-            window.requestAnimationFrame(function () {
-
-                const scroll = window.scrollY;
-
-                if (scroll < 900) {
-
-                    heroImage.style.transform =
-                        "scale(1.015) translateY(" +
-                        (scroll * 0.035) +
-                        "px)";
-
-                }
-
-                ticking = false;
-
-            });
-
-            ticking = true;
-
-        }, { passive: true });
-
-    }
-
-
-})();
-</script>
-
-
-<!-- =========================================================
-     STRUCTURED DATA
-     ========================================================= -->
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "التميز لمقاولات الهدم",
-    "description": "خدمات هدم وتكسير المنازل والمباني والجدران والخرسانة في الدمام والمنطقة الشرقية.",
-    "telephone": "+966568526502",
-    "areaServed": [
-        {
-            "@type": "City",
-            "name": "الدمام"
-        },
-        {
-            "@type": "City",
-            "name": "الخبر"
-        },
-        {
-            "@type": "City",
-            "name": "الظهران"
-        },
-        {
-            "@type": "City",
-            "name": "القطيف"
-        },
-        {
-            "@type": "City",
-            "name": "الجبيل"
-        },
-        {
-            "@type": "City",
-            "name": "الأحساء"
-        },
-        {
-            "@type": "City",
-            "name": "بقيق"
-        },
-        {
-            "@type": "City",
-            "name": "الخفجي"
-        }
-    ],
-    "serviceType": [
-        "هدم المنازل",
-        "هدم المباني",
-        "تكسير الجدران",
-        "تكسير الخرسانة",
-        "إزالة مخلفات الهدم"
-    ],
-    "knowsLanguage": "ar"
-}
-</script>
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "هل تنفذون هدم المنازل القديمة؟",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "نعم، يمكن التواصل معنا وإرسال موقع وصور المشروع لتحديد طبيعة العمل المطلوب."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "هل تقدمون تكسير الجدران والخرسانة؟",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "تشمل الخدمات تكسير الجدران وبعض أعمال تكسير الخرسانة، ويحدد نطاق التنفيذ حسب طبيعة الموقع."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "هل أقدر أرسل الموقع على واتساب؟",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "نعم، أرسل رابط الموقع وصور أو فيديو للمكان مع وصف مختصر للمطلوب."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "هل الخدمة متوفرة خارج الدمام؟",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "الخدمة تشمل الدمام وعددًا من مدن المنطقة الشرقية، ويمكن إرسال موقع المشروع للتأكد."
-            }
-        }
-    ]
-}
-</script>
+  .
