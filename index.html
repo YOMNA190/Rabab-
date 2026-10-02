@@ -1,1263 +1,1890 @@
+<!-- =========================================================
+     AL-TAMAYOZ DEMOLITION | PAGE ID 1111
+     Full Replacement Landing Page
+     ========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
 <style>
 /* =========================================================
-   AL TAMAYOZ DEMOLITION
-   WordPress Custom HTML - Full Page
+   RESET / BASE
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
-
-body.page-id-1111 #masthead,
 body.page-id-1111 .site-header,
-body.page-id-1111 .elementor-location-header,
 body.page-id-1111 .site-footer,
-body.page-id-1111 .elementor-location-footer {
+body.page-id-1111 .sidebar,
+body.page-id-1111 .entry-title {
     display: none !important;
 }
 
 body.page-id-1111 {
     margin: 0 !important;
-    background: #11110f !important;
+    padding: 0 !important;
+    background: #0a0b0c;
 }
 
-.al-tamayoz-site,
-.al-tamayoz-site * {
+.dm-page,
+.dm-page * {
     box-sizing: border-box;
 }
 
-.al-tamayoz-site {
-    --black: #11110f;
-    --black-2: #181816;
-    --black-3: #22221f;
-    --white: #f3f0e9;
-    --muted: #aaa79e;
-    --orange: #ff6a00;
-    --orange-dark: #d94f00;
-    --line: rgba(243,240,233,.16);
+.dm-page {
+    --dm-orange: #ef6a22;
+    --dm-orange-dark: #c84e12;
+    --dm-green: #1fa968;
+    --dm-black: #08090a;
+    --dm-dark: #111315;
+    --dm-panel: #171a1c;
+    --dm-panel-2: #1d2023;
+    --dm-white: #ffffff;
+    --dm-muted: #a7abad;
+    --dm-line: rgba(255,255,255,.10);
+    --dm-radius: 24px;
 
     direction: rtl;
-    font-family: "Tajawal", Arial, sans-serif;
-    color: var(--white);
-    background: var(--black);
+    color: var(--dm-white);
+    background: var(--dm-black);
+    font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
     overflow: hidden;
-    line-height: 1.7;
 }
 
-.al-tamayoz-site a {
+.dm-page a {
     color: inherit;
     text-decoration: none;
 }
 
-.al-tamayoz-site img {
-    display: block;
-    width: 100%;
+.dm-container {
+    width: min(1200px, calc(100% - 40px));
+    margin-inline: auto;
 }
 
-.al-tamayoz-site button,
-.al-tamayoz-site a {
-    -webkit-tap-highlight-color: transparent;
-}
+/* =========================================================
+   TOP STRIP
+   ========================================================= */
 
-.al-container {
-    width: min(1380px, calc(100% - 48px));
-    margin: auto;
-}
-
-/* =========================
-   HEADER
-   ========================= */
-
-.al-header {
+.dm-top {
     position: absolute;
-    z-index: 20;
-    inset: 0 0 auto;
-    height: 92px;
-    border-bottom: 1px solid rgba(255,255,255,.13);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+    background: rgba(5,6,7,.28);
+    backdrop-filter: blur(12px);
 }
 
-.al-header-inner {
-    height: 100%;
+.dm-top-inner {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,.78);
+}
+
+.dm-top-right,
+.dm-top-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.dm-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dm-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #35d985;
+    box-shadow: 0 0 0 5px rgba(53,217,133,.12);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dm-header {
+    position: absolute;
+    top: 46px;
+    left: 0;
+    right: 0;
+    z-index: 25;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.dm-header-inner {
+    min-height: 84px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
 }
 
-.al-logo {
+.dm-brand {
     display: flex;
     align-items: center;
-    gap: 13px;
-    min-width: 210px;
-}
-
-.al-logo-mark {
-    width: 42px;
-    height: 42px;
-    display: grid;
-    place-items: center;
-    background: var(--orange);
-    color: var(--black);
-    font-size: 21px;
-    font-weight: 900;
-    transform: skew(-8deg);
-}
-
-.al-logo-text strong {
-    display: block;
-    font-size: 20px;
-    font-weight: 900;
-    line-height: 1.1;
-}
-
-.al-logo-text span {
-    display: block;
-    margin-top: 3px;
-    color: #aaa79e;
-    font-size: 10px;
-    letter-spacing: 1.7px;
-    text-transform: uppercase;
-    direction: ltr;
-}
-
-.al-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.al-nav a {
-    color: #d8d5ce;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color .2s ease;
-}
-
-.al-nav a:hover {
-    color: var(--orange);
-}
-
-.al-header-contact {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.al-phone {
-    font-size: 14px;
-    font-weight: 700;
-    direction: ltr;
+    gap: 12px;
     white-space: nowrap;
 }
 
-.al-wa {
+.dm-brand-mark {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.07);
+    color: var(--dm-orange);
+    font-size: 19px;
+    font-weight: 900;
+    transform: skew(-7deg);
+}
+
+.dm-brand-text strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.dm-brand-text span {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    color: rgba(255,255,255,.52);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.dm-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 14px;
+    color: rgba(255,255,255,.75);
+}
+
+.dm-nav a {
+    position: relative;
+    transition: color .25s ease;
+}
+
+.dm-nav a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -9px;
+    width: 0;
+    height: 2px;
+    background: var(--dm-orange);
+    transition: width .25s ease;
+}
+
+.dm-nav a:hover {
+    color: #fff;
+}
+
+.dm-nav a:hover::after {
+    width: 100%;
+}
+
+.dm-header-actions {
+    display: flex;
+    gap: 9px;
+}
+
+.dm-mini-btn {
+    min-height: 43px;
+    padding: 0 17px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 43px;
-    padding: 0 20px;
-    background: var(--orange);
-    color: #111 !important;
-    font-weight: 800;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(255,255,255,.07);
     font-size: 13px;
-    transition: transform .2s ease, background .2s ease;
+    font-weight: 700;
 }
 
-.al-wa:hover {
-    background: #ff7d25;
-    transform: translateY(-2px);
+.dm-mini-btn.orange {
+    border-color: var(--dm-orange);
+    background: var(--dm-orange);
 }
 
-/* =========================
+/* =========================================================
    HERO
-   ========================= */
+   ========================================================= */
 
-.al-hero {
+.dm-hero {
     position: relative;
-    min-height: 860px;
-    display: grid;
-    align-items: end;
+    min-height: 850px;
+    display: flex;
+    align-items: center;
     isolation: isolate;
-    background: #111;
+    overflow: hidden;
 }
 
-.al-hero::after {
+.dm-hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: -5;
+    background:
+        url("https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=2200")
+        center center / cover no-repeat;
+    transform: scale(1.015);
+}
+
+.dm-hero-image::after {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: -1;
     background:
-        linear-gradient(90deg, rgba(17,17,15,.12) 20%, rgba(17,17,15,.75) 78%),
-        linear-gradient(0deg, rgba(17,17,15,.96) 0%, rgba(17,17,15,.12) 55%, rgba(17,17,15,.45) 100%);
+        linear-gradient(
+            90deg,
+            rgba(5,6,7,.96) 0%,
+            rgba(5,6,7,.84) 35%,
+            rgba(5,6,7,.43) 68%,
+            rgba(5,6,7,.55) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5,6,7,.96) 0%,
+            transparent 38%,
+            rgba(5,6,7,.40) 100%
+        );
 }
 
-.al-hero-image {
+.dm-hero-grid {
     position: absolute;
-    z-index: -2;
     inset: 0;
+    z-index: -2;
+    opacity: .12;
+    background-image:
+        linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(90deg, black, transparent 75%);
 }
 
-.al-hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+.dm-hero-content {
+    width: min(1200px, calc(100% - 40px));
+    margin-inline: auto;
+    padding-top: 130px;
 }
 
-.al-hero-grid {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr minmax(500px, 760px);
-    gap: 60px;
-    align-items: end;
-    padding-bottom: 95px;
+.dm-hero-copy {
+    max-width: 770px;
 }
 
-.al-hero-kicker {
-    align-self: end;
-    border-right: 3px solid var(--orange);
-    padding-right: 18px;
-    color: #dedbd4;
-    font-size: 13px;
+.dm-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(0,0,0,.30);
+    color: rgba(255,255,255,.83);
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: .4px;
+    backdrop-filter: blur(10px);
 }
 
-.al-hero-kicker span {
-    display: block;
-    color: var(--orange);
-    direction: ltr;
-    letter-spacing: 2px;
-    font-size: 10px;
-    margin-bottom: 7px;
+.dm-eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--dm-orange);
+    box-shadow: 0 0 0 5px rgba(239,106,34,.12);
 }
 
-.al-hero-copy h1 {
-    margin: 0;
-    max-width: 820px;
-    font-size: clamp(48px, 6.7vw, 104px);
+.dm-hero h1 {
+    margin: 25px 0 20px;
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(46px, 6vw, 82px);
+    line-height: .99;
+    letter-spacing: -2.5px;
     font-weight: 900;
-    line-height: .98;
-    letter-spacing: -3px;
+    max-width: 850px;
 }
 
-.al-hero-copy h1 em {
-    color: var(--orange);
-    font-style: normal;
+.dm-hero h1 span {
+    color: var(--dm-orange);
 }
 
-.al-hero-copy p {
-    max-width: 690px;
-    margin: 30px 0 0;
-    color: #d0cdc6;
+.dm-hero-lead {
+    max-width: 680px;
+    margin: 0;
+    color: rgba(255,255,255,.76);
     font-size: 18px;
     line-height: 1.9;
 }
 
-.al-hero-actions {
-    display: flex;
-    gap: 12px;
+.dm-hero-actions {
     margin-top: 32px;
+    display: flex;
     flex-wrap: wrap;
+    gap: 12px;
 }
 
-.al-btn {
-    min-height: 54px;
-    padding: 0 27px;
+.dm-cta {
+    min-height: 58px;
+    padding: 0 25px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 11px;
+    font-size: 15px;
     font-weight: 800;
-    font-size: 14px;
     border: 1px solid transparent;
-    transition: .25s ease;
+    transition: transform .25s ease, background .25s ease;
 }
 
-.al-btn-primary {
-    background: var(--orange);
-    color: #111 !important;
-}
-
-.al-btn-primary:hover {
-    background: #ff7a18;
+.dm-cta:hover {
     transform: translateY(-2px);
 }
 
-.al-btn-outline {
-    border-color: rgba(243,240,233,.4);
-    color: var(--white) !important;
+.dm-cta-primary {
+    background: var(--dm-orange);
+    color: #fff;
 }
 
-.al-btn-outline:hover {
-    border-color: var(--white);
+.dm-cta-primary:hover {
+    background: var(--dm-orange-dark);
+}
+
+.dm-cta-whatsapp {
+    background: #1fa968;
+    color: #fff;
+}
+
+.dm-cta-dark {
     background: rgba(255,255,255,.07);
+    border-color: rgba(255,255,255,.18);
 }
 
-.al-hero-meta {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+.dm-hero-meta {
+    margin-top: 45px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.13);
     display: flex;
-    direction: ltr;
-    border-top: 1px solid rgba(255,255,255,.18);
+    flex-wrap: wrap;
+    gap: 30px;
+    color: rgba(255,255,255,.64);
+    font-size: 13px;
 }
 
-.al-meta-item {
-    padding: 16px 25px;
-    border-right: 1px solid rgba(255,255,255,.18);
-    color: #bcb8b0;
-    font-size: 11px;
-    letter-spacing: .7px;
+.dm-hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
 
-/* =========================
-   SECTION BASE
-   ========================= */
-
-.al-section {
-    padding: 125px 0;
+.dm-hero-meta-item strong {
+    color: #fff;
 }
 
-.al-section-head {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
+/* =========================================================
+   SECTION SYSTEM
+   ========================================================= */
+
+.dm-section {
+    padding: 105px 0;
+    position: relative;
+}
+
+.dm-section-dark {
+    background: #0b0d0e;
+}
+
+.dm-section-panel {
+    background: #111416;
+}
+
+.dm-section-head {
+    display: flex;
     align-items: end;
-    margin-bottom: 65px;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 48px;
 }
 
-.al-eyebrow {
-    color: var(--orange);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    direction: ltr;
-}
-
-.al-section-head h2 {
-    margin: 8px 0 0;
-    font-size: clamp(36px, 5vw, 70px);
-    line-height: 1;
-    letter-spacing: -2px;
-}
-
-.al-section-head p {
-    margin: 0;
-    max-width: 560px;
-    color: var(--muted);
-    font-size: 16px;
-    line-height: 2;
-}
-
-/* =========================
-   SERVICES
-   ========================= */
-
-.al-services {
-    background: var(--white);
-    color: var(--black);
-}
-
-.al-services .al-eyebrow {
-    color: var(--orange-dark);
-}
-
-.al-services .al-section-head p {
-    color: #64615a;
-}
-
-.al-service-list {
-    border-top: 1px solid #bbb8b0;
-}
-
-.al-service {
-    display: grid;
-    grid-template-columns: 110px 1.1fr 1fr;
-    gap: 35px;
-    align-items: center;
-    min-height: 185px;
-    border-bottom: 1px solid #bbb8b0;
-    transition: padding .25s ease, background .25s ease;
-}
-
-.al-service:hover {
-    padding-inline: 22px;
-    background: #e9e6de;
-}
-
-.al-service-number {
-    direction: ltr;
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--orange-dark);
-}
-
-.al-service h3 {
-    margin: 0;
-    font-size: clamp(25px, 3vw, 40px);
-    line-height: 1.1;
-    font-weight: 900;
-}
-
-.al-service p {
-    margin: 0;
-    color: #68655e;
-    max-width: 500px;
-    font-size: 15px;
-}
-
-/* =========================
-   IMAGE STORY
-   ========================= */
-
-.al-story {
-    background: var(--black-2);
-}
-
-.al-story-grid {
-    display: grid;
-    grid-template-columns: 1.15fr .85fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.al-story-image {
-    position: relative;
-    min-height: 670px;
-    overflow: hidden;
-}
-
-.al-story-image img {
-    height: 100%;
-    min-height: 670px;
-    object-fit: cover;
-    filter: saturate(.8);
-    transition: transform .7s ease;
-}
-
-.al-story-image:hover img {
-    transform: scale(1.035);
-}
-
-.al-story-label {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background: var(--orange);
-    color: #111;
-    padding: 17px 23px;
+.dm-section-kicker {
+    margin-bottom: 12px;
+    color: var(--dm-orange);
     font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.dm-section h2 {
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(34px, 4vw, 56px);
+    line-height: 1.05;
     font-weight: 900;
-    direction: ltr;
+    letter-spacing: -1px;
 }
 
-.al-story-copy h2 {
-    margin: 12px 0 25px;
-    font-size: clamp(40px, 5vw, 72px);
-    line-height: 1;
-    letter-spacing: -2px;
+.dm-section-head p {
+    max-width: 440px;
+    margin: 0;
+    color: var(--dm-muted);
+    line-height: 1.9;
 }
 
-.al-story-copy p {
-    max-width: 570px;
-    color: var(--muted);
-    font-size: 17px;
-    line-height: 2;
-}
+/* =========================================================
+   SERVICES
+   ========================================================= */
 
-.al-check-list {
-    margin: 35px 0 0;
-    padding: 0;
-    list-style: none;
-}
-
-.al-check-list li {
-    position: relative;
-    padding: 14px 28px 14px 0;
-    border-top: 1px solid var(--line);
-    font-weight: 700;
-}
-
-.al-check-list li::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 24px;
-    width: 8px;
-    height: 8px;
-    background: var(--orange);
-}
-
-/* =========================
-   WORK / GALLERY
-   ========================= */
-
-.al-work {
-    background: #e8e5dd;
-    color: var(--black);
-}
-
-.al-work .al-section-head p {
-    color: #66635c;
-}
-
-.al-gallery {
+.dm-services {
     display: grid;
-    grid-template-columns: 1.25fr .75fr;
-    grid-template-rows: 310px 310px;
+    grid-template-columns: repeat(12, 1fr);
     gap: 14px;
 }
 
-.al-gallery-item {
+.dm-service {
     position: relative;
+    min-height: 330px;
+    padding: 28px;
     overflow: hidden;
-    background: #bbb;
+    background: #16191b;
+    border: 1px solid var(--dm-line);
+    transition: transform .3s ease, border-color .3s ease;
 }
 
-.al-gallery-item:first-child {
-    grid-row: span 2;
+.dm-service:nth-child(1),
+.dm-service:nth-child(4) {
+    grid-column: span 7;
 }
 
-.al-gallery-item img {
+.dm-service:nth-child(2),
+.dm-service:nth-child(3) {
+    grid-column: span 5;
+}
+
+.dm-service:hover {
+    transform: translateY(-5px);
+    border-color: rgba(239,106,34,.50);
+}
+
+.dm-service-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: .42;
+    transition: transform .5s ease, opacity .5s ease;
+}
+
+.dm-service:hover .dm-service-image {
+    transform: scale(1.04);
+    opacity: .55;
+}
+
+.dm-service::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(4,5,6,.96), rgba(4,5,6,.18));
+}
+
+.dm-service-content {
+    position: relative;
+    z-index: 2;
     height: 100%;
-    object-fit: cover;
-    transition: transform .6s ease;
+    min-height: 274px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
-.al-gallery-item:hover img {
-    transform: scale(1.045);
-}
-
-.al-gallery-caption {
+.dm-service-number {
     position: absolute;
-    inset: auto 0 0;
-    padding: 60px 25px 22px;
-    color: #fff;
-    background: linear-gradient(transparent, rgba(0,0,0,.78));
-}
-
-.al-gallery-caption strong {
-    display: block;
-    font-size: 19px;
-}
-
-.al-gallery-caption span {
-    color: #d0cdc7;
-    font-size: 11px;
-}
-
-/* =========================
-   PROCESS
-   ========================= */
-
-.al-process {
-    background: var(--black);
-}
-
-.al-process-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--line);
-}
-
-.al-process-item {
-    min-height: 280px;
-    padding: 30px 25px;
-    border-left: 1px solid var(--line);
-}
-
-.al-process-item:last-child {
-    border-left: 0;
-}
-
-.al-process-num {
-    display: block;
-    direction: ltr;
-    color: var(--orange);
+    top: 0;
+    right: 0;
     font-size: 12px;
+    color: rgba(255,255,255,.45);
+}
+
+.dm-service h3 {
+    margin: 0 0 9px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 28px;
     font-weight: 900;
-    letter-spacing: 2px;
 }
 
-.al-process-item h3 {
-    margin: 55px 0 14px;
-    font-size: 25px;
-}
-
-.al-process-item p {
+.dm-service p {
+    max-width: 500px;
     margin: 0;
-    color: var(--muted);
+    color: rgba(255,255,255,.68);
+    line-height: 1.8;
     font-size: 14px;
-    line-height: 1.9;
 }
 
-/* =========================
-   AREA
-   ========================= */
+.dm-service-link {
+    margin-top: 17px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--dm-orange);
+    font-size: 13px;
+    font-weight: 800;
+}
 
-.al-area {
+/* =========================================================
+   INTRO CTA
+   ========================================================= */
+
+.dm-breaker {
+    padding: 0 0 105px;
+    background: #0b0d0e;
+}
+
+.dm-breaker-inner {
     position: relative;
-    background: var(--orange);
-    color: var(--black);
+    padding: 45px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 30px;
+    background:
+        linear-gradient(110deg, #1a1d1f, #101213);
+    border: 1px solid rgba(255,255,255,.10);
     overflow: hidden;
 }
 
-.al-area::before {
-    content: "DAMMAM";
+.dm-breaker-inner::before {
+    content: "";
     position: absolute;
-    left: -30px;
-    bottom: -65px;
-    font-family: Arial, sans-serif;
-    font-size: clamp(130px, 22vw, 340px);
-    font-weight: 900;
-    line-height: .8;
-    color: rgba(17,17,15,.08);
-    direction: ltr;
+    width: 240px;
+    height: 240px;
+    left: -80px;
+    top: -100px;
+    border-radius: 50%;
+    border: 1px solid rgba(239,106,34,.25);
+    box-shadow:
+        0 0 0 30px rgba(239,106,34,.025),
+        0 0 0 60px rgba(239,106,34,.025);
 }
 
-.al-area-grid {
+.dm-breaker h3 {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    margin: 0 0 9px;
+    font-size: 26px;
+}
+
+.dm-breaker p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    color: var(--dm-muted);
+}
+
+/* =========================================================
+   WHY
+   ========================================================= */
+
+.dm-why {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .85fr 1.15fr;
     gap: 70px;
     align-items: center;
 }
 
-.al-area h2 {
-    margin: 8px 0 25px;
-    font-size: clamp(45px, 6vw, 85px);
-    line-height: .95;
-    letter-spacing: -3px;
+.dm-why-visual {
+    position: relative;
+    min-height: 540px;
+    background:
+        url("https://images.pexels.com/photos/6474450/pexels-photo-6474450.jpeg?auto=compress&cs=tinysrgb&w=1400")
+        center / cover;
 }
 
-.al-area p {
-    max-width: 540px;
+.dm-why-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(5,6,7,.8), transparent 60%);
+}
+
+.dm-why-label {
+    position: absolute;
+    z-index: 2;
+    right: 24px;
+    bottom: 24px;
+    padding: 14px 18px;
+    background: rgba(5,6,7,.78);
+    border: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(12px);
+}
+
+.dm-why-label strong {
+    display: block;
     font-size: 18px;
+}
+
+.dm-why-label span {
+    display: block;
+    margin-top: 4px;
+    color: rgba(255,255,255,.55);
+    font-size: 12px;
+}
+
+.dm-benefits {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--dm-line);
+}
+
+.dm-benefit {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 23px 0;
+    border-bottom: 1px solid var(--dm-line);
+}
+
+.dm-benefit-num {
+    color: var(--dm-orange);
+    font-size: 12px;
+    font-weight: 800;
+    padding-top: 3px;
+}
+
+.dm-benefit h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.dm-benefit p {
+    margin: 0;
+    color: var(--dm-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.dm-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--dm-line);
+    border: 1px solid var(--dm-line);
+}
+
+.dm-process {
+    min-height: 255px;
+    padding: 27px;
+    background: #111416;
+}
+
+.dm-process-num {
+    color: var(--dm-orange);
+    font-family: "Tajawal", sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.dm-process h3 {
+    margin: 30px 0 8px;
+    font-size: 18px;
+}
+
+.dm-process p {
+    margin: 0;
+    color: var(--dm-muted);
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+/* =========================================================
+   WHAT WE NEED
+   ========================================================= */
+
+.dm-info {
+    background: #f1eee8;
+    color: #101112;
+}
+
+.dm-info .dm-section-kicker {
+    color: var(--dm-orange-dark);
+}
+
+.dm-info .dm-section-head p {
+    color: #686765;
+}
+
+.dm-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.dm-info-list {
+    display: grid;
+    gap: 11px;
+}
+
+.dm-info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.08);
+}
+
+.dm-info-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 38px;
+    background: #101112;
+    color: #fff;
+    font-weight: 900;
+}
+
+.dm-info-item strong {
+    font-size: 15px;
+}
+
+.dm-info-item span {
+    display: block;
+    margin-top: 2px;
+    color: #777;
+    font-size: 12px;
+}
+
+.dm-info-copy h3 {
+    margin: 0 0 14px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 38px;
+    line-height: 1.15;
+}
+
+.dm-info-copy p {
+    margin: 0 0 25px;
+    color: #5d5c59;
     line-height: 1.9;
 }
 
-.al-area-box {
-    border: 1px solid rgba(17,17,15,.3);
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.dm-map-section {
+    background: #0b0d0e;
+}
+
+.dm-map-wrap {
+    display: grid;
+    grid-template-columns: .72fr 1.28fr;
+    gap: 18px;
+}
+
+.dm-map-copy {
     padding: 35px;
+    background: #15181a;
+    border: 1px solid var(--dm-line);
 }
 
-.al-area-box span {
+.dm-map-copy h3 {
+    margin: 0 0 12px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 34px;
+}
+
+.dm-map-copy p {
+    margin: 0;
+    color: var(--dm-muted);
+    line-height: 1.9;
+}
+
+.dm-cities {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dm-city {
+    padding: 9px 12px;
+    border: 1px solid rgba(255,255,255,.11);
+    color: rgba(255,255,255,.78);
+    background: rgba(255,255,255,.035);
+    font-size: 12px;
+}
+
+.dm-map-cta {
+    margin-top: 30px;
+    display: inline-flex;
+}
+
+.dm-map {
+    min-height: 520px;
+    border: 1px solid var(--dm-line);
+    overflow: hidden;
+    background: #17191a;
+}
+
+.dm-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    border: 0;
+    filter: grayscale(.25) contrast(1.05);
+}
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.dm-gallery {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr .7fr;
+    grid-template-rows: 280px 280px;
+    gap: 12px;
+}
+
+.dm-gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: #16191b;
+}
+
+.dm-gallery-item:first-child {
+    grid-row: span 2;
+}
+
+.dm-gallery-item img {
+    width: 100%;
+    height: 100%;
     display: block;
-    margin-bottom: 12px;
-    font-size: 10px;
-    font-weight: 900;
-    direction: ltr;
-    letter-spacing: 2px;
+    object-fit: cover;
+    transition: transform .5s ease;
 }
 
-.al-area-box strong {
-    display: block;
-    font-size: 30px;
+.dm-gallery-item:hover img {
+    transform: scale(1.045);
 }
 
-/* =========================
+.dm-gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,.6), transparent 55%);
+}
+
+.dm-gallery-caption {
+    position: absolute;
+    z-index: 2;
+    right: 18px;
+    bottom: 16px;
+    left: 18px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* =========================================================
    FAQ
-   ========================= */
+   ========================================================= */
 
-.al-faq {
-    background: var(--black-2);
+.dm-faq {
+    max-width: 900px;
+    margin-inline: auto;
 }
 
-.al-faq-wrap {
-    max-width: 950px;
-    margin-right: auto;
-    margin-left: 0;
+.dm-faq details {
+    border-top: 1px solid var(--dm-line);
 }
 
-.al-faq details {
-    border-top: 1px solid var(--line);
+.dm-faq details:last-child {
+    border-bottom: 1px solid var(--dm-line);
 }
 
-.al-faq details:last-child {
-    border-bottom: 1px solid var(--line);
-}
-
-.al-faq summary {
+.dm-faq summary {
+    padding: 23px 0;
     cursor: pointer;
     list-style: none;
-    padding: 27px 0;
-    font-size: 20px;
-    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-}
-
-.al-faq summary::-webkit-details-marker {
-    display: none;
-}
-
-.al-faq summary::before {
-    content: "+";
-    order: 2;
-    color: var(--orange);
-    direction: ltr;
-    font-size: 26px;
-    font-weight: 400;
-}
-
-.al-faq details[open] summary::before {
-    content: "−";
-}
-
-.al-faq details p {
-    max-width: 760px;
-    margin: -5px 0 25px;
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 2;
-}
-
-/* =========================
-   CTA
-   ========================= */
-
-.al-final-cta {
-    background: var(--white);
-    color: var(--black);
-    padding: 105px 0;
-}
-
-.al-final-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 50px;
-    align-items: end;
-}
-
-.al-final-cta h2 {
-    max-width: 850px;
-    margin: 10px 0 0;
-    font-size: clamp(42px, 6vw, 88px);
-    line-height: .98;
-    letter-spacing: -3px;
-}
-
-.al-final-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.al-final-actions .al-btn-outline {
-    border-color: #222;
-    color: #111 !important;
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-
-.al-footer {
-    background: #0b0b0a;
-    border-top: 1px solid var(--line);
-    padding: 32px 0;
-}
-
-.al-footer-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.al-footer-copy {
-    color: #77746e;
-    font-size: 11px;
-}
-
-.al-footer-contact {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.al-footer-contact a {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
 }
 
-.al-footer-contact a:hover {
-    color: var(--orange);
-}
-
-/* =========================
-   MOBILE CTA
-   ========================= */
-
-.al-mobile-bar {
+.dm-faq summary::-webkit-details-marker {
     display: none;
 }
 
-/* =========================
-   ACCESSIBILITY
-   ========================= */
+.dm-faq summary::after {
+    content: "+";
+    color: var(--dm-orange);
+    font-size: 22px;
+    font-weight: 400;
+}
 
-.al-tamayoz-site a:focus-visible,
-.al-tamayoz-site summary:focus-visible {
-    outline: 3px solid var(--orange);
+.dm-faq details[open] summary::after {
+    content: "−";
+}
+
+.dm-faq answer,
+.dm-faq .dm-answer {
+    display: block;
+    padding: 0 0 23px;
+    color: var(--dm-muted);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.dm-final {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dm-final-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        url("https://images.pexels.com/photos/2101137/pexels-photo-2101137.jpeg?auto=compress&cs=tinysrgb&w=2200")
+        center / cover;
+}
+
+.dm-final-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5,6,7,.78);
+}
+
+.dm-final-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+}
+
+.dm-final h2 {
+    margin: 0 0 16px;
+    font-family: "Tajawal", sans-serif;
+    font-size: clamp(38px, 5vw, 66px);
+    line-height: 1;
+}
+
+.dm-final p {
+    margin: 0;
+    max-width: 620px;
+    color: rgba(255,255,255,.70);
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.dm-final-actions {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.dm-footer {
+    padding: 35px 0 100px;
+    background: #070809;
+    border-top: 1px solid var(--dm-line);
+}
+
+.dm-footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    color: rgba(255,255,255,.50);
+    font-size: 12px;
+}
+
+.dm-footer-brand {
+    color: #fff;
+    font-weight: 800;
+}
+
+/* =========================================================
+   POPUP
+   ========================================================= */
+
+.dm-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0,0,0,.74);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease;
+}
+
+.dm-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dm-modal-card {
+    position: relative;
+    width: min(500px, 100%);
+    padding: 38px;
+    background:
+        linear-gradient(145deg, #1b1e20, #0d0f10);
+    border: 1px solid rgba(255,255,255,.13);
+    box-shadow: 0 30px 100px rgba(0,0,0,.6);
+    transform: translateY(18px) scale(.97);
+    transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.dm-modal.is-open .dm-modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.dm-modal-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,.13);
+    background: rgba(255,255,255,.05);
+    color: #fff;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.dm-modal-mark {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: var(--dm-orange);
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.dm-modal-card h2 {
+    margin: 0 0 10px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 34px;
+    line-height: 1.1;
+}
+
+.dm-modal-card p {
+    margin: 0;
+    color: var(--dm-muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.dm-modal-actions {
+    margin-top: 26px;
+    display: grid;
+    gap: 9px;
+}
+
+.dm-modal-action {
+    min-height: 61px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.05);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.dm-modal-action:hover {
+    transform: translateX(-3px);
+    background: rgba(255,255,255,.08);
+}
+
+.dm-modal-action strong {
+    display: block;
+    font-size: 15px;
+}
+
+.dm-modal-action span {
+    display: block;
+    margin-top: 2px;
+    color: rgba(255,255,255,.48);
+    font-size: 11px;
+}
+
+.dm-modal-action.phone {
+    border-color: rgba(239,106,34,.4);
+}
+
+.dm-modal-action.whatsapp {
+    border-color: rgba(31,169,104,.4);
+}
+
+.dm-modal-action-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,.08);
+}
+
+.dm-modal-skip {
+    width: 100%;
+    margin-top: 15px;
+    border: 0;
+    background: transparent;
+    color: rgba(255,255,255,.42);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+/* =========================================================
+   FLOATING WHATSAPP
+   ========================================================= */
+
+.dm-floating-wa {
+    position: fixed;
+    z-index: 90;
+    right: 20px;
+    bottom: 22px;
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    background: #1fa968;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 12px 35px rgba(0,0,0,.3);
+    font-size: 20px;
+}
+
+/* =========================================================
+   MOBILE BAR
+   ========================================================= */
+
+.dm-mobile-bar {
+    display: none;
+    position: fixed;
+    z-index: 95;
+    right: 10px;
+    left: 10px;
+    bottom: 10px;
+    padding: 7px;
+    gap: 7px;
+    background: rgba(13,15,16,.94);
+    border: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(15px);
+}
+
+.dm-mobile-bar a {
+    min-height: 50px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.dm-mobile-call {
+    background: var(--dm-orange);
+}
+
+.dm-mobile-wa {
+    background: #1fa968;
+}
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.dm-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .65s ease, transform .65s ease;
+}
+
+.dm-reveal.dm-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.dm-page a:focus-visible,
+.dm-page button:focus-visible,
+.dm-page summary:focus-visible {
+    outline: 2px solid var(--dm-orange);
     outline-offset: 4px;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
-
-@media (max-width: 1050px) {
-    .al-nav {
-        display: none;
+@media (prefers-reduced-motion: reduce) {
+    .dm-page *,
+    .dm-page *::before,
+    .dm-page *::after {
+        animation: none !important;
+        transition: none !important;
     }
 
-    .al-hero-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .al-hero-kicker {
-        display: none;
-    }
-
-    .al-section-head {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .al-story-grid,
-    .al-area-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .al-story-image {
-        min-height: 550px;
-    }
-
-    .al-story-image img {
-        min-height: 550px;
-    }
-
-    .al-process-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .al-process-item:nth-child(2) {
-        border-left: 0;
+    .dm-reveal {
+        opacity: 1;
+        transform: none;
     }
 }
 
-@media (max-width: 700px) {
-    .al-container {
-        width: min(100% - 30px, 1380px);
-    }
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
-    .al-header {
-        height: 72px;
-    }
+@media (max-width: 1000px) {
 
-    .al-logo {
-        min-width: 0;
-    }
-
-    .al-logo-text strong {
-        font-size: 16px;
-    }
-
-    .al-logo-text span {
+    .dm-nav {
         display: none;
     }
 
-    .al-header-contact .al-phone {
-        display: none;
-    }
-
-    .al-header-contact .al-wa {
-        min-height: 40px;
-        padding: 0 14px;
-        font-size: 11px;
-    }
-
-    .al-hero {
+    .dm-hero {
         min-height: 780px;
     }
 
-    .al-hero-grid {
-        padding-bottom: 105px;
-        gap: 20px;
+    .dm-hero h1 {
+        max-width: 700px;
     }
 
-    .al-hero-copy h1 {
-        font-size: clamp(45px, 14vw, 70px);
-        letter-spacing: -2px;
-    }
-
-    .al-hero-copy p {
-        margin-top: 23px;
-        font-size: 15px;
-        line-height: 1.9;
-    }
-
-    .al-hero-actions {
-        margin-top: 25px;
-    }
-
-    .al-btn {
-        width: 100%;
-    }
-
-    .al-hero-meta {
-        right: 0;
-        left: 0;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .al-meta-item {
-        flex: 1;
-        padding: 13px 7px;
-        text-align: center;
-        font-size: 9px;
-    }
-
-    .al-section {
-        padding: 80px 0;
-    }
-
-    .al-section-head {
-        margin-bottom: 40px;
-    }
-
-    .al-section-head h2 {
-        font-size: 43px;
-    }
-
-    .al-service {
-        grid-template-columns: 45px 1fr;
-        gap: 10px;
-        padding: 28px 0;
-        min-height: 0;
-    }
-
-    .al-service:hover {
-        padding-inline: 0;
-        background: transparent;
-    }
-
-    .al-service p {
-        grid-column: 2;
-        font-size: 13px;
-    }
-
-    .al-service h3 {
-        font-size: 25px;
-    }
-
-    .al-story-grid {
+    .dm-why {
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .al-story-image,
-    .al-story-image img {
+    .dm-why-visual {
         min-height: 430px;
-        height: 430px;
     }
 
-    .al-story-copy h2 {
-        font-size: 47px;
-    }
-
-    .al-gallery {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 360px 250px 250px;
-    }
-
-    .al-gallery-item:first-child {
-        grid-row: auto;
-    }
-
-    .al-process-grid {
+    .dm-map-wrap {
         grid-template-columns: 1fr;
     }
 
-    .al-process-item {
-        min-height: 210px;
-        border-left: 0;
-        border-bottom: 1px solid var(--line);
+    .dm-map {
+        min-height: 420px;
     }
 
-    .al-process-item:last-child {
-        border-bottom: 0;
-    }
-
-    .al-process-item h3 {
-        margin-top: 30px;
-    }
-
-    .al-area h2 {
-        font-size: 55px;
-    }
-
-    .al-area-box {
-        padding: 25px;
-    }
-
-    .al-final-cta {
-        padding: 75px 0 105px;
-    }
-
-    .al-final-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .al-final-cta h2 {
-        font-size: 51px;
-    }
-
-    .al-final-actions {
-        width: 100%;
-    }
-
-    .al-footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .al-mobile-bar {
-        position: fixed;
-        z-index: 100;
-        right: 10px;
-        left: 10px;
-        bottom: 10px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        background: #11110f;
-        box-shadow: 0 10px 35px rgba(0,0,0,.4);
-        border: 1px solid rgba(255,255,255,.13);
-    }
-
-    .al-mobile-bar a {
-        min-height: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 13px;
-        font-weight: 800;
-    }
-
-    .al-mobile-call {
-        border-left: 1px solid rgba(255,255,255,.15);
-    }
-
-    .al-mobile-wa {
-        background: var(--orange);
-        color: #111 !important;
-    }
-
-    .al-tamayoz-site {
-        padding-bottom: 76px;
+    .dm-map iframe {
+        min-height: 420px;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .al-tamayoz-site *,
-    .al-tamayoz-site *::before,
-    .al-tamayoz-site *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
+@media (max-width: 760px) {
+
+    .dm-container,
+    .dm-hero-content {
+        width: min(100% - 28px, 1200px);
+    }
+
+    .dm-top-left {
+        display: none;
+    }
+
+    .dm-top-inner {
+        justify-content: center;
+        min-height: 38px;
+        font-size: 11px;
+    }
+
+    .dm-header {
+        top: 38px;
+    }
+
+    .dm-header-inner {
+        min-height: 68px;
+    }
+
+    .dm-header-actions .dm-mini-btn:first-child {
+        display: none;
+    }
+
+    .dm-brand-mark {
+        width: 38px;
+        height: 38px;
+    }
+
+    .dm-brand-text strong {
+        font-size: 14px;
+    }
+
+    .dm-brand-text span {
+        font-size: 8px;
+    }
+
+    .dm-hero {
+        min-height: 760px;
+    }
+
+    .dm-hero-image {
+        background-position: 60% center;
+    }
+
+    .dm-hero-image::after {
+        background:
+            linear-gradient(
+                0deg,
+                rgba(5,6,7,.97) 4%,
+                rgba(5,6,7,.68) 55%,
+                rgba(5,6,7,.35) 100%
+            );
+    }
+
+    .dm-hero-content {
+        padding-top: 125px;
+        padding-bottom: 55px;
+    }
+
+    .dm-hero h1 {
+        font-size: clamp(42px, 13vw, 62px);
+        letter-spacing: -1.5px;
+        line-height: 1;
+    }
+
+    .dm-hero-lead {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .dm-hero-actions {
+        display: grid;
+    }
+
+    .dm-cta {
+        width: 100%;
+    }
+
+    .dm-hero-meta {
+        gap: 14px;
+        margin-top: 30px;
+    }
+
+    .dm-section {
+        padding: 75px 0;
+    }
+
+    .dm-section-head {
+        display: block;
+        margin-bottom: 32px;
+    }
+
+    .dm-section-head p {
+        margin-top: 16px;
+    }
+
+    .dm-services {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .dm-service,
+    .dm-service:nth-child(1),
+    .dm-service:nth-child(2),
+    .dm-service:nth-child(3),
+    .dm-service:nth-child(4) {
+        grid-column: span 1;
+        min-height: 300px;
+    }
+
+    .dm-breaker {
+        padding-bottom: 75px;
+    }
+
+    .dm-breaker-inner {
+        grid-template-columns: 1fr;
+        padding: 28px;
+    }
+
+    .dm-process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dm-process {
+        min-height: 220px;
+    }
+
+    .dm-info-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .dm-info-copy h3 {
+        font-size: 32px;
+    }
+
+    .dm-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 260px 180px 180px;
+    }
+
+    .dm-gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .dm-gallery-item:nth-child(2),
+    .dm-gallery-item:nth-child(3),
+    .dm-gallery-item:nth-child(4),
+    .dm-gallery-item:nth-child(5) {
+        grid-column: span 1;
+    }
+
+    .dm-final {
+        min-height: 570px;
+    }
+
+    .dm-footer {
+        padding-bottom: 90px;
+    }
+
+    .dm-footer-inner {
+        display: block;
+    }
+
+    .dm-footer-inner > * + * {
+        margin-top: 10px;
+    }
+
+    .dm-floating-wa {
+        display: none;
+    }
+
+    .dm-mobile-bar {
+        display: flex;
+    }
+
+    .dm-modal {
+        align-items: end;
+        padding: 10px;
+    }
+
+    .dm-modal-card {
+        padding: 30px 22px 20px;
+        width: 100%;
+    }
+
+    .dm-modal-card h2 {
+        font-size: 29px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .dm-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dm-process {
+        min-height: auto;
+    }
+
+    .dm-gallery {
+        grid-template-rows: 230px 150px 150px;
+    }
+
+    .dm-modal-card {
+        padding-top: 28px;
     }
 }
 </style>
 
-<div class="al-tamayoz-site" id="top" dir="rtl" lang="ar">
 
-    <!-- HEADER -->
-    <header class="al-header">
-        <div class="al-container al-header-inner">
+<div class="dm-page" id="dmPage">
 
-            <a class="al-logo" href="#top" aria-label="التميز لمقاولات الهدم">
-                <span class="al-logo-mark">ت</span>
-                <span class="al-logo-text">
-                    <strong>التميز</strong>
-                    <span>DEMOLITION CONTRACTING</span>
+    <!-- =====================================================
+         OPENING CONTACT MODAL
+         ===================================================== -->
+
+    <div class="dm-modal" id="dmModal" aria-hidden="true">
+        <div class="dm-modal-card" role="dialog" aria-modal="true" aria-labelledby="dmModalTitle">
+
+            <button class="dm-modal-close" id="dmModalClose" type="button" aria-label="إغلاق">
+                ×
+            </button>
+
+            <div class="dm-modal-mark">هـ</div>
+
+            <h2 id="dmModalTitle">
+                عندك هدم أو تكسير؟
+            </h2>
+
+            <p>
+                أرسل لنا موقع المشروع أو تواصل معنا مباشرة،
+                ونحدد معك الخطوة المناسبة قبل التنفيذ.
+            </p>
+
+            <div class="dm-modal-actions">
+
+                <a
+                    class="dm-modal-action phone"
+                    href="tel:+966568526502"
+                    data-dm-event="phone_click"
+                >
+                    <div>
+                        <strong>اتصل الآن</strong>
+                        <span>056 852 6502</span>
+                    </div>
+
+                    <div class="dm-modal-action-icon">☎</div>
+                </a>
+
+                <a
+                    class="dm-modal-action whatsapp"
+                    href="https://wa.me/966568526502?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D9%87%D8%AF%D9%85%20%D9%88%D8%A7%D9%84%D8%AA%D9%83%D8%B3%D9%8A%D8%B1."
+                    target="_blank"
+                    rel="noopener"
+                    data-dm-event="whatsapp_click"
+                >
+                    <div>
+                        <strong>واتساب</strong>
+                        <span>أرسل موقع المشروع وصورة أو فيديو</span>
+                    </div>
+
+                    <div class="dm-modal-action-icon">↗</div>
+                </a>
+
+            </div>
+
+            <button class="dm-modal-skip" id="dmModalSkip" type="button">
+                متابعة إلى الموقع
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         TOP
+         ===================================================== -->
+
+    <div class="dm-top">
+        <div class="dm-container dm-top-inner">
+
+            <div class="dm-top-right">
+                <span class="dm-live">
+                    <i class="dm-live-dot"></i>
+                    متاح للتواصل
                 </span>
+
+                <span>الدمام والمنطقة الشرقية</span>
+            </div>
+
+            <div class="dm-top-left">
+                <span>اتصل الآن</span>
+                <a href="tel:+966568526502" data-dm-event="phone_click">
+                    056 852 6502
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="dm-header">
+        <div class="dm-container dm-header-inner">
+
+            <a class="dm-brand" href="#top" aria-label="التميز لمقاولات الهدم">
+
+                <div class="dm-brand-mark">
+                    هـ
+                </div>
+
+                <div class="dm-brand-text">
+                    <strong>التميز لمقاولات الهدم</strong>
+                    <span>DEMOLITION & BREAKING</span>
+                </div>
+
             </a>
 
-            <nav class="al-nav" aria-label="التنقل الرئيسي">
+            <nav class="dm-nav" aria-label="التنقل الرئيسي">
                 <a href="#services">الخدمات</a>
-                <a href="#work">أعمال الهدم</a>
+                <a href="#why">لماذا نحن</a>
                 <a href="#process">طريقة العمل</a>
                 <a href="#areas">نطاق الخدمة</a>
                 <a href="#faq">الأسئلة</a>
             </nav>
 
-            <div class="al-header-contact">
-                <a class="al-phone" href="tel:+966568526502" data-track="phone">
-                    056 852 6502
+            <div class="dm-header-actions">
+
+                <a
+                    class="dm-mini-btn"
+                    href="tel:+966568526502"
+                    data-dm-event="phone_click"
+                >
+                    اتصل
                 </a>
 
                 <a
-                    class="al-wa"
+                    class="dm-mini-btn orange"
                     href="https://wa.me/966568526502"
                     target="_blank"
                     rel="noopener"
-                    data-track="whatsapp"
+                    data-dm-event="whatsapp_click"
                 >
                     واتساب
                 </a>
+
             </div>
 
         </div>
     </header>
 
 
-    <!-- HERO -->
-    <main>
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-        <section class="al-hero">
+    <main id="top">
 
-            <div class="al-hero-image">
-                <img
-                    src="https://images.pexels.com/photos/11521973/pexels-photo-11521973.jpeg?auto=compress&cs=tinysrgb&w=1800"
-                    srcset="
-                        https://images.pexels.com/photos/11521973/pexels-photo-11521973.jpeg?auto=compress&cs=tinysrgb&w=900 900w,
-                        https://images.pexels.com/photos/11521973/pexels-photo-11521973.jpeg?auto=compress&cs=tinysrgb&w=1400 1400w,
-                        https://images.pexels.com/photos/11521973/pexels-photo-11521973.jpeg?auto=compress&cs=tinysrgb&w=1800 1800w
-                    "
-                    sizes="100vw"
-                    width="1800"
-                    height="1200"
-                    alt="حفار أثناء هدم مبنى قديم"
-                    fetchpriority="high"
-                    loading="eager"
-                    decoding="async"
-                >
-            </div>
+        <section class="dm-hero">
 
-            <div class="al-container al-hero-grid">
+            <div class="dm-hero-image"></div>
+            <div class="dm-hero-grid"></div>
 
-                <div class="al-hero-kicker">
-                    <span>DEMOLITION / EASTERN PROVINCE</span>
-                    هدم وتكسير المباني والمنازل
-                    <br>
-                    في الدمام والمنطقة الشرقية
-                </div>
+            <div class="dm-hero-content">
 
-                <div class="al-hero-copy">
+                <div class="dm-hero-copy dm-reveal">
+
+                    <div class="dm-eyebrow">
+                        هدم وتكسير في الدمام والمنطقة الشرقية
+                    </div>
 
                     <h1>
-                        نهدم القديم.<br>
-                        ونفتح <em>المكان للجديد.</em>
+                        نهدم القديم
+                        <br>
+                        <span>ونجهّز المكان للجديد.</span>
                     </h1>
 
-                    <p>
-                        هدم المنازل والمباني القديمة، وتكسير الجدران والخرسانة
-                        والأجزاء المطلوب إزالتها، في الدمام والمنطقة الشرقية.
+                    <p class="dm-hero-lead">
+                        هدم المنازل والمباني القديمة، تكسير الجدران والخرسانة،
+                        وتنفيذ أعمال الهدم والتكسير حسب طبيعة الموقع واحتياجه.
                     </p>
 
-                    <div class="al-hero-actions">
+                    <div class="dm-hero-actions">
 
                         <a
-                            class="al-btn al-btn-primary"
+                            class="dm-cta dm-cta-primary"
                             href="tel:+966568526502"
-                            data-track="phone"
+                            data-dm-event="phone_click"
                         >
                             اتصل الآن
+                            <span>↗</span>
                         </a>
 
                         <a
-                            class="al-btn al-btn-outline"
-                            href="https://wa.me/966568526502"
+                            class="dm-cta dm-cta-whatsapp"
+                            href="https://wa.me/966568526502?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%87%D8%AF%D9%85%20%D9%88%D8%A7%D9%84%D8%AA%D9%83%D8%B3%D9%8A%D8%B1."
                             target="_blank"
                             rel="noopener"
-                            data-track="whatsapp"
+                            data-dm-event="whatsapp_click"
                         >
-                            أرسل تفاصيل الموقع على واتساب
+                            تواصل عبر واتساب
+                            <span>↗</span>
                         </a>
 
                     </div>
 
+                    <div class="dm-hero-meta">
+
+                        <div class="dm-hero-meta-item">
+                            <span>01</span>
+                            <strong>هدم مباني ومنازل</strong>
+                        </div>
+
+                        <div class="dm-hero-meta-item">
+                            <span>02</span>
+                            <strong>تكسير جدران وخرسانة</strong>
+                        </div>
+
+                        <div class="dm-hero-meta-item">
+                            <span>03</span>
+                            <strong>المنطقة الشرقية</strong>
+                        </div>
+
+                    </div>
+
                 </div>
 
-            </div>
-
-            <div class="al-container al-hero-meta">
-                <div class="al-meta-item">DAMMAM</div>
-                <div class="al-meta-item">EASTERN PROVINCE</div>
-                <div class="al-meta-item">DEMOLITION</div>
             </div>
 
         </section>
 
 
-        <!-- SERVICES -->
-        <section class="al-section al-services" id="services">
+        <!-- =================================================
+             SERVICES
+             ================================================= -->
 
-            <div class="al-container">
+        <section class="dm-section dm-section-dark" id="services">
 
-                <div class="al-section-head">
+            <div class="dm-container">
+
+                <div class="dm-section-head dm-reveal">
 
                     <div>
-                        <span class="al-eyebrow">01 / SERVICES</span>
-                        <h2>ماذا نهدم؟</h2>
+                        <div class="dm-section-kicker">
+                            WHAT WE DO
+                        </div>
+
+                        <h2>
+                            هدم وتكسير،
+                            <br>
+                            من أول ضربة لآخر مخلف.
+                        </h2>
                     </div>
 
                     <p>
-                        أعمال هدم وتكسير موجهة للمباني والمنازل والأجزاء التي
-                        تحتاج إلى إزالة، مع تحديد نطاق العمل قبل التنفيذ.
+                        نغطي أعمال الهدم والتكسير للمنازل والمباني والأجزاء
+                        الداخلية، مع اختيار أسلوب التنفيذ حسب طبيعة المشروع.
                     </p>
 
                 </div>
 
-                <div class="al-service-list">
 
-                    <article class="al-service">
-                        <span class="al-service-number">01</span>
+                <div class="dm-services">
 
-                        <h3>هدم المنازل القديمة</h3>
+                    <article class="dm-service dm-reveal">
 
-                        <p>
-                            هدم وإزالة المنازل والمباني القديمة حسب طبيعة
-                            الموقع ونطاق العمل المطلوب.
-                        </p>
+                        <div
+                            class="dm-service-image"
+                            style="background-image:url('https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        </div>
+
+                        <div class="dm-service-content">
+
+                            <span class="dm-service-number">01</span>
+
+                            <h3>هدم المنازل القديمة</h3>
+
+                            <p>
+                                هدم المنازل والمباني القديمة وتجهيز الموقع
+                                للمرحلة التالية من المشروع.
+                            </p>
+
+                            <span class="dm-service-link">
+                                تفاصيل الخدمة ←
+                            </span>
+
+                        </div>
+
                     </article>
 
-                    <article class="al-service">
-                        <span class="al-service-number">02</span>
 
-                        <h3>هدم المباني والمنشآت</h3>
+                    <article class="dm-service dm-reveal">
 
-                        <p>
-                            تنفيذ أعمال الهدم للمباني والمنشآت التي يتطلب
-                            المشروع إزالتها بالكامل أو جزئيًا.
-                        </p>
+                        <div
+                            class="dm-service-image"
+                            style="background-image:url('https://images.pexels.com/photos/6474450/pexels-photo-6474450.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        </div>
+
+                        <div class="dm-service-content">
+
+                            <span class="dm-service-number">02</span>
+
+                            <h3>هدم المباني والمنشآت</h3>
+
+                            <p>
+                                أعمال هدم للمباني والمنشآت حسب حجم الموقع
+                                وطبيعة العناصر المطلوب إزالتها.
+                            </p>
+
+                            <span class="dm-service-link">
+                                اطلب المعاينة ←
+                            </span>
+
+                        </div>
+
                     </article>
 
-                    <article class="al-service">
-                        <span class="al-service-number">03</span>
 
-                        <h3>تكسير الجدران والخرسانة</h3>
+                    <article class="dm-service dm-reveal">
 
-                        <p>
-                            تكسير وإزالة الجدران والخرسانة والأجزاء الإنشائية
-                            أو الداخلية بحسب طبيعة الموقع.
-                        </p>
+                        <div
+                            class="dm-service-image"
+                            style="background-image:url('https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        </div>
+
+                        <div class="dm-service-content">
+
+                            <span class="dm-service-number">03</span>
+
+                            <h3>تكسير الجدران</h3>
+
+                            <p>
+                                فتحات وتكسير جدران داخلية حسب متطلبات
+                                التعديل أو إعادة توزيع المساحات.
+                            </p>
+
+                            <span class="dm-service-link">
+                                تواصل معنا ←
+                            </span>
+
+                        </div>
+
                     </article>
 
-                    <article class="al-service">
-                        <span class="al-service-number">04</span>
 
-                        <h3>هدم وإزالة أجزاء محددة</h3>
+                    <article class="dm-service dm-reveal">
 
-                        <p>
-                            إذا كان المطلوب إزالة جزء محدد من المبنى، يتم
-                            تحديد الجزء ونطاق العمل قبل البدء.
-                        </p>
+                        <div
+                            class="dm-service-image"
+                            style="background-image:url('https://images.pexels.com/photos/162568/demolition-crane-building-construction-162568.jpeg?auto=compress&cs=tinysrgb&w=1200')">
+                        </div>
+
+                        <div class="dm-service-content">
+
+                            <span class="dm-service-number">04</span>
+
+                            <h3>تكسير الخرسانة وإزالة الأنقاض</h3>
+
+                            <p>
+                                تكسير العناصر الخرسانية وإزالة مخلفات الهدم
+                                بحسب نطاق العمل المتفق عليه.
+                            </p>
+
+                            <span class="dm-service-link">
+                                اسأل عن الخدمة ←
+                            </span>
+
+                        </div>
+
                     </article>
 
                 </div>
@@ -1267,341 +1894,613 @@ body.page-id-1111 {
         </section>
 
 
-        <!-- STORY -->
-        <section class="al-section al-story">
+        <!-- =================================================
+             BREAKER CTA
+             ================================================= -->
 
-            <div class="al-container al-story-grid">
+        <section class="dm-breaker">
 
-                <div class="al-story-image">
+            <div class="dm-container">
 
-                    <img
-                        src="https://images.pexels.com/photos/15109996/pexels-photo-15109996/free-photo-of-aerial-view-of-a-bulldozer-demolishing-houses.jpeg?auto=compress&cs=tinysrgb&w=1400"
-                        srcset="
-                            https://images.pexels.com/photos/15109996/pexels-photo-15109996/free-photo-of-aerial-view-of-a-bulldozer-demolishing-houses.jpeg?auto=compress&cs=tinysrgb&w=800 800w,
-                            https://images.pexels.com/photos/15109996/pexels-photo-15109996/free-photo-of-aerial-view-of-a-bulldozer-demolishing-houses.jpeg?auto=compress&cs=tinysrgb&w=1400 1400w
-                        "
-                        sizes="(max-width: 700px) 100vw, 55vw"
-                        width="1400"
-                        height="1050"
-                        loading="lazy"
-                        decoding="async"
-                        alt="معدات أثناء أعمال هدم مبانٍ"
-                    >
-
-                    <span class="al-story-label">
-                        DEMOLITION WORK
-                    </span>
-
-                </div>
-
-                <div class="al-story-copy">
-
-                    <span class="al-eyebrow">02 / THE WORK</span>
-
-                    <h2>
-                        الهدم مش مجرد<br>
-                        إزالة.
-                    </h2>
-
-                    <p>
-                        كل موقع له طبيعته. لذلك يبدأ العمل بفهم المطلوب
-                        تحديدًا، ومعرفة المبنى أو الجزء المراد هدمه، ثم
-                        الاتفاق على نطاق التنفيذ قبل بدء العمل.
-                    </p>
-
-                    <ul class="al-check-list">
-                        <li>هدم منازل ومبانٍ قديمة</li>
-                        <li>تكسير جدران وخرسانة</li>
-                        <li>هدم كامل أو جزئي حسب نطاق المشروع</li>
-                        <li>خدمة داخل الدمام والمنطقة الشرقية</li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- WORK -->
-        <section class="al-section al-work" id="work">
-
-            <div class="al-container">
-
-                <div class="al-section-head">
+                <div class="dm-breaker-inner dm-reveal">
 
                     <div>
-                        <span class="al-eyebrow">03 / DEMOLITION</span>
-                        <h2>شكل الشغل.</h2>
+                        <h3>
+                            عندك مبنى قديم أو جزء محتاج تكسير؟
+                        </h3>
+
+                        <p>
+                            أرسل موقع المشروع وصورة للمكان على واتساب.
+                        </p>
                     </div>
-
-                    <p>
-                        صور توضيحية لطبيعة أعمال الهدم والتكسير التي تعكس
-                        نطاق الخدمة، وليست ادعاءً بأنها مشاريع سابقة للشركة.
-                    </p>
-
-                </div>
-
-                <div class="al-gallery">
-
-                    <figure class="al-gallery-item">
-                        <img
-                            src="https://images.pexels.com/photos/7907392/pexels-photo-7907392.jpeg?auto=compress&cs=tinysrgb&w=1400"
-                            width="1400"
-                            height="918"
-                            loading="lazy"
-                            decoding="async"
-                            alt="هدم مبنى باستخدام معدات ثقيلة"
-                        >
-
-                        <figcaption class="al-gallery-caption">
-                            <strong>هدم مبنى</strong>
-                            <span>BUILDING DEMOLITION</span>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="al-gallery-item">
-                        <img
-                            src="https://images.pexels.com/photos/15109996/pexels-photo-15109996/free-photo-of-aerial-view-of-a-bulldozer-demolishing-houses.jpeg?auto=compress&cs=tinysrgb&w=1000"
-                            width="1000"
-                            height="750"
-                            loading="lazy"
-                            decoding="async"
-                            alt="معدات هدم مبانٍ ومنازل"
-                        >
-
-                        <figcaption class="al-gallery-caption">
-                            <strong>هدم وإزالة</strong>
-                            <span>DEMOLITION & REMOVAL</span>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="al-gallery-item">
-                        <img
-                            src="https://images.unsplash.com/photo-1776594974675-b21647efe342?auto=format&fit=crop&fm=jpg&q=82&w=1200"
-                            width="1200"
-                            height="800"
-                            loading="lazy"
-                            decoding="async"
-                            alt="عمال ومعدة أثناء هدم مبنى"
-                        >
-
-                        <figcaption class="al-gallery-caption">
-                            <strong>أعمال تكسير وهدم</strong>
-                            <span>BREAKING WORK</span>
-                        </figcaption>
-                    </figure>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROCESS -->
-        <section class="al-section al-process" id="process">
-
-            <div class="al-container">
-
-                <div class="al-section-head">
-
-                    <div>
-                        <span class="al-eyebrow">04 / PROCESS</span>
-                        <h2>من أول اتصال<br>لحد التنفيذ.</h2>
-                    </div>
-
-                    <p>
-                        خطوات واضحة بدل الكلام العام. ابعت تفاصيل الموقع،
-                        نحدد المطلوب، وبعدها يتم الاتفاق على نطاق العمل.
-                    </p>
-
-                </div>
-
-                <div class="al-process-grid">
-
-                    <article class="al-process-item">
-                        <span class="al-process-num">STEP 01</span>
-                        <h3>التواصل</h3>
-                        <p>
-                            تواصل معنا وأرسل موقع المشروع وصور المبنى
-                            أو الجزء المطلوب هدمه إن أمكن.
-                        </p>
-                    </article>
-
-                    <article class="al-process-item">
-                        <span class="al-process-num">STEP 02</span>
-                        <h3>تحديد المطلوب</h3>
-                        <p>
-                            يتم فهم طبيعة الموقع ونطاق أعمال الهدم
-                            المطلوبة قبل التنفيذ.
-                        </p>
-                    </article>
-
-                    <article class="al-process-item">
-                        <span class="al-process-num">STEP 03</span>
-                        <h3>الاتفاق</h3>
-                        <p>
-                            تحديد نطاق العمل والتكلفة وطريقة التنفيذ
-                            المناسبة للمشروع.
-                        </p>
-                    </article>
-
-                    <article class="al-process-item">
-                        <span class="al-process-num">STEP 04</span>
-                        <h3>التنفيذ</h3>
-                        <p>
-                            بدء أعمال الهدم والتكسير وفق النطاق المتفق
-                            عليه للموقع.
-                        </p>
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- AREA -->
-        <section class="al-section al-area" id="areas">
-
-            <div class="al-container al-area-grid">
-
-                <div>
-
-                    <span class="al-eyebrow">05 / SERVICE AREA</span>
-
-                    <h2>
-                        الدمام<br>
-                        والمنطقة الشرقية.
-                    </h2>
-
-                    <p>
-                        نطاق عملنا الأساسي هو الدمام والمنطقة الشرقية،
-                        لأعمال هدم وتكسير المنازل والمباني والأجزاء المطلوب
-                        إزالتها.
-                    </p>
-
-                </div>
-
-                <div class="al-area-box">
-                    <span>OUR AREA</span>
-
-                    <strong>
-                        DAMMAM<br>
-                        EASTERN PROVINCE
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FAQ -->
-        <section class="al-section al-faq" id="faq">
-
-            <div class="al-container">
-
-                <div class="al-section-head">
-
-                    <div>
-                        <span class="al-eyebrow">06 / FAQ</span>
-                        <h2>أسئلة قبل الهدم.</h2>
-                    </div>
-
-                    <p>
-                        إجابات مباشرة على أكثر الأسئلة المرتبطة بطلب
-                        أعمال الهدم والتكسير.
-                    </p>
-
-                </div>
-
-                <div class="al-faq-wrap">
-
-                    <details>
-                        <summary>هل تهدمون المنازل القديمة؟</summary>
-                        <p>
-                            نعم، يتم تنفيذ أعمال هدم المنازل والمباني القديمة
-                            حسب طبيعة الموقع ونطاق العمل المطلوب.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>هل تقدمون تكسير الجدران والخرسانة؟</summary>
-                        <p>
-                            نعم، تكسير الجدران والخرسانة من ضمن أعمال
-                            التكسير، ويحدد نطاق التنفيذ حسب طبيعة الموقع.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>أين تقدمون الخدمة؟</summary>
-                        <p>
-                            نطاق الخدمة هو الدمام والمنطقة الشرقية.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>كيف أطلب عرضًا لأعمال الهدم؟</summary>
-                        <p>
-                            تواصل معنا على الهاتف أو واتساب وأرسل موقع
-                            المشروع وصورًا للمبنى أو الجزء المطلوب هدمه
-                            لتوضيح نطاق العمل.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>هل كل أعمال الهدم تحتاج إلى تصريح؟</summary>
-                        <p>
-                            متطلبات التصاريح تختلف حسب نوع المشروع والموقع.
-                            يجب التأكد من المتطلبات النظامية اللازمة قبل
-                            بدء التنفيذ.
-                        </p>
-                    </details>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- CTA -->
-        <section class="al-final-cta" id="contact">
-
-            <div class="al-container al-final-grid">
-
-                <div>
-                    <span class="al-eyebrow">07 / START</span>
-
-                    <h2>
-                        عندك مبنى<br>
-                        يحتاج هدم؟
-                    </h2>
-                </div>
-
-                <div class="al-final-actions">
 
                     <a
-                        class="al-btn al-btn-primary"
-                        href="tel:+966568526502"
-                        data-track="phone"
-                    >
-                        056 852 6502
-                    </a>
-
-                    <a
-                        class="al-btn al-btn-outline"
+                        class="dm-cta dm-cta-whatsapp"
                         href="https://wa.me/966568526502"
                         target="_blank"
                         rel="noopener"
-                        data-track="whatsapp"
+                        data-dm-event="whatsapp_click"
                     >
-                        تواصل عبر واتساب
+                        أرسل الموقع على واتساب
+                        ↗
                     </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WHY
+             ================================================= -->
+
+        <section class="dm-section dm-section-panel" id="why">
+
+            <div class="dm-container">
+
+                <div class="dm-why">
+
+                    <div class="dm-why-visual dm-reveal">
+
+                        <div class="dm-why-label">
+                            <strong>الهدم مش مجرد تكسير</strong>
+                            <span>كل موقع له طريقة تنفيذ مختلفة</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dm-reveal">
+
+                        <div class="dm-section-kicker">
+                            WHY AL-TAMAYOZ
+                        </div>
+
+                        <h2>
+                            الشغل يبدأ
+                            <br>
+                            قبل المعدات.
+                        </h2>
+
+                        <div class="dm-benefits">
+
+                            <div class="dm-benefit">
+                                <div class="dm-benefit-num">01</div>
+                                <div>
+                                    <h3>فهم الموقع أولًا</h3>
+                                    <p>
+                                        معرفة نوع المبنى والأجزاء المطلوب هدمها
+                                        قبل تحديد طريقة التنفيذ.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="dm-benefit">
+                                <div class="dm-benefit-num">02</div>
+                                <div>
+                                    <h3>اختيار أسلوب التنفيذ</h3>
+                                    <p>
+                                        نوع العمل والمساحة وطبيعة العناصر
+                                        تحدد المعدات وطريقة التكسير المناسبة.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="dm-benefit">
+                                <div class="dm-benefit-num">03</div>
+                                <div>
+                                    <h3>تنفيذ منظم</h3>
+                                    <p>
+                                        الهدف ليس إزالة الجزء المطلوب فقط،
+                                        بل تنفيذ العمل بصورة منظمة داخل الموقع.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="dm-benefit">
+                                <div class="dm-benefit-num">04</div>
+                                <div>
+                                    <h3>وضوح قبل البداية</h3>
+                                    <p>
+                                        تفاصيل الموقع ونطاق العمل يتم تحديدها
+                                        قبل بدء التنفيذ قدر الإمكان.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROCESS
+             ================================================= -->
+
+        <section class="dm-section dm-section-dark" id="process">
+
+            <div class="dm-container">
+
+                <div class="dm-section-head dm-reveal">
+
+                    <div>
+                        <div class="dm-section-kicker">
+                            THE PROCESS
+                        </div>
+
+                        <h2>
+                            من أول رسالة
+                            <br>
+                            إلى تسليم الموقع.
+                        </h2>
+                    </div>
+
+                    <p>
+                        كل ما نحتاجه في البداية هو معلومات بسيطة عن المشروع
+                        حتى نقدر نفهم نطاق العمل المطلوب.
+                    </p>
+
+                </div>
+
+
+                <div class="dm-process-grid">
+
+                    <div class="dm-process dm-reveal">
+                        <div class="dm-process-num">01</div>
+                        <h3>أرسل الموقع</h3>
+                        <p>
+                            أرسل موقع المشروع على واتساب، مع صور أو فيديو
+                            للمكان إن أمكن.
+                        </p>
+                    </div>
+
+                    <div class="dm-process dm-reveal">
+                        <div class="dm-process-num">02</div>
+                        <h3>نفهم المطلوب</h3>
+                        <p>
+                            نحدد نوع الهدم أو التكسير والجزء المطلوب
+                            التعامل معه.
+                        </p>
+                    </div>
+
+                    <div class="dm-process dm-reveal">
+                        <div class="dm-process-num">03</div>
+                        <h3>تحديد التنفيذ</h3>
+                        <p>
+                            يتم الاتفاق على نطاق العمل وطريقة التنفيذ
+                            والموعد المناسب.
+                        </p>
+                    </div>
+
+                    <div class="dm-process dm-reveal">
+                        <div class="dm-process-num">04</div>
+                        <h3>بدء العمل</h3>
+                        <p>
+                            يبدأ التنفيذ وفق التفاصيل المتفق عليها
+                            للموقع.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INFO
+             ================================================= -->
+
+        <section class="dm-section dm-info">
+
+            <div class="dm-container">
+
+                <div class="dm-info-grid">
+
+                    <div class="dm-info-copy dm-reveal">
+
+                        <div class="dm-section-kicker">
+                            BEFORE WE START
+                        </div>
+
+                        <h3>
+                            عشان نقدر نفهم شغلك بسرعة،
+                            ابعت لنا 4 حاجات.
+                        </h3>
+
+                        <p>
+                            كلما كانت معلومات الموقع أوضح، كان أسهل علينا
+                            تحديد طبيعة العمل المطلوب من البداية.
+                        </p>
+
+                        <a
+                            class="dm-cta dm-cta-primary"
+                            href="https://wa.me/966568526502"
+                            target="_blank"
+                            rel="noopener"
+                            data-dm-event="whatsapp_click"
+                        >
+                            أرسل التفاصيل على واتساب
+                            ↗
+                        </a>
+
+                    </div>
+
+
+                    <div class="dm-info-list dm-reveal">
+
+                        <div class="dm-info-item">
+                            <div class="dm-info-icon">01</div>
+                            <div>
+                                <strong>موقع المشروع</strong>
+                                <span>المدينة أو رابط الموقع</span>
+                            </div>
+                        </div>
+
+                        <div class="dm-info-item">
+                            <div class="dm-info-icon">02</div>
+                            <div>
+                                <strong>صور أو فيديو</strong>
+                                <span>لقطات واضحة للمكان</span>
+                            </div>
+                        </div>
+
+                        <div class="dm-info-item">
+                            <div class="dm-info-icon">03</div>
+                            <div>
+                                <strong>نوع العمل</strong>
+                                <span>هدم منزل، مبنى، جدار، خرسانة...</span>
+                            </div>
+                        </div>
+
+                        <div class="dm-info-item">
+                            <div class="dm-info-icon">04</div>
+                            <div>
+                                <strong>الموعد التقريبي</strong>
+                                <span>متى تحتاج بدء العمل؟</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MAP
+             ================================================= -->
+
+        <section class="dm-section dm-map-section" id="areas">
+
+            <div class="dm-container">
+
+                <div class="dm-section-head dm-reveal">
+
+                    <div>
+                        <div class="dm-section-kicker">
+                            SERVICE AREA
+                        </div>
+
+                        <h2>
+                            نخدم الدمام
+                            <br>
+                            ومدن المنطقة الشرقية.
+                        </h2>
+                    </div>
+
+                    <p>
+                        نطاق الخدمة يشمل الدمام وعددًا من مدن ومحافظات
+                        المنطقة الشرقية. أرسل موقع مشروعك للتأكد من إمكانية
+                        التنفيذ في موقعك.
+                    </p>
+
+                </div>
+
+
+                <div class="dm-map-wrap">
+
+                    <div class="dm-map-copy dm-reveal">
+
+                        <h3>
+                            أين نوصلك؟
+                        </h3>
+
+                        <p>
+                            إذا كان مشروعك خارج الدمام، أرسل الموقع مباشرة
+                            على واتساب وسنراجع نطاق الخدمة للمشروع.
+                        </p>
+
+                        <div class="dm-cities">
+
+                            <span class="dm-city">الدمام</span>
+                            <span class="dm-city">الخبر</span>
+                            <span class="dm-city">الظهران</span>
+                            <span class="dm-city">القطيف</span>
+                            <span class="dm-city">الجبيل</span>
+                            <span class="dm-city">الأحساء</span>
+                            <span class="dm-city">بقيق</span>
+                            <span class="dm-city">الخفجي</span>
+
+                        </div>
+
+                        <a
+                            class="dm-cta dm-cta-whatsapp dm-map-cta"
+                            href="https://wa.me/966568526502"
+                            target="_blank"
+                            rel="noopener"
+                            data-dm-event="whatsapp_click"
+                        >
+                            أرسل موقع مشروعك
+                            ↗
+                        </a>
+
+                    </div>
+
+
+                    <div class="dm-map dm-reveal">
+
+                        <iframe
+                            src="https://www.google.com/maps?q=26.431827,49.890377&z=9&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="خريطة نطاق الخدمة في المنطقة الشرقية">
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GALLERY
+             ================================================= -->
+
+        <section class="dm-section dm-section-panel">
+
+            <div class="dm-container">
+
+                <div class="dm-section-head dm-reveal">
+
+                    <div>
+                        <div class="dm-section-kicker">
+                            DEMOLITION WORK
+                        </div>
+
+                        <h2>
+                            طبيعة الأعمال
+                            <br>
+                            التي ننفذها.
+                        </h2>
+                    </div>
+
+                    <p>
+                        أمثلة بصرية على طبيعة أعمال الهدم والتكسير،
+                        وليست صورًا لموقع عميل محدد.
+                    </p>
+
+                </div>
+
+
+                <div class="dm-gallery">
+
+                    <div class="dm-gallery-item dm-reveal">
+                        <img
+                            src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                            alt="أعمال هدم وتكسير مباني"
+                            width="1200"
+                            height="900"
+                            loading="lazy">
+                        <div class="dm-gallery-caption">
+                            هدم مباني ومنشآت
+                        </div>
+                    </div>
+
+                    <div class="dm-gallery-item dm-reveal">
+                        <img
+                            src="https://images.pexels.com/photos/6474450/pexels-photo-6474450.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                            alt="معدات وأعمال هدم"
+                            width="1000"
+                            height="700"
+                            loading="lazy">
+                        <div class="dm-gallery-caption">
+                            أعمال التكسير والهدم
+                        </div>
+                    </div>
+
+                    <div class="dm-gallery-item dm-reveal">
+                        <img
+                            src="https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                            alt="تكسير داخل المباني"
+                            width="1000"
+                            height="700"
+                            loading="lazy">
+                        <div class="dm-gallery-caption">
+                            تكسير وتجهيز المساحات
+                        </div>
+                    </div>
+
+                    <div class="dm-gallery-item dm-reveal">
+                        <img
+                            src="https://images.pexels.com/photos/162568/demolition-crane-building-construction-162568.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                            alt="هدم مبنى"
+                            width="1000"
+                            height="700"
+                            loading="lazy">
+                        <div class="dm-gallery-caption">
+                            هدم المباني
+                        </div>
+                    </div>
+
+                    <div class="dm-gallery-item dm-reveal">
+                        <img
+                            src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                            alt="موقع أعمال إنشائية"
+                            width="1000"
+                            height="700"
+                            loading="lazy">
+                        <div class="dm-gallery-caption">
+                            تجهيز الموقع بعد الهدم
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FAQ
+             ================================================= -->
+
+        <section class="dm-section dm-section-dark" id="faq">
+
+            <div class="dm-container">
+
+                <div class="dm-section-head dm-reveal">
+
+                    <div>
+                        <div class="dm-section-kicker">
+                            FAQ
+                        </div>
+
+                        <h2>
+                            قبل ما تتصل،
+                            <br>
+                            هذه أهم الأسئلة.
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="dm-faq">
+
+                    <details class="dm-reveal">
+                        <summary>
+                            هل تنفذون هدم المنازل القديمة؟
+                        </summary>
+                        <div class="dm-answer">
+                            نعم، يمكن التواصل معنا وإرسال موقع وصور المشروع
+                            لتحديد طبيعة العمل المطلوب.
+                        </div>
+                    </details>
+
+                    <details class="dm-reveal">
+                        <summary>
+                            هل تقدمون تكسير الجدران والخرسانة؟
+                        </summary>
+                        <div class="dm-answer">
+                            تشمل الخدمات تكسير الجدران وبعض أعمال تكسير الخرسانة،
+                            ويحدد نطاق التنفيذ حسب طبيعة الموقع.
+                        </div>
+                    </details>
+
+                    <details class="dm-reveal">
+                        <summary>
+                            هل أقدر أرسل الموقع على واتساب؟
+                        </summary>
+                        <div class="dm-answer">
+                            نعم، وهذه أفضل طريقة للبدء. أرسل رابط الموقع وصور
+                            أو فيديو للمكان مع وصف مختصر للمطلوب.
+                        </div>
+                    </details>
+
+                    <details class="dm-reveal">
+                        <summary>
+                            هل الخدمة متوفرة خارج الدمام؟
+                        </summary>
+                        <div class="dm-answer">
+                            نخدم الدمام وعددًا من مدن المنطقة الشرقية.
+                            أرسل موقع المشروع للتأكد من إمكانية التنفيذ.
+                        </div>
+                    </details>
+
+                    <details class="dm-reveal">
+                        <summary>
+                            كم يستغرق تنفيذ الهدم؟
+                        </summary>
+                        <div class="dm-answer">
+                            المدة تختلف حسب حجم المبنى ونوع العمل وطبيعة الموقع،
+                            لذلك يتم تحديدها بعد معرفة تفاصيل المشروع.
+                        </div>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FINAL CTA
+             ================================================= -->
+
+        <section class="dm-final">
+
+            <div class="dm-final-bg"></div>
+
+            <div class="dm-container">
+
+                <div class="dm-final-content dm-reveal">
+
+                    <div class="dm-section-kicker">
+                        READY TO START?
+                    </div>
+
+                    <h2>
+                        عندك هدم؟
+                        <br>
+                        خلّنا نشوف الموقع.
+                    </h2>
+
+                    <p>
+                        أرسل موقع المشروع وصورة أو فيديو للمكان،
+                        وتواصل معنا لمعرفة الخطوة التالية.
+                    </p>
+
+                    <div class="dm-final-actions">
+
+                        <a
+                            class="dm-cta dm-cta-primary"
+                            href="tel:+966568526502"
+                            data-dm-event="phone_click"
+                        >
+                            اتصل الآن
+                            ↗
+                        </a>
+
+                        <a
+                            class="dm-cta dm-cta-whatsapp"
+                            href="https://wa.me/966568526502"
+                            target="_blank"
+                            rel="noopener"
+                            data-dm-event="whatsapp_click"
+                        >
+                            واتساب
+                            ↗
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -1612,28 +2511,24 @@ body.page-id-1111 {
     </main>
 
 
-    <!-- FOOTER -->
-    <footer class="al-footer">
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
-        <div class="al-container al-footer-inner">
+    <footer class="dm-footer">
 
-            <div class="al-footer-copy">
-                © 2026 التميز لمقاولات الهدم — الدمام والمنطقة الشرقية
+        <div class="dm-container dm-footer-inner">
+
+            <div class="dm-footer-brand">
+                التميز لمقاولات الهدم
             </div>
 
-            <div class="al-footer-contact">
-                <a href="tel:+966568526502" data-track="phone">
-                    056 852 6502
-                </a>
+            <div>
+                هدم وتكسير المنازل والمباني في الدمام والمنطقة الشرقية
+            </div>
 
-                <a
-                    href="https://wa.me/966568526502"
-                    target="_blank"
-                    rel="noopener"
-                    data-track="whatsapp"
-                >
-                    WhatsApp
-                </a>
+            <div>
+                © <span id="dmYear"></span>
             </div>
 
         </div>
@@ -1641,23 +2536,42 @@ body.page-id-1111 {
     </footer>
 
 
-    <!-- MOBILE CTA -->
-    <div class="al-mobile-bar">
+    <!-- =====================================================
+         FLOATING WHATSAPP
+         ===================================================== -->
+
+    <a
+        class="dm-floating-wa"
+        href="https://wa.me/966568526502"
+        target="_blank"
+        rel="noopener"
+        aria-label="التواصل عبر واتساب"
+        data-dm-event="whatsapp_click"
+    >
+        ↗
+    </a>
+
+
+    <!-- =====================================================
+         MOBILE CTA
+         ===================================================== -->
+
+    <div class="dm-mobile-bar">
 
         <a
-            class="al-mobile-call"
+            class="dm-mobile-call"
             href="tel:+966568526502"
-            data-track="phone"
+            data-dm-event="phone_click"
         >
-            اتصال مباشر
+            اتصل الآن
         </a>
 
         <a
-            class="al-mobile-wa"
+            class="dm-mobile-wa"
             href="https://wa.me/966568526502"
             target="_blank"
             rel="noopener"
-            data-track="whatsapp"
+            data-dm-event="whatsapp_click"
         >
             واتساب
         </a>
@@ -1667,67 +2581,294 @@ body.page-id-1111 {
 </div>
 
 
-<!-- =========================
-     TRACKING
-     ========================= -->
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
 
 <script>
 (function () {
 
-    document.querySelectorAll('[data-track]').forEach(function (link) {
+    "use strict";
 
-        link.addEventListener('click', function () {
+    const modal = document.getElementById("dmModal");
+    const closeBtn = document.getElementById("dmModalClose");
+    const skipBtn = document.getElementById("dmModalSkip");
+    const year = document.getElementById("dmYear");
 
-            var type = this.getAttribute('data-track');
+    /* ---------------------------------------------------------
+       YEAR
+       --------------------------------------------------------- */
 
-            window.dataLayer = window.dataLayer || [];
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
 
-            window.dataLayer.push({
-                event: type === 'phone' ? 'phone_click' : 'whatsapp_click',
-                link_url: this.href
-            });
+    /* ---------------------------------------------------------
+       TRACKING
+       --------------------------------------------------------- */
 
-            if (typeof window.gtag === 'function') {
-                window.gtag('event', type === 'phone' ? 'phone_click' : 'whatsapp_click', {
-                    event_category: 'lead',
-                    event_label: 'Al Tamayoz Demolition'
+    function trackEvent(eventName) {
+
+        try {
+
+            if (window.dataLayer && Array.isArray(window.dataLayer)) {
+                window.dataLayer.push({
+                    event: eventName,
+                    page: "demolition_landing",
+                    source: "dm_page"
                 });
+            }
+
+            if (typeof window.gtag === "function") {
+                window.gtag("event", eventName, {
+                    page_location: window.location.href,
+                    page_title: document.title
+                });
+            }
+
+        } catch (error) {
+            console.warn("Tracking error:", error);
+        }
+
+    }
+
+    document.querySelectorAll("[data-dm-event]").forEach(function (element) {
+
+        element.addEventListener("click", function () {
+
+            const eventName = element.getAttribute("data-dm-event");
+
+            if (eventName) {
+                trackEvent(eventName);
             }
 
         });
 
     });
 
+    /* ---------------------------------------------------------
+       MODAL
+       --------------------------------------------------------- */
+
+    function openModal() {
+
+        if (!modal) return;
+
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+
+        trackEvent("contact_modal_view");
+
+    }
+
+    function closeModal() {
+
+        if (!modal) return;
+
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+
+        document.body.style.overflow = "";
+
+        try {
+            sessionStorage.setItem("dm_contact_modal_seen", "1");
+        } catch (error) {}
+
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+    }
+
+    if (skipBtn) {
+        skipBtn.addEventListener("click", closeModal);
+    }
+
+    if (modal) {
+
+        modal.addEventListener("click", function (event) {
+
+            if (event.target === modal) {
+                closeModal();
+            }
+
+        });
+
+    }
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape" && modal && modal.classList.contains("is-open")) {
+            closeModal();
+        }
+
+    });
+
+    /*
+     * Show on first visit only.
+     * Delay prevents the popup from appearing before
+     * the Hero starts rendering.
+     */
+
+    let alreadySeen = false;
+
+    try {
+        alreadySeen = sessionStorage.getItem("dm_contact_modal_seen") === "1";
+    } catch (error) {}
+
+    if (!alreadySeen) {
+
+        window.setTimeout(function () {
+            openModal();
+        }, 900);
+
+    }
+
+
+    /* ---------------------------------------------------------
+       REVEAL ANIMATIONS
+       --------------------------------------------------------- */
+
+    const revealElements = document.querySelectorAll(".dm-reveal");
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            function (entries, obs) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("dm-visible");
+
+                        obs.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            }
+        );
+
+        revealElements.forEach(function (element) {
+            observer.observe(element);
+        });
+
+    } else {
+
+        revealElements.forEach(function (element) {
+            element.classList.add("dm-visible");
+        });
+
+    }
+
+
+    /* ---------------------------------------------------------
+       HERO PARALLAX
+       --------------------------------------------------------- */
+
+    const heroImage = document.querySelector(".dm-hero-image");
+
+    if (
+        heroImage &&
+        window.matchMedia("(min-width: 900px)").matches &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+
+        let ticking = false;
+
+        window.addEventListener("scroll", function () {
+
+            if (ticking) return;
+
+            window.requestAnimationFrame(function () {
+
+                const scroll = window.scrollY;
+
+                if (scroll < 900) {
+
+                    heroImage.style.transform =
+                        "scale(1.015) translateY(" +
+                        (scroll * 0.035) +
+                        "px)";
+
+                }
+
+                ticking = false;
+
+            });
+
+            ticking = true;
+
+        }, { passive: true });
+
+    }
+
+
 })();
 </script>
 
 
-<!-- =========================
+<!-- =========================================================
      STRUCTURED DATA
-     ========================= -->
+     ========================================================= -->
 
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "التميز لمقاولات الهدم",
+    "description": "خدمات هدم وتكسير المنازل والمباني والجدران والخرسانة في الدمام والمنطقة الشرقية.",
     "telephone": "+966568526502",
-    "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "المنطقة الشرقية"
-    },
-    "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "الدمام",
-        "addressRegion": "المنطقة الشرقية",
-        "addressCountry": "SA"
-    },
+    "areaServed": [
+        {
+            "@type": "City",
+            "name": "الدمام"
+        },
+        {
+            "@type": "City",
+            "name": "الخبر"
+        },
+        {
+            "@type": "City",
+            "name": "الظهران"
+        },
+        {
+            "@type": "City",
+            "name": "القطيف"
+        },
+        {
+            "@type": "City",
+            "name": "الجبيل"
+        },
+        {
+            "@type": "City",
+            "name": "الأحساء"
+        },
+        {
+            "@type": "City",
+            "name": "بقيق"
+        },
+        {
+            "@type": "City",
+            "name": "الخفجي"
+        }
+    ],
     "serviceType": [
         "هدم المنازل",
         "هدم المباني",
         "تكسير الجدران",
-        "تكسير الخرسانة"
-    ]
+        "تكسير الخرسانة",
+        "إزالة مخلفات الهدم"
+    ],
+    "knowsLanguage": "ar"
 }
 </script>
 
@@ -1738,10 +2879,10 @@ body.page-id-1111 {
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "هل تهدمون المنازل القديمة؟",
+            "name": "هل تنفذون هدم المنازل القديمة؟",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "نعم، يتم تنفيذ أعمال هدم المنازل والمباني القديمة حسب طبيعة الموقع ونطاق العمل المطلوب."
+                "text": "نعم، يمكن التواصل معنا وإرسال موقع وصور المشروع لتحديد طبيعة العمل المطلوب."
             }
         },
         {
@@ -1749,23 +2890,23 @@ body.page-id-1111 {
             "name": "هل تقدمون تكسير الجدران والخرسانة؟",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "نعم، تكسير الجدران والخرسانة من ضمن أعمال التكسير، ويحدد نطاق التنفيذ حسب طبيعة الموقع."
+                "text": "تشمل الخدمات تكسير الجدران وبعض أعمال تكسير الخرسانة، ويحدد نطاق التنفيذ حسب طبيعة الموقع."
             }
         },
         {
             "@type": "Question",
-            "name": "أين تقدمون الخدمة؟",
+            "name": "هل أقدر أرسل الموقع على واتساب؟",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "نطاق الخدمة هو الدمام والمنطقة الشرقية."
+                "text": "نعم، أرسل رابط الموقع وصور أو فيديو للمكان مع وصف مختصر للمطلوب."
             }
         },
         {
             "@type": "Question",
-            "name": "كيف أطلب عرضًا لأعمال الهدم؟",
+            "name": "هل الخدمة متوفرة خارج الدمام؟",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "تواصل معنا على الهاتف أو واتساب وأرسل موقع المشروع وصورًا للمبنى أو الجزء المطلوب هدمه لتوضيح نطاق العمل."
+                "text": "الخدمة تشمل الدمام وعددًا من مدن المنطقة الشرقية، ويمكن إرسال موقع المشروع للتأكد."
             }
         }
     ]
